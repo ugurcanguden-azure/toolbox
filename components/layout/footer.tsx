@@ -21,7 +21,6 @@ export function Footer() {
             <p className="flex items-center gap-1">
               {t('madeWith')} <Heart className="h-4 w-4 fill-red-500 text-red-500" /> {t('by')}
             </p>
-            <p className="font-medium text-foreground">{t('privacy')}</p>
             
             {/* Footer Links */}
             <div className="flex flex-wrap items-center justify-center gap-4">
