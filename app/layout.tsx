@@ -117,16 +117,19 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Favicon */}
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        
-              {/* Google AdSense - Deferred for better performance */}
-              <meta name="google-adsense-account" content="ca-pub-9339461513261360" />
-              <script
-                async={true}
-                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9339461513261360"
-                crossOrigin="anonymous"
-              />
+      {/* Favicon */}
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+      
+      {/* Google Site Verification */}
+      <meta name="google-site-verification" content="bIxfo-zqtnjZmEcwbIgclHMqLIo8C6RdmYeeiLEIZJ4" />
+      
+      {/* Google AdSense - Deferred for better performance */}
+      <meta name="google-adsense-account" content="ca-pub-9339461513261360" />
+      <script
+        async={true}
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9339461513261360"
+        crossOrigin="anonymous"
+      />
         
         {/* Structured Data */}
         <script
