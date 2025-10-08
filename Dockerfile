@@ -35,17 +35,18 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
+# Copy everything from builder (as root first)
+COPY --from=builder /app ./
 
-# Copy everything from builder
-COPY --from=builder --chown=nextjs:nodejs /app ./
+# Create nextjs user and fix permissions
+RUN addgroup --system --gid 1001 nodejs && \
+    adduser --system --uid 1001 nextjs && \
+    chown -R nextjs:nodejs /app
 
 USER nextjs
 
 EXPOSE 4003 
 ENV PORT=4003
 
-# Use next start (requires .next directory from build)
-# If build failed, fall back to dev mode
-CMD ["sh", "-c", "if [ -d .next ]; then npm start; else npm run dev; fi"]
+# Run in development mode (works with next-intl)
+CMD ["npm", "run", "dev"]
