@@ -26,12 +26,31 @@ export function AdBanner({
   useEffect(() => {
     // Load ads regardless of consent status
     // Non-personalized ads shown if consent declined
-    try {
-      // @ts-ignore
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (err) {
-      console.error('AdSense error:', err);
-    }
+    let isLoaded = false;
+    
+    const loadAd = () => {
+      if (isLoaded) return;
+      
+      try {
+        // @ts-ignore
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        isLoaded = true;
+      } catch (err) {
+        // Silently ignore duplicate push errors in development
+        if (process.env.NODE_ENV === 'development') {
+          // Expected in StrictMode
+        } else {
+          console.error('AdSense error:', err);
+        }
+      }
+    };
+
+    // Small delay to ensure DOM is ready
+    const timer = setTimeout(loadAd, 100);
+
+    return () => {
+      clearTimeout(timer);
+    };
   }, []);
 
   // Don't render while checking consent

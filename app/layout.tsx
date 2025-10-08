@@ -117,6 +117,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        
         {/* Google AdSense */}
         <meta name="google-adsense-account" content="ca-pub-9339461513261360" />
         <script
@@ -129,6 +132,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          suppressHydrationWarning
         />
       </head>
       <body className={inter.className}>{children}</body>
