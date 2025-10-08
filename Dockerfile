@@ -30,12 +30,11 @@ RUN addgroup --system --gid 1001 nodejs && \
 USER nextjs
 
 # Environment variables
-ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV PORT=4003
 
 # Expose port
 EXPOSE 4003
 
-# Start in development mode (required for next-intl compatibility)
+# Start in dev mode (fully compatible with next-intl and Tailwind)
 CMD ["npm", "run", "dev"]

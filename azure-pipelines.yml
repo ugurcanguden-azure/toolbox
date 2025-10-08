@@ -79,6 +79,6 @@ steps:
         docker rm $(APP_NAME) || true
         
         # Yeni imajı çalıştırma ve portları bağlama
-        docker run -e PORT=$(CONTAINER_PORT) -d -p $(SERVER_PORT):$(CONTAINER_PORT) --name $(APP_NAME) $(DOCKER_REGISTRY_URL)/$(APP_NAME):latest
+        docker run -e PORT=$(CONTAINER_PORT) -d -p $(SERVER_PORT):$(CONTAINER_PORT) --restart unless-stopped --name $(APP_NAME) $(DOCKER_REGISTRY_URL)/$(APP_NAME):latest
       EOF
     displayName: 'Deploy to Server via SSH'
