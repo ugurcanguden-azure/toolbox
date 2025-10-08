@@ -24,19 +24,18 @@ export function AdBanner({
   const { hasConsent, isLoading } = useCookieConsent();
 
   useEffect(() => {
-    // Only load ads if consent is given
-    if (hasConsent) {
-      try {
-        // @ts-ignore
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-      } catch (err) {
-        console.error('AdSense error:', err);
-      }
+    // Load ads regardless of consent status
+    // Non-personalized ads shown if consent declined
+    try {
+      // @ts-ignore
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (err) {
+      console.error('AdSense error:', err);
     }
-  }, [hasConsent]);
+  }, []);
 
-  // Don't render anything while checking consent or if declined
-  if (isLoading || !hasConsent) {
+  // Don't render while checking consent
+  if (isLoading) {
     return null;
   }
 
@@ -49,6 +48,8 @@ export function AdBanner({
         data-ad-slot={dataAdSlot}
         data-ad-format={dataAdFormat}
         data-full-width-responsive={dataFullWidthResponsive.toString()}
+        // If consent declined, request non-personalized ads
+        {...(!hasConsent && { 'data-npa': '1' })}
       />
     </div>
   );
