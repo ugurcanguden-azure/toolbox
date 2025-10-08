@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { useTranslations } from 'next-intl';
-import { Button, Card, CardHeader, CardTitle, CardContent, Textarea } from '@/components';
+import { Button, Card, CardHeader, CardTitle, CardContent, Textarea, InArticleAd } from '@/components';
 import { Copy, Check, AlertCircle, ArrowLeftRight, Upload, Download, FileText } from 'lucide-react';
 import { useCopyToClipboard } from '@/hooks';
 
@@ -411,6 +411,9 @@ export default function Base64Page() {
           </div>
         </div>
       </div>
+
+      {/* Ad - After Info */}
+      <InArticleAd dataAdSlot="3333333333" />
     </div>
   );
 }

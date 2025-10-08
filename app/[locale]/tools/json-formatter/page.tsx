@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { useTranslations } from 'next-intl';
-import { Button, Card, CardHeader, CardTitle, CardContent, Textarea, JsonTreeViewer } from '@/components';
+import { Button, Card, CardHeader, CardTitle, CardContent, Textarea, JsonTreeViewer, InArticleAd } from '@/components';
 import { Copy, Check, AlertCircle, Code2, TreePine, Download, FileJson, Search, ChevronsDownUp, ChevronsUpDown } from 'lucide-react';
 import { useCopyToClipboard } from '@/hooks';
 
@@ -181,6 +181,9 @@ export default function JsonFormatterPage() {
         )}
       </div>
 
+      {/* Ad - Before Tool */}
+      <InArticleAd dataAdSlot="1111111111" />
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <Card>
           <CardHeader>
@@ -331,6 +334,9 @@ export default function JsonFormatterPage() {
           </CardContent>
         </Card>
       </div>
+
+      {/* Ad - After Tool */}
+      <InArticleAd dataAdSlot="2222222222" />
     </div>
   );
 }
