@@ -21,23 +21,6 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
   
-  // Redirects for root domain to subdomain
-  async redirects() {
-    return [
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'curioboxapp.info',
-          },
-        ],
-        destination: 'https://toolbox.curioboxapp.info/:path*',
-        permanent: true,
-      },
-    ]
-  },
-  
   // Headers for security and performance
   async headers() {
     return [
