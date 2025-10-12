@@ -1,76 +1,112 @@
-import { MetadataRoute } from 'next'
-import { SITE_CONFIG } from '@/lib/config'
+import { MetadataRoute } from 'next';
+import { locales } from '@/i18n/request';
+
+const baseUrl = 'https://toolbox.curioboxapp.info';
+
+const tools = [
+  'json-formatter',
+  'xml-formatter',
+  'base64',
+  'url-encoder',
+  'uuid-generator',
+  'password-generator',
+  'hash-generator',
+  'color-converter',
+  'qr-generator',
+  'regex-tester',
+  'string-tools',
+  'markdown-preview',
+  'jwt-decoder',
+  'timestamp-converter',
+  'lorem-generator',
+  'case-converter',
+  'html-formatter',
+  'css-minifier',
+  'sql-formatter',
+  'image-to-base64',
+  'number-base-converter',
+  'word-counter',
+  'line-sorter',
+  'duplicate-remover',
+  'html-entity-encoder',
+  'json-to-csv',
+  'csv-to-json',
+  'yaml-formatter',
+  'credit-card-validator',
+  'text-compare',
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = SITE_CONFIG.url
-  const locales = ['en', 'de', 'tr', 'fr', 'pt']
-  
-  const tools = [
-    'json-formatter',
-    'xml-formatter',
-    'base64',
-    'url-encoder',
-    'uuid-generator',
-    'hash-generator',
-    'password-generator',
-    'qr-generator',
-    'color-converter',
-    'regex-tester',
-    'string-tools',
-    'text-compare',
-    'markdown-preview',
-    'jwt-decoder',
-    'timestamp-converter',
-    'lorem-generator',
-    'case-converter',
-    'html-formatter',
-    'css-minifier',
-    'sql-formatter',
-    'image-to-base64',
-    'number-base-converter',
-    'word-counter',
-    'line-sorter',
-    'duplicate-remover',
-    'html-entity-encoder',
-    'json-to-csv',
-    'csv-to-json',
-    'yaml-formatter',
-    'credit-card-validator',
-  ]
+  const routes: MetadataRoute.Sitemap = [];
+  const currentDate = new Date();
 
-  const routes: MetadataRoute.Sitemap = []
+  // Add root redirect
+  routes.push({
+    url: baseUrl,
+    lastModified: currentDate,
+    changeFrequency: 'daily',
+    priority: 1,
+  });
 
-  // Add home page for each locale
+  // Add homepage for each locale
   locales.forEach((locale) => {
     routes.push({
       url: `${baseUrl}/${locale}`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
+      lastModified: currentDate,
+      changeFrequency: 'daily',
       priority: 1,
       alternates: {
         languages: Object.fromEntries(
-          locales.map((loc) => [loc, `${baseUrl}/${loc}`])
+          locales.map((l) => [l, `${baseUrl}/${l}`])
         ),
       },
-    })
-  })
+    });
+  });
 
-  // Add all tools for each locale
+  // Define tool categories with priorities
+  const highPriorityTools = [
+    'json-formatter',
+    'base64',
+    'uuid-generator',
+    'password-generator',
+    'hash-generator',
+    'qr-generator',
+    'color-converter',
+    'regex-tester',
+  ];
+
+  // Add tool pages for each locale
   tools.forEach((tool) => {
+    const isHighPriority = highPriorityTools.includes(tool);
     locales.forEach((locale) => {
       routes.push({
         url: `${baseUrl}/${locale}/tools/${tool}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.8,
+        lastModified: currentDate,
+        changeFrequency: isHighPriority ? 'weekly' : 'monthly',
+        priority: isHighPriority ? 0.9 : 0.7,
         alternates: {
           languages: Object.fromEntries(
-            locales.map((loc) => [loc, `${baseUrl}/${loc}/tools/${tool}`])
+            locales.map((l) => [l, `${baseUrl}/${l}/tools/${tool}`])
           ),
         },
-      })
-    })
-  })
+      });
+    });
+  });
 
-  return routes
+  // Add privacy policy for each locale
+  locales.forEach((locale) => {
+    routes.push({
+      url: `${baseUrl}/${locale}/privacy-policy`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.3,
+      alternates: {
+        languages: Object.fromEntries(
+          locales.map((l) => [l, `${baseUrl}/${l}/privacy-policy`])
+        ),
+      },
+    });
+  });
+
+  return routes;
 }

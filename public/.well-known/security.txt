@@ -1,0 +1,6 @@
+Contact: mailto:ugurcanguden@gmail.com
+Preferred-Languages: en, tr
+Canonical: https://toolbox.curioboxapp.info/.well-known/security.txt
+Policy: https://toolbox.curioboxapp.info/en/privacy-policy
+Acknowledgments: https://toolbox.curioboxapp.info/en
+

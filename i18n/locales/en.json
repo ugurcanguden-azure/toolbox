@@ -30,7 +30,10 @@
     "input": "Input",
     "output": "Output",
     "copy": "Copy",
-    "download": "Download"
+    "download": "Download",
+    "options": "Options",
+    "loadingTool": "Loading Tool",
+    "pleaseWait": "Please wait a moment..."
   },
   "cookieConsent": {
     "title": "🍪 We Use Cookies",

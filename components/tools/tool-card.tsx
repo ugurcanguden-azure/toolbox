@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui';
 import { Button } from '@/components/ui/button';
+import { useLoading } from '@/contexts/loading-context';
 import type { Tool } from '@/types';
 import * as Icons from 'lucide-react';
 
@@ -17,6 +18,7 @@ interface ToolCardProps {
 
 export function ToolCard({ tool, isFavorite = false, onToggleFavorite, onCardClick }: ToolCardProps) {
   const t = useTranslations('common');
+  const { startLoading } = useLoading();
   const Icon = (Icons as any)[tool.icon] || Icons.Wrench;
 
   const handleFavoriteClick = (e: React.MouseEvent) => {
@@ -26,6 +28,7 @@ export function ToolCard({ tool, isFavorite = false, onToggleFavorite, onCardCli
   };
 
   const handleCardClick = () => {
+    startLoading(); // Loading başlat
     onCardClick?.(tool.id);
   };
 

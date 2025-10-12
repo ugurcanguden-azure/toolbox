@@ -30,7 +30,10 @@
     "input": "Eingabe",
     "output": "Ausgabe",
     "copy": "Kopieren",
-    "download": "Herunterladen"
+    "download": "Herunterladen",
+    "options": "Optionen",
+    "loadingTool": "Tool wird geladen",
+    "pleaseWait": "Bitte warten Sie einen Moment..."
   },
   "cookieConsent": {
     "title": "🍪 Wir Verwenden Cookies",

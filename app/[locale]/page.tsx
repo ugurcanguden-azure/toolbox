@@ -363,7 +363,6 @@ export default function HomePage() {
       {/* Ad - After Search/Filter */}
       <AdBanner 
         dataAdSlot="0987654321"
-        dataAdFormat="horizontal"
         className="max-w-7xl mx-auto mb-12"
       />
 

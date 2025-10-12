@@ -16,6 +16,11 @@ const localeNames: Record<Locale, string> = {
   tr: 'Türkçe',
   fr: 'Français',
   pt: 'Português',
+  es: 'Español',
+  it: 'Italiano',
+  nl: 'Nederlands',
+  ja: '日本語',
+  ru: 'Русский',
 };
 
 export function LocaleSwitcher({ currentLocale }: LocaleSwitcherProps) {

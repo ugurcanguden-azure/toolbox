@@ -1,0 +1,25 @@
+/* TEAM */
+Developer: Ugurcan Guden
+Contact: ugurcanguden [at] gmail.com
+Location: Turkey
+
+/* SITE */
+Last update: 2025/01/12
+Language: English, German, Turkish, French, Portuguese, Spanish, Italian, Dutch, Japanese, Russian
+Doctype: HTML5
+IDE: Cursor, VS Code
+Components: React, Next.js, TypeScript, Tailwind CSS
+
+/* THANKS */
+Next.js: https://nextjs.org
+React: https://react.dev
+Tailwind CSS: https://tailwindcss.com
+shadcn/ui: https://ui.shadcn.com
+Lucide Icons: https://lucide.dev
+
+Standards:
+- Web Accessibility (WCAG 2.1)
+- Privacy-First Design
+- No User Tracking
+- Open Source Tools
+

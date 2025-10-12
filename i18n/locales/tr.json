@@ -30,7 +30,10 @@
     "input": "Giriş",
     "output": "Çıkış",
     "copy": "Kopyala",
-    "download": "İndir"
+    "download": "İndir",
+    "options": "Seçenekler",
+    "loadingTool": "Araç Yükleniyor",
+    "pleaseWait": "Lütfen bekleyin..."
   },
   "cookieConsent": {
     "title": "🍪 Çerez Kullanımı",

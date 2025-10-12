@@ -1,35 +1,81 @@
 {
-  "name": "Toolbox - 30+ Developer Tools",
+  "name": "Toolbox - 30+ Free Developer Tools",
   "short_name": "Toolbox",
-  "description": "A collection of 30+ useful tools for everyone",
-  "start_url": "/",
+  "description": "Free online toolbox with 30+ developer tools: JSON Formatter, Base64, UUID, Hash, Password, QR Code, Regex, String Tools and more!",
+  "start_url": "/en",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#000000",
-  "orientation": "portrait-primary",
+  "theme_color": "#6366f1",
+  "orientation": "any",
+  "lang": "en",
+  "dir": "ltr",
   "icons": [
     {
       "src": "/icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
     }
   ],
-  "categories": ["utilities", "productivity", "developer-tools"],
+  "categories": ["utilities", "productivity", "developer-tools", "education"],
+  "screenshots": [
+    {
+      "src": "/og-image.svg",
+      "sizes": "1200x630",
+      "type": "image/svg+xml",
+      "form_factor": "wide"
+    }
+  ],
   "shortcuts": [
     {
       "name": "JSON Formatter",
       "short_name": "JSON",
-      "description": "Format and validate JSON",
+      "description": "Format and validate JSON data",
       "url": "/en/tools/json-formatter",
       "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
     },
     {
       "name": "Base64 Encoder",
       "short_name": "Base64",
-      "description": "Encode and decode Base64",
+      "description": "Encode and decode Base64 strings",
       "url": "/en/tools/base64",
       "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+    },
+    {
+      "name": "Password Generator",
+      "short_name": "Password",
+      "description": "Generate secure passwords",
+      "url": "/en/tools/password-generator",
+      "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+    },
+    {
+      "name": "QR Code Generator",
+      "short_name": "QR Code",
+      "description": "Generate QR codes instantly",
+      "url": "/en/tools/qr-generator",
+      "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
     }
-  ]
+  ],
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "iarc_rating_id": ""
 }

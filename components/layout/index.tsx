@@ -5,3 +5,5 @@ export { Header } from './header';
 export { Footer } from './footer';
 export { CookieConsent } from './cookie-consent';
 export { CookieConsentManager } from './cookie-consent-manager';
+export { GlobalLoading } from './global-loading';
+export { NavigationListener } from './navigation-listener';

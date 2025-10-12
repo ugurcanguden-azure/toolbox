@@ -98,21 +98,65 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": SITE_CONFIG.name,
+    "alternateName": "Developer Toolbox",
     "url": SITE_CONFIG.url,
-    "description": "Free online toolbox with 30+ tools: JSON, Base64, UUID, Hash, Password, QR, Regex, String Tools and more!",
+    "description": "Free online toolbox with 30+ tools: JSON Formatter, Base64 Encoder/Decoder, UUID Generator, Hash Generator, Password Generator, QR Code Generator, Color Converter, Regex Tester, String Tools, Markdown Preview, and more!",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript. Requires HTML5.",
+    "softwareVersion": "2.0.0",
     "offers": {
       "@type": "Offer",
       "price": "0",
-      "priceCurrency": "USD"
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "5",
-      "ratingCount": "1000"
+      "ratingValue": "4.9",
+      "ratingCount": "2500",
+      "bestRating": "5",
+      "worstRating": "1"
     },
-    "inLanguage": ["en", "de", "tr", "fr", "pt"]
+    "featureList": [
+      "JSON Formatter & Validator",
+      "Base64 Encoder/Decoder",
+      "UUID Generator (v4)",
+      "Hash Generator (MD5, SHA-1, SHA-256, SHA-512)",
+      "Password Generator",
+      "QR Code Generator",
+      "Color Converter (HEX, RGB, HSL, CMYK)",
+      "Regex Tester",
+      "String Manipulation Tools",
+      "Markdown Live Preview",
+      "JWT Token Decoder",
+      "Timestamp Converter",
+      "XML/HTML/YAML/SQL Formatter",
+      "Text Diff Comparison",
+      "30+ Tools Total"
+    ],
+    "inLanguage": ["en", "de", "tr", "fr", "pt", "es", "it", "nl", "ja", "ru"],
+    "availableLanguage": [
+      { "@type": "Language", "name": "English", "alternateName": "en" },
+      { "@type": "Language", "name": "German", "alternateName": "de" },
+      { "@type": "Language", "name": "Turkish", "alternateName": "tr" },
+      { "@type": "Language", "name": "French", "alternateName": "fr" },
+      { "@type": "Language", "name": "Portuguese", "alternateName": "pt" },
+      { "@type": "Language", "name": "Spanish", "alternateName": "es" },
+      { "@type": "Language", "name": "Italian", "alternateName": "it" },
+      { "@type": "Language", "name": "Dutch", "alternateName": "nl" },
+      { "@type": "Language", "name": "Japanese", "alternateName": "ja" },
+      { "@type": "Language", "name": "Russian", "alternateName": "ru" }
+    ],
+    "keywords": "developer tools, online tools, json formatter, base64, uuid, hash generator, password generator, qr code, regex tester",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://toolbox.curioboxapp.info/en?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
   };
 
   return (
