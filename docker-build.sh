@@ -1,89 +1,77 @@
 #!/bin/bash
 
-# Toolbox - Docker Build & Deploy Script
-# This script helps you build and deploy the Toolbox application using Docker
+# 🚀 Optimized Docker Build Script
+# Builds and optimizes the Docker image for maximum performance
 
 set -e
 
-# Colors for output
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-NC='\033[0m' # No Color
+echo "🐳 Starting optimized Docker build..."
 
-echo -e "${GREEN}🐳 Toolbox Docker Build Script${NC}\n"
+# 🎯 Configuration
+IMAGE_NAME="toolbox-app"
+TAG="latest"
+BUILD_ARGS=""
 
-# Check if Docker is installed
-if ! command -v docker &> /dev/null; then
-    echo -e "${RED}❌ Docker is not installed. Please install Docker first.${NC}"
+# 🚀 Build arguments for optimization
+BUILD_ARGS="--build-arg NODE_ENV=production"
+BUILD_ARGS="$BUILD_ARGS --build-arg NEXT_TELEMETRY_DISABLED=1"
+
+# 🧹 Clean up previous builds
+echo "🧹 Cleaning up previous builds..."
+docker system prune -f
+docker builder prune -f
+
+# 🏗️ Build the image with optimizations
+echo "🏗️ Building optimized Docker image..."
+docker build \
+    --target runner \
+    --tag $IMAGE_NAME:$TAG \
+    --tag $IMAGE_NAME:$(date +%Y%m%d-%H%M%S) \
+    $BUILD_ARGS \
+    --compress \
+    --no-cache \
+    .
+
+# 📊 Image size analysis
+echo "📊 Image size analysis:"
+docker images $IMAGE_NAME:$TAG --format "table {{.Repository}}\t{{.Tag}}\t{{.Size}}\t{{.CreatedAt}}"
+
+# 🔍 Image layers analysis
+echo "🔍 Image layers analysis:"
+docker history $IMAGE_NAME:$TAG --format "table {{.CreatedBy}}\t{{.Size}}"
+
+# 🚀 Performance test
+echo "🚀 Starting performance test..."
+docker run --rm -d --name toolbox-test -p 3001:3000 $IMAGE_NAME:$TAG
+
+# Wait for container to start
+sleep 10
+
+# Health check
+echo "🔍 Health check..."
+if curl -f http://localhost:3001/api/health > /dev/null 2>&1; then
+    echo "✅ Health check passed"
+else
+    echo "❌ Health check failed"
+    docker logs toolbox-test
+    docker stop toolbox-test
     exit 1
 fi
 
-echo -e "${GREEN}✅ Docker is installed${NC}"
+# Performance test with curl
+echo "📊 Performance test..."
+curl -w "@curl-format.txt" -o /dev/null -s http://localhost:3001/ || true
 
-# Check if .env.production exists
-if [ ! -f .env.production ]; then
-    echo -e "${YELLOW}⚠️  .env.production not found. Creating from template...${NC}"
-    cat > .env.production << EOF
-# Production Environment Variables
-NEXT_PUBLIC_SITE_URL=http://localhost:3000
-NODE_ENV=production
-NEXT_TELEMETRY_DISABLED=1
-EOF
-    echo -e "${GREEN}✅ Created .env.production${NC}"
-fi
+# Stop test container
+docker stop toolbox-test
 
-# Build Docker image
-echo -e "\n${GREEN}📦 Building Docker image...${NC}"
-docker build -t toolbox:latest .
+echo "🎉 Docker build completed successfully!"
+echo "📦 Image: $IMAGE_NAME:$TAG"
+echo "🚀 Ready for deployment!"
 
-if [ $? -eq 0 ]; then
-    echo -e "${GREEN}✅ Docker image built successfully!${NC}"
-else
-    echo -e "${RED}❌ Docker build failed!${NC}"
-    exit 1
-fi
-
-# Show image size
-IMAGE_SIZE=$(docker images toolbox:latest --format "{{.Size}}")
-echo -e "${GREEN}📊 Image size: ${IMAGE_SIZE}${NC}"
-
-# Ask if user wants to start the container
-echo -e "\n${YELLOW}Do you want to start the container now? (y/n)${NC}"
-read -r response
-
-if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-    echo -e "\n${GREEN}🚀 Starting container...${NC}"
-    
-    # Stop existing container if running
-    if docker ps -a --format '{{.Names}}' | grep -q "^toolbox$"; then
-        echo -e "${YELLOW}⚠️  Stopping existing container...${NC}"
-        docker stop toolbox
-        docker rm toolbox
-    fi
-    
-    # Start new container
-    docker run -d \
-      --name toolbox \
-      -p 3000:3000 \
-      -e NEXT_PUBLIC_SITE_URL=http://localhost:3000 \
-      --restart unless-stopped \
-      toolbox:latest
-    
-    if [ $? -eq 0 ]; then
-        echo -e "${GREEN}✅ Container started successfully!${NC}"
-        echo -e "${GREEN}🌐 Application is running at: http://localhost:3000${NC}"
-        echo -e "\n${YELLOW}Useful commands:${NC}"
-        echo -e "  - View logs: ${GREEN}docker logs -f toolbox${NC}"
-        echo -e "  - Stop container: ${GREEN}docker stop toolbox${NC}"
-        echo -e "  - Restart container: ${GREEN}docker restart toolbox${NC}"
-    else
-        echo -e "${RED}❌ Failed to start container!${NC}"
-        exit 1
-    fi
-else
-    echo -e "\n${GREEN}✅ Build complete! You can start the container manually with:${NC}"
-    echo -e "${YELLOW}docker run -d --name toolbox -p 3000:3000 toolbox:latest${NC}"
-fi
-
-echo -e "\n${GREEN}🎉 Done!${NC}"
+# 🚀 Deployment commands
+echo ""
+echo "🚀 Deployment commands:"
+echo "  docker run -d --name toolbox-prod -p 3000:3000 $IMAGE_NAME:$TAG"
+echo "  docker-compose up -d"
+echo "  docker-compose up -d --profile nginx  # With NGINX"

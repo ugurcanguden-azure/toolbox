@@ -1,3 +1,6 @@
+# 🚀 Optimized .dockerignore for Performance
+# Excludes unnecessary files to reduce image size and build time
+
 # Dependencies
 node_modules
 npm-debug.log*
@@ -9,6 +12,13 @@ pnpm-debug.log*
 # Testing
 coverage
 .nyc_output
+__tests__
+*.test.js
+*.test.ts
+*.test.tsx
+*.spec.js
+*.spec.ts
+*.spec.tsx
 
 # Next.js
 .next/
@@ -20,10 +30,16 @@ dist
 .vercel
 .netlify
 
+# 🗜️ Compression artifacts (will be generated during build)
+*.gz
+*.br
+
 # Misc
 .DS_Store
 *.pem
 *.log
+*.tmp
+*.temp
 
 # Debug
 *.tsbuildinfo
@@ -45,7 +61,7 @@ next-env.d.ts
 .gitignore
 .gitattributes
 
-# Documentation
+# 📚 Documentation (exclude to reduce image size)
 README.md
 CONTRIBUTING.md
 ROADMAP.md
@@ -55,6 +71,7 @@ DEPLOYMENT.md
 DOCKER_QUICK_START.md
 AZURE_PIPELINE_SETUP.md
 NGINX_CONFIG.md
+PERFORMANCE-OPTIMIZATION.md
 .cursorrules
 .cursor
 
@@ -65,3 +82,20 @@ Dockerfile
 docker-compose*.yml
 docker-build.sh
 azure-pipelines.yml
+
+# 🚀 Performance monitoring (exclude from production)
+lighthouse-ci.json
+.nyc_output
+
+# 📊 Development tools
+.eslintrc*
+.prettierrc*
+jest.config*
+cypress/
+playwright/
+
+# 🗂️ Temporary files
+*.cache
+.cache/
+.temp/
+tmp/

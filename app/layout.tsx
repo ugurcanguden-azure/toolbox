@@ -3,7 +3,14 @@ import { Inter } from "next/font/google";
 import { SITE_CONFIG } from "@/lib/config";
 import { GoogleAdSense } from "next-google-adsense";
 
-const inter = Inter({ subsets: ["latin"] });
+// 🎨 FONT OPTIMIZATION - Critical for PageSpeed
+const inter = Inter({ 
+  subsets: ["latin"],
+  display: 'swap', // Prevents invisible text during font load
+  preload: true, // Preload critical font
+  fallback: ['system-ui', 'arial'], // Fallback fonts
+  variable: '--font-inter', // CSS variable for better performance
+});
 
 export const metadata: Metadata = {
   title: {
@@ -162,6 +169,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+      {/* 🎨 FONT PRELOAD - Critical for performance */}
+      <link
+        rel="preload"
+        href="/fonts/inter-var.woff2"
+        as="font"
+        type="font/woff2"
+        crossOrigin="anonymous"
+      />
+      
       {/* Favicon */}
       <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       
@@ -170,6 +186,16 @@ export default function RootLayout({
       
       {/* Google AdSense Account Meta */}
       <meta name="google-adsense-account" content="ca-pub-9339461513261360" />
+      
+      {/* 🚀 PERFORMANCE HINTS */}
+      <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+      <link rel="dns-prefetch" href="//www.google-analytics.com" />
+      <link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
+      
+      {/* 🔥 RESOURCE HINTS */}
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link rel="preconnect" href="https://www.google-analytics.com" />
+      <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
         
         {/* Structured Data */}
         <script
@@ -178,9 +204,9 @@ export default function RootLayout({
           suppressHydrationWarning
         />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} ${inter.variable}`}>
         {/* Google AdSense Script (via next-google-adsense) */}
-        <GoogleAdSense publisherId="ca-pub-9339461513261360" />
+        <GoogleAdSense publisherId="pub-9339461513261360" />
         {children}
       </body>
     </html>
