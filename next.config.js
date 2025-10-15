@@ -16,10 +16,15 @@ const nextConfig = {
   
   // 🔥 EXPERIMENTAL FEATURES FOR PERFORMANCE
   experimental: {
-    // Enable modern bundling for better performance
-    optimizeCss: true,
     // Enable server components optimization
     serverComponentsExternalPackages: ['sharp'],
+  },
+  
+  // 🌐 FORCE DYNAMIC RENDERING (for next-intl compatibility)
+  // This disables static optimization but allows build to complete
+  // All pages will be rendered on-demand
+  generateBuildId: async () => {
+    return 'build-' + Date.now()
   },
   
   // 📸 ADVANCED IMAGE OPTIMIZATION

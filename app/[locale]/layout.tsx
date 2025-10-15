@@ -10,9 +10,9 @@ import type { Metadata } from 'next';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
+// Force dynamic rendering for next-intl compatibility
+export const dynamic = 'force-dynamic';
+export const dynamicParams = true;
 
 export async function generateMetadata({ 
   params: { locale } 
@@ -114,7 +114,7 @@ export async function generateMetadata({
     },
     // Google Site Verification
     verification: {
-      google: 'bIxfo-zqtnjZmEcwbIgclHMqLIo8C6RdmYeeiLEIZJ4',
+      google: 'JTl7ocUCsAiICDbWUYpv8B3wfSKQSdRLdg1tPXDDTac',
     },
     // Google AdSense Account
     other: {

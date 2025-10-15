@@ -29,6 +29,7 @@ yarn-error.log*
 .env*.local
 .env
 
+
 # vercel
 .vercel
 
@@ -43,3 +44,5 @@ next-env.d.ts
 *.swo
 *~
 
+/deployment-package
+*.tar.gz

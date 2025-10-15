@@ -182,7 +182,7 @@ export default function RootLayout({
       <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       
       {/* Google Site Verification */}
-      <meta name="google-site-verification" content="bIxfo-zqtnjZmEcwbIgclHMqLIo8C6RdmYeeiLEIZJ4" />
+      <meta name="google-site-verification" content="JTl7ocUCsAiICDbWUYpv8B3wfSKQSdRLdg1tPXDDTac" />
       
       {/* Google AdSense Account Meta */}
       <meta name="google-adsense-account" content="ca-pub-9339461513261360" />
