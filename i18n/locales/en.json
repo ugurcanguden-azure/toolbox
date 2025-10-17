@@ -45,7 +45,90 @@
   "navigation": {
     "home": "Home",
     "tools": "Tools",
+    "blog": "Blog",
     "about": "About"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Uğurcan Güden",
+    "intro": "Software Developer",
+    "description": "I'm Uğurcan Güden, a software developer focusing on .NET/microservices and React/Next.js. I work on scalability, security, and performance across projects like QQRCHEF and Free Dev Tools. I also maintain guden-core (NPM) and Guden.Lib* (NuGet) to standardize common needs.",
+    "experience": {
+      "title": "Experience & Expertise",
+      "frontend": {
+        "title": "Frontend Development",
+        "description": "Building dynamic, responsive and user-friendly interfaces with React, Next.js and modern JavaScript frameworks. Creating modern UI/UX solutions with Ant Design and Tailwind CSS."
+      },
+      "backend": {
+        "title": "Backend Development", 
+        "description": "Designing secure, scalable and high-performance backend systems with .NET Core, microservice architectures, EF Core, Redis and PostgreSQL/MSSQL. Developing security-focused solutions with JWT and role-based auth."
+      },
+      "devops": {
+        "title": "DevOps & Deployment",
+        "description": "Setting up CI/CD pipelines with Docker container technology, custom image registry, Nginx reverse proxy, GitHub Actions and Azure DevOps. Creating scalable and secure deployment processes."
+      },
+      "mobile": {
+        "title": "Open Source",
+        "description": "Providing reusable, easy-to-maintain and standard solutions with guden-core (NPM) and Guden.Lib* (NuGet) packages. I value sharing with the community and continuous learning."
+      }
+    },
+    "tools": {
+      "title": "QQRCHEF & Free Dev Tools",
+      "description": "Among the projects I'm actively developing are QQRCHEF (.NET Core + Next.js) and Free Dev Tools (browser-based free tools for developers).",
+      "features": {
+        "title": "QQRCHEF Features",
+        "feature1": "Docker + Custom Registry",
+        "feature2": "Role-Based Auth",
+        "feature3": "Email Verification",
+        "feature4": "In-Memory Cache",
+        "feature5": "Unit of Work Pattern",
+        "feature6": "Nginx Reverse Proxy"
+      },
+      "tech": {
+        "title": "Technology Stack",
+        "tech1": "⚙️ .NET Core + Microservices",
+        "tech2": "⚛️ React/Next.js + Ant Design",
+        "tech3": "🐳 Docker + Nginx",
+        "tech4": "🗄️ PostgreSQL/MSSQL + Redis",
+        "tech5": "🔐 JWT + Role-Based Auth",
+        "tech6": "📦 NPM + NuGet Packages"
+      }
+    },
+    "philosophy": {
+      "title": "My Working Values",
+      "principle1": {
+        "title": "Honesty",
+        "description": "Honesty and transparency in work and relationships are always priorities for me."
+      },
+      "principle2": {
+        "title": "Discipline",
+        "description": "I value the discipline of continuous learning, regular work and quality-focused development."
+      },
+      "principle3": {
+        "title": "Responsibility",
+        "description": "I take ownership of tasks and aim to contribute to team success."
+      },
+      "principle4": {
+        "title": "Team Harmony",
+        "description": "I'm a collaborative and learning-oriented team member. I believe in doing better together."
+      }
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Reach out for ideas, suggestions and collaborations!",
+      "email": "Email",
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "website": "Website",
+      "message": "Let's share ideas and create great things together! 🚀"
+    },
+    "stats": {
+      "title": "Statistics",
+      "experience": "Years of Experience",
+      "projects": "Completed Projects",
+      "tools": "Developer Tools",
+      "languages": "Supported Languages"
+    }
   },
   "categories": {
     "encoders": "Encoders/Decoders",
@@ -841,6 +924,75 @@
     "contact": {
       "title": "Contact Us",
       "content": "If you have any questions about this Privacy Policy, please contact us at: ugurcanguden@gmail.com"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Tools, Formats and Best Practices Guide",
+    "readMore": "Read More",
+    "readTime": "min read",
+    "relatedTools": "Related Tools",
+    "relatedPosts": "Related Articles",
+    "backToBlog": "Back to Blog",
+    "shareArticle": "Share Article",
+    "categories": {
+      "encoders": "Encoders",
+      "formatters": "Formatters",
+      "generators": "Generators",
+      "converters": "Converters",
+      "utilities": "Utilities"
+    },
+    "posts": {
+      "what-is-json": {
+        "title": "What is JSON? JavaScript Object Notation Guide",
+        "description": "JSON (JavaScript Object Notation) format, history, use cases and examples. The cornerstone of data exchange in modern web applications.",
+        "content": "JSON (JavaScript Object Notation) is a lightweight, human-readable, and platform-independent data format used for data exchange in modern web applications. Developed by Douglas Crockford in the early 2000s, it has become the de facto standard for web APIs today. JSON is based on JavaScript's object notation syntax and emerged as a simpler and more readable alternative to XML."
+      },
+      "what-is-xml": {
+        "title": "What is XML? Extensible Markup Language Guide",
+        "description": "XML (Extensible Markup Language) format, history, use cases and best practices. The powerful standard for data transport and storage.",
+        "content": "XML (Extensible Markup Language) is a structured data format that is both human and machine-readable, standardized by W3C in 1998. Unlike HTML, it allows user-defined tags and is focused on data transport. XML was designed as a simplified version of SGML (Standard Generalized Markup Language)."
+      },
+      "what-is-base64": {
+        "title": "What is Base64? Encoding and Decoding Guide",
+        "description": "Base64 encoding system, how it works, use cases and examples. Essential for binary data transfer in text-based systems.",
+        "content": "Base64 is an encoding scheme that converts binary data into ASCII text format. It's widely used for transferring binary data over text-based protocols like email, JSON, and XML. Base64 uses 64 characters (A-Z, a-z, 0-9, +, /) to represent binary data."
+      },
+      "what-is-uuid": {
+        "title": "What is UUID? Universally Unique Identifier Guide",
+        "description": "UUID (Universally Unique Identifier) format, versions, generation methods and use cases. The standard for unique identification.",
+        "content": "UUID (Universally Unique Identifier) is a 128-bit number used to uniquely identify information in computer systems. Also known as GUID (Globally Unique Identifier), UUIDs are designed to be unique across space and time without requiring a central authority."
+      },
+      "what-is-hash": {
+        "title": "What is Hash? Cryptographic Hash Functions Guide",
+        "description": "Hash functions, MD5, SHA-256, use cases and security. Essential for data integrity and password security.",
+        "content": "A hash function is a mathematical algorithm that converts input data of any size into a fixed-size output (hash value or digest). Cryptographic hash functions like MD5, SHA-1, and SHA-256 are one-way functions used for data integrity, password storage, and digital signatures."
+      },
+      "what-is-jwt": {
+        "title": "What is JWT? JSON Web Token Security Guide",
+        "description": "JWT (JSON Web Token) structure, use cases and security. The standard for authentication in modern web applications.",
+        "content": "JWT (JSON Web Token) is an open standard (RFC 7519) that provides a secure way to transmit information between parties. It's primarily used for authentication and information exchange. JWT consists of three parts: Header, Payload, and Signature."
+      },
+      "what-is-regex": {
+        "title": "What is Regex? Comprehensive Regular Expressions Guide",
+        "description": "Regular Expression (Regex) definition, how to use, examples and best practices. Powerful tool for text processing and pattern matching.",
+        "content": "Regular Expression (Regex) is a powerful tool for searching, matching, and replacing specific patterns in text. Supported in almost all programming languages, it's used in many areas such as data validation, text processing, and log analysis."
+      },
+      "markdown-guide": {
+        "title": "Markdown Guide: Quick and Easy Documentation",
+        "description": "Markdown syntax, use cases and best practices. Ideal format for README, documentation, and blog posts.",
+        "content": "Markdown is a lightweight markup language for converting plain text to formatted text. Created by John Gruber in 2004, it's widely used on platforms like GitHub, Stack Overflow, and Reddit."
+      },
+      "sql-optimization": {
+        "title": "SQL Optimization: Tips for Faster Queries",
+        "description": "SQL query optimization, index usage, best practices. Guide to improving database performance.",
+        "content": "SQL optimization involves improvements to make database queries run faster. Database performance can be significantly improved through proper index usage, understanding query plans, and following best practices."
+      },
+      "password-security": {
+        "title": "Secure Password Creation: Best Practices Guide",
+        "description": "Strong password creation, password management and security best practices. Essential information for account security.",
+        "content": "Strong passwords are the foundation of online security. Passwords should contain at least 12 characters, including uppercase and lowercase letters, numbers, and special characters. Password manager usage and two-factor authentication (2FA) are recommended."
+      }
     }
   }
 }

@@ -45,7 +45,90 @@
   "navigation": {
     "home": "Home",
     "tools": "Tools",
+    "blog": "Blog",
     "about": "Over"
+  },
+  "about": {
+    "title": "Over Mij",
+    "subtitle": "Uğurcan Güden",
+    "intro": "Software Ontwikkelaar",
+    "description": "Ik ben Uğurcan Güden, een softwareontwikkelaar gericht op .NET/microservices en React/Next.js. Ik werk aan schaalbaarheid, beveiliging en prestaties in projecten zoals QQRCHEF en Free Dev Tools. Ik onderhoud ook guden-core (NPM) en Guden.Lib* (NuGet) om gemeenschappelijke behoeften te standaardiseren.",
+    "experience": {
+      "title": "Ervaring & Expertise",
+      "frontend": {
+        "title": "Frontend Ontwikkeling",
+        "description": "Bouwen van dynamische, responsieve en gebruiksvriendelijke interfaces met React, Next.js en moderne JavaScript-frameworks. Creëren van moderne UI/UX-oplossingen met Ant Design en Tailwind CSS."
+      },
+      "backend": {
+        "title": "Backend Ontwikkeling",
+        "description": "Ontwerpen van veilige, schaalbare en hoogpresterende backend-systemen met .NET Core, microservice-architecturen, EF Core, Redis en PostgreSQL/MSSQL. Ontwikkelen van beveiligingsgerichte oplossingen met JWT en rolgebaseerde authenticatie."
+      },
+      "devops": {
+        "title": "DevOps & Deployment",
+        "description": "Opzetten van CI/CD-pipelines met Docker-containertechnologie, aangepaste image-registry, Nginx reverse proxy, GitHub Actions en Azure DevOps. Creëren van schaalbare en veilige implementatieprocessen."
+      },
+      "mobile": {
+        "title": "Open Source",
+        "description": "Bieden van herbruikbare, gemakkelijk te onderhouden en gestandaardiseerde oplossingen met guden-core (NPM) en Guden.Lib* (NuGet) pakketten. Ik waardeer delen met de gemeenschap en continu leren."
+      }
+    },
+    "tools": {
+      "title": "QQRCHEF & Free Dev Tools",
+      "description": "Onder de projecten die ik actief ontwikkel zijn QQRCHEF (.NET Core + Next.js) en Free Dev Tools (gratis browsergebaseerde tools voor ontwikkelaars).",
+      "features": {
+        "title": "QQRCHEF Functies",
+        "feature1": "Docker + Aangepaste Registry",
+        "feature2": "Rolgebaseerde Auth",
+        "feature3": "E-mailverificatie",
+        "feature4": "In-Memory Cache",
+        "feature5": "Unit of Work Patroon",
+        "feature6": "Nginx Reverse Proxy"
+      },
+      "tech": {
+        "title": "Technologie Stack",
+        "tech1": "⚙️ .NET Core + Microservices",
+        "tech2": "⚛️ React/Next.js + Ant Design",
+        "tech3": "🐳 Docker + Nginx",
+        "tech4": "🗄️ PostgreSQL/MSSQL + Redis",
+        "tech5": "🔐 JWT + Rolgebaseerde Auth",
+        "tech6": "📦 NPM + NuGet Pakketten"
+      }
+    },
+    "philosophy": {
+      "title": "Mijn Werkwaarden",
+      "principle1": {
+        "title": "Eerlijkheid",
+        "description": "Eerlijkheid en transparantie in werk en relaties zijn altijd prioriteiten voor mij."
+      },
+      "principle2": {
+        "title": "Discipline",
+        "description": "Ik waardeer de discipline van continu leren, regelmatig werken en kwaliteitsgerichte ontwikkeling."
+      },
+      "principle3": {
+        "title": "Verantwoordelijkheid",
+        "description": "Ik neem verantwoordelijkheid voor taken en streef ernaar bij te dragen aan teamsucces."
+      },
+      "principle4": {
+        "title": "Teamharmonie",
+        "description": "Ik ben een samenwerkend en leergericht teamlid. Ik geloof in samen beter worden."
+      }
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Neem contact op voor ideeën, suggesties en samenwerkingen!",
+      "email": "E-mail",
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "website": "Website",
+      "message": "Laten we ideeën delen en samen geweldige dingen creëren! 🚀"
+    },
+    "stats": {
+      "title": "Statistieken",
+      "experience": "Jaar Ervaring",
+      "projects": "Voltooide Projecten",
+      "tools": "Ontwikkelaarstools",
+      "languages": "Ondersteunde Talen"
+    }
   },
   "categories": {
     "encoders": "Encoders/Decoders",
@@ -841,6 +924,75 @@
     "contact": {
       "title": "Contact Us",
       "content": "If you have any questions about this Privacy Policy, please contact us at: ugurcanguden@gmail.com"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Tools, Formaten en Best Practices Gids",
+    "readMore": "Lees Meer",
+    "readTime": "min leestijd",
+    "relatedTools": "Gerelateerde Tools",
+    "relatedPosts": "Gerelateerde Artikelen",
+    "backToBlog": "Terug naar Blog",
+    "shareArticle": "Artikel Delen",
+    "categories": {
+      "encoders": "Encoders",
+      "formatters": "Formatters",
+      "generators": "Generators",
+      "converters": "Converters",
+      "utilities": "Hulpprogramma's"
+    },
+    "posts": {
+      "what-is-json": {
+        "title": "Wat is JSON? JavaScript Object Notation Gids",
+        "description": "JSON (JavaScript Object Notation) formaat, geschiedenis, gebruikscases en voorbeelden. De hoeksteen van gegevensuitwisseling in moderne webapplicaties.",
+        "content": "JSON (JavaScript Object Notation) is een lichtgewicht, door mensen leesbaar en platformonafhankelijk gegevensformaat dat wordt gebruikt voor gegevensuitwisseling in moderne webapplicaties. Ontwikkeld door Douglas Crockford in het begin van de jaren 2000, is het vandaag de dag de de facto standaard geworden voor web-API's."
+      },
+      "what-is-xml": {
+        "title": "Wat is XML? Extensible Markup Language Gids",
+        "description": "XML (Extensible Markup Language) formaat, geschiedenis, gebruikscases en best practices. De krachtige standaard voor gegevenstransport en opslag.",
+        "content": "XML (Extensible Markup Language) is een gestructureerd gegevensformaat dat zowel door mensen als machines leesbaar is, gestandaardiseerd door W3C in 1998. In tegenstelling tot HTML staat het door gebruikers gedefinieerde tags toe en is het gericht op gegevenstransport."
+      },
+      "what-is-base64": {
+        "title": "Wat is Base64? Encoding en Decoding Gids",
+        "description": "Base64-coderingssysteem, hoe het werkt, gebruikscases en voorbeelden. Essentieel voor binaire gegevensoverdracht in op tekst gebaseerde systemen.",
+        "content": "Base64 is een coderingsschema dat binaire gegevens converteert naar ASCII-tekstformaat. Het wordt veel gebruikt voor het overdragen van binaire gegevens via op tekst gebaseerde protocollen zoals e-mail, JSON en XML."
+      },
+      "what-is-uuid": {
+        "title": "Wat is UUID? Universally Unique Identifier Gids",
+        "description": "UUID (Universally Unique Identifier) formaat, versies, generatiemethoden en gebruikscases. De standaard voor unieke identificatie.",
+        "content": "UUID (Universally Unique Identifier) is een 128-bits nummer dat wordt gebruikt om informatie in computersystemen op unieke wijze te identificeren. Ook bekend als GUID, zijn UUID's ontworpen om uniek te zijn in ruimte en tijd."
+      },
+      "what-is-hash": {
+        "title": "Wat is Hash? Cryptografische Hash-functies Gids",
+        "description": "Hash-functies, MD5, SHA-256, gebruikscases en beveiliging. Essentieel voor data-integriteit en wachtwoordbeveiliging.",
+        "content": "Een hash-functie is een wiskundig algoritme dat invoergegevens van elke grootte converteert naar een uitvoer van vaste grootte (hash-waarde of digest). Cryptografische hash-functies zoals MD5, SHA-1 en SHA-256 zijn eenrichtingsfuncties."
+      },
+      "what-is-jwt": {
+        "title": "Wat is JWT? JSON Web Token Beveiligingsgids",
+        "description": "JWT (JSON Web Token) structuur, gebruikscases en beveiliging. De standaard voor authenticatie in moderne webapplicaties.",
+        "content": "JWT (JSON Web Token) is een open standaard (RFC 7519) die een veilige manier biedt om informatie tussen partijen over te dragen. Het wordt voornamelijk gebruikt voor authenticatie en informatie-uitwisseling. JWT bestaat uit drie delen: Header, Payload en Signature."
+      },
+      "what-is-regex": {
+        "title": "Wat is Regex? Uitgebreide Reguliere Expressies Gids",
+        "description": "Regular Expression (Regex) definitie, hoe te gebruiken, voorbeelden en best practices. Krachtig hulpmiddel voor tekstverwerking en patroonherkenning.",
+        "content": "Regular Expression (Regex) is een krachtig hulpmiddel voor het zoeken, matchen en vervangen van specifieke patronen in tekst. Ondersteund in bijna alle programmeertalen, wordt het gebruikt in veel gebieden zoals data-validatie, tekstverwerking en log-analyse."
+      },
+      "markdown-guide": {
+        "title": "Markdown Gids: Snelle en Eenvoudige Documentatie",
+        "description": "Markdown syntaxis, gebruikscases en best practices. Ideaal formaat voor README, documentatie en blogposts.",
+        "content": "Markdown is een lichtgewicht opmaaktaal voor het converteren van platte tekst naar opgemaakte tekst. Gemaakt door John Gruber in 2004, wordt het veel gebruikt op platforms zoals GitHub, Stack Overflow en Reddit."
+      },
+      "sql-optimization": {
+        "title": "SQL Optimalisatie: Tips voor Snellere Queries",
+        "description": "SQL query optimalisatie, index gebruik, best practices. Gids voor het verbeteren van database prestaties.",
+        "content": "SQL optimalisatie omvat verbeteringen om databasequery's sneller te laten uitvoeren. Databaseprestaties kunnen aanzienlijk worden verbeterd door goed indexgebruik, begrip van queryplannen en het volgen van best practices."
+      },
+      "password-security": {
+        "title": "Veilige Wachtwoordcreatie: Best Practices Gids",
+        "description": "Sterke wachtwoorden maken, wachtwoordbeheer en beveiligings-best-practices. Essentiële informatie voor accountbeveiliging.",
+        "content": "Sterke wachtwoorden zijn de basis van online beveiliging. Wachtwoorden moeten minstens 12 tekens bevatten, inclusief hoofdletters en kleine letters, cijfers en speciale tekens. Het gebruik van een wachtwoordbeheerder en tweefactorauthenticatie (2FA) worden aanbevolen."
+      }
     }
   }
 }

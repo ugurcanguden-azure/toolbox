@@ -45,7 +45,90 @@
   "navigation": {
     "home": "Início",
     "tools": "Ferramentas",
+    "blog": "Blog",
     "about": "Sobre"
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "subtitle": "Uğurcan Güden",
+    "intro": "Desenvolvedor de Software",
+    "description": "Sou Uğurcan Güden, um desenvolvedor de software focado em .NET/microserviços e React/Next.js. Trabalho em escalabilidade, segurança e desempenho em projetos como QQRCHEF e Free Dev Tools. Também mantenho guden-core (NPM) e Guden.Lib* (NuGet) para padronizar necessidades comuns.",
+    "experience": {
+      "title": "Experiência & Expertise",
+      "frontend": {
+        "title": "Desenvolvimento Frontend",
+        "description": "Construindo interfaces dinâmicas, responsivas e amigáveis com React, Next.js e frameworks JavaScript modernos. Criando soluções UI/UX modernas com Ant Design e Tailwind CSS."
+      },
+      "backend": {
+        "title": "Desenvolvimento Backend", 
+        "description": "Projetando sistemas backend seguros, escaláveis e de alto desempenho com .NET Core, arquiteturas de microserviços, EF Core, Redis e PostgreSQL/MSSQL. Desenvolvendo soluções focadas em segurança com JWT e autenticação baseada em funções."
+      },
+      "devops": {
+        "title": "DevOps & Deploy",
+        "description": "Configurando pipelines CI/CD com tecnologia de contêineres Docker, registro de imagens personalizado, proxy reverso Nginx, GitHub Actions e Azure DevOps. Criando processos de implantação escaláveis e seguros."
+      },
+      "mobile": {
+        "title": "Open Source",
+        "description": "Fornecendo soluções reutilizáveis, fáceis de manter e padronizadas com pacotes guden-core (NPM) e Guden.Lib* (NuGet). Valorizo compartilhar com a comunidade e aprendizado contínuo."
+      }
+    },
+    "tools": {
+      "title": "QQRCHEF & Free Dev Tools",
+      "description": "Entre os projetos que estou desenvolvendo ativamente estão QQRCHEF (.NET Core + Next.js) e Free Dev Tools (ferramentas gratuitas baseadas em navegador para desenvolvedores).",
+      "features": {
+        "title": "Recursos QQRCHEF",
+        "feature1": "Docker + Registro Personalizado",
+        "feature2": "Auth Baseada em Funções",
+        "feature3": "Verificação de Email",
+        "feature4": "Cache em Memória",
+        "feature5": "Padrão Unit of Work",
+        "feature6": "Proxy Reverso Nginx"
+      },
+      "tech": {
+        "title": "Stack Tecnológico",
+        "tech1": "⚙️ .NET Core + Microserviços",
+        "tech2": "⚛️ React/Next.js + Ant Design",
+        "tech3": "🐳 Docker + Nginx",
+        "tech4": "🗄️ PostgreSQL/MSSQL + Redis",
+        "tech5": "🔐 JWT + Auth Baseada em Funções",
+        "tech6": "📦 Pacotes NPM + NuGet"
+      }
+    },
+    "philosophy": {
+      "title": "Meus Valores de Trabalho",
+      "principle1": {
+        "title": "Honestidade",
+        "description": "Honestidade e transparência no trabalho e relacionamentos são sempre prioridades para mim."
+      },
+      "principle2": {
+        "title": "Disciplina",
+        "description": "Valorizo a disciplina do aprendizado contínuo, trabalho regular e desenvolvimento focado em qualidade."
+      },
+      "principle3": {
+        "title": "Responsabilidade",
+        "description": "Assumo a responsabilidade pelas tarefas e objetivo contribuir para o sucesso da equipe."
+      },
+      "principle4": {
+        "title": "Harmonia da Equipe",
+        "description": "Sou um membro da equipe colaborativo e orientado ao aprendizado. Acredito em fazer melhor juntos."
+      }
+    },
+    "contact": {
+      "title": "Contato",
+      "description": "Entre em contato para ideias, sugestões e colaborações!",
+      "email": "E-mail",
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "website": "Site",
+      "message": "Vamos compartilhar ideias e criar coisas incríveis juntos! 🚀"
+    },
+    "stats": {
+      "title": "Estatísticas",
+      "experience": "Anos de Experiência",
+      "projects": "Projetos Concluídos",
+      "tools": "Ferramentas de Desenvolvimento",
+      "languages": "Idiomas Suportados"
+    }
   },
   "categories": {
     "encoders": "Codificadores/Decodificadores",
@@ -841,6 +924,75 @@
     "contact": {
       "title": "Entre em Contato",
       "content": "Se você tiver alguma dúvida sobre esta Política de Privacidade, entre em contato conosco em: ugurcanguden@gmail.com"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Ferramentas, Formatos e Guia de Melhores Práticas",
+    "readMore": "Leia Mais",
+    "readTime": "min de leitura",
+    "relatedTools": "Ferramentas Relacionadas",
+    "relatedPosts": "Artigos Relacionados",
+    "backToBlog": "Voltar ao Blog",
+    "shareArticle": "Compartilhar Artigo",
+    "categories": {
+      "encoders": "Codificadores",
+      "formatters": "Formatadores",
+      "generators": "Geradores",
+      "converters": "Conversores",
+      "utilities": "Utilitários"
+    },
+    "posts": {
+      "what-is-json": {
+        "title": "O que é JSON? Guia JavaScript Object Notation",
+        "description": "Formato JSON (JavaScript Object Notation), história, casos de uso e exemplos. A pedra angular da troca de dados em aplicações web modernas.",
+        "content": "JSON (JavaScript Object Notation) é um formato de dados leve, legível por humanos e independente de plataforma usado para troca de dados em aplicações web modernas. Desenvolvido por Douglas Crockford no início dos anos 2000, tornou-se o padrão de facto para APIs web hoje."
+      },
+      "what-is-xml": {
+        "title": "O que é XML? Guia Extensible Markup Language",
+        "description": "Formato XML (Extensible Markup Language), história, casos de uso e melhores práticas. O padrão poderoso para transporte e armazenamento de dados.",
+        "content": "XML (Extensible Markup Language) é um formato de dados estruturado legível tanto por humanos quanto por máquinas, padronizado pelo W3C em 1998. Ao contrário do HTML, permite tags definidas pelo usuário e é focado no transporte de dados."
+      },
+      "what-is-base64": {
+        "title": "O que é Base64? Guia de Codificação e Decodificação",
+        "description": "Sistema de codificação Base64, como funciona, casos de uso e exemplos. Essencial para transferência de dados binários em sistemas baseados em texto.",
+        "content": "Base64 é um esquema de codificação que converte dados binários em formato de texto ASCII. É amplamente usado para transferir dados binários por protocolos baseados em texto como e-mail, JSON e XML."
+      },
+      "what-is-uuid": {
+        "title": "O que é UUID? Guia Universally Unique Identifier",
+        "description": "Formato UUID (Universally Unique Identifier), versões, métodos de geração e casos de uso. O padrão para identificação única.",
+        "content": "UUID (Universally Unique Identifier) é um número de 128 bits usado para identificar exclusivamente informações em sistemas de computador. Também conhecido como GUID, os UUIDs são projetados para serem únicos no espaço e no tempo."
+      },
+      "what-is-hash": {
+        "title": "O que é Hash? Guia de Funções Hash Criptográficas",
+        "description": "Funções hash, MD5, SHA-256, casos de uso e segurança. Essencial para integridade de dados e segurança de senhas.",
+        "content": "Uma função hash é um algoritmo matemático que converte dados de entrada de qualquer tamanho em uma saída de tamanho fixo (valor hash ou digest). Funções hash criptográficas como MD5, SHA-1 e SHA-256 são funções unidirecionais."
+      },
+      "what-is-jwt": {
+        "title": "O que é JWT? Guia de Segurança JSON Web Token",
+        "description": "Estrutura JWT (JSON Web Token), casos de uso e segurança. O padrão para autenticação em aplicações web modernas.",
+        "content": "JWT (JSON Web Token) é um padrão aberto (RFC 7519) que fornece uma maneira segura de transmitir informações entre as partes. É usado principalmente para autenticação e troca de informações. JWT consiste em três partes: Header, Payload e Signature."
+      },
+      "what-is-regex": {
+        "title": "O que é Regex? Guia Abrangente de Expressões Regulares",
+        "description": "Definição de Regular Expression (Regex), como usar, exemplos e melhores práticas. Ferramenta poderosa para processamento de texto e correspondência de padrões.",
+        "content": "Regular Expression (Regex) é uma ferramenta poderosa para pesquisar, corresponder e substituir padrões específicos em texto. Suportado em quase todas as linguagens de programação, é usado em muitas áreas como validação de dados, processamento de texto e análise de logs."
+      },
+      "markdown-guide": {
+        "title": "Guia Markdown: Documentação Rápida e Fácil",
+        "description": "Sintaxe Markdown, casos de uso e melhores práticas. Formato ideal para README, documentação e posts de blog.",
+        "content": "Markdown é uma linguagem de marcação leve para converter texto simples em texto formatado. Criado por John Gruber em 2004, é amplamente usado em plataformas como GitHub, Stack Overflow e Reddit."
+      },
+      "sql-optimization": {
+        "title": "Otimização SQL: Dicas para Consultas Mais Rápidas",
+        "description": "Otimização de consultas SQL, uso de índice, melhores práticas. Guia para melhorar o desempenho do banco de dados.",
+        "content": "A otimização SQL envolve melhorias para fazer as consultas de banco de dados executarem mais rapidamente. O desempenho do banco de dados pode ser significativamente melhorado através do uso adequado de índices, compreensão de planos de consulta e seguindo as melhores práticas."
+      },
+      "password-security": {
+        "title": "Criação de Senha Segura: Guia de Melhores Práticas",
+        "description": "Criação de senhas fortes, gerenciamento de senhas e melhores práticas de segurança. Informações essenciais para segurança de conta.",
+        "content": "Senhas fortes são a base da segurança online. As senhas devem conter pelo menos 12 caracteres, incluindo letras maiúsculas e minúsculas, números e caracteres especiais. O uso de gerenciador de senhas e autenticação de dois fatores (2FA) são recomendados."
+      }
     }
   }
 }

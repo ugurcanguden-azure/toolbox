@@ -45,7 +45,90 @@
   "navigation": {
     "home": "ホーム",
     "tools": "ツール",
+    "blog": "ブログ",
     "about": "について"
+  },
+  "about": {
+    "title": "私について",
+    "subtitle": "Uğurcan Güden",
+    "intro": "ソフトウェア開発者",
+    "description": "私はUğurcan Güdenです。.NET/マイクロサービスとReact/Next.jsに焦点を当てたソフトウェア開発者です。QQRCHEFやFree Dev Toolsなどのプロジェクトでスケーラビリティ、セキュリティ、パフォーマンスに取り組んでいます。また、guden-core（NPM）とGuden.Lib*（NuGet）を保守し、共通のニーズを標準化しています。",
+    "experience": {
+      "title": "経験 & 専門知識",
+      "frontend": {
+        "title": "フロントエンド開発",
+        "description": "React、Next.js、モダンなJavaScriptフレームワークで動的でレスポンシブなユーザーフレンドリーなインターフェースを構築しています。Ant DesignとTailwind CSSでモダンなUI/UXソリューションを作成しています。"
+      },
+      "backend": {
+        "title": "バックエンド開発",
+        "description": ".NET Core、マイクロサービスアーキテクチャ、EF Core、Redis、PostgreSQL/MSSQLで安全でスケーラブルで高性能なバックエンドシステムを設計しています。JWTとロールベース認証でセキュリティ重視のソリューションを開発しています。"
+      },
+      "devops": {
+        "title": "DevOps & デプロイメント",
+        "description": "Dockerコンテナ技術、カスタムイメージレジストリ、Nginxリバースプロキシ、GitHub Actions、Azure DevOpsでCI/CDパイプラインを設定しています。スケーラブルで安全なデプロイメントプロセスを作成しています。"
+      },
+      "mobile": {
+        "title": "オープンソース",
+        "description": "guden-core（NPM）とGuden.Lib*（NuGet）パッケージで再利用可能で保守しやすく標準化されたソリューションを提供しています。コミュニティとの共有と継続的な学習を大切にしています。"
+      }
+    },
+    "tools": {
+      "title": "QQRCHEF & Free Dev Tools",
+      "description": "私が積極的に開発しているプロジェクトには、QQRCHEF（.NET Core + Next.js）とFree Dev Tools（開発者向けブラウザベースの無料ツール）があります。",
+      "features": {
+        "title": "QQRCHEF機能",
+        "feature1": "Docker + カスタムレジストリ",
+        "feature2": "ロールベース認証",
+        "feature3": "メール検証",
+        "feature4": "インメモリキャッシュ",
+        "feature5": "Unit of Workパターン",
+        "feature6": "Nginxリバースプロキシ"
+      },
+      "tech": {
+        "title": "技術スタック",
+        "tech1": "⚙️ .NET Core + マイクロサービス",
+        "tech2": "⚛️ React/Next.js + Ant Design",
+        "tech3": "🐳 Docker + Nginx",
+        "tech4": "🗄️ PostgreSQL/MSSQL + Redis",
+        "tech5": "🔐 JWT + ロールベース認証",
+        "tech6": "📦 NPM + NuGetパッケージ"
+      }
+    },
+    "philosophy": {
+      "title": "私の仕事の価値観",
+      "principle1": {
+        "title": "誠実さ",
+        "description": "仕事と関係における誠実さと透明性は常に私の優先事項です。"
+      },
+      "principle2": {
+        "title": "規律",
+        "description": "継続的な学習、定期的な仕事、品質重視の開発の規律を大切にしています。"
+      },
+      "principle3": {
+        "title": "責任",
+        "description": "タスクの責任を取り、チームの成功に貢献することを目指しています。"
+      },
+      "principle4": {
+        "title": "チームハーモニー",
+        "description": "私は協力的で学習志向のチームメンバーです。一緒により良くなることを信じています。"
+      }
+    },
+    "contact": {
+      "title": "お問い合わせ",
+      "description": "アイデア、提案、コラボレーションのためにご連絡ください！",
+      "email": "メール",
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "website": "ウェブサイト",
+      "message": "アイデアを共有し、一緒に素晴らしいものを作りましょう！🚀"
+    },
+    "stats": {
+      "title": "統計",
+      "experience": "年の経験",
+      "projects": "完了プロジェクト",
+      "tools": "開発ツール",
+      "languages": "サポート言語"
+    }
   },
   "categories": {
     "encoders": "エンコーダー/デコーダー",
@@ -841,6 +924,75 @@
     "contact": {
       "title": "お問い合わせ",
       "content": "このプライバシーポリシーについてご質問がある場合は、ugurcanguden@gmail.comまでお問い合わせください。"
+    }
+  },
+  "blog": {
+    "title": "ブログ",
+    "subtitle": "ツール、フォーマット、ベストプラクティスガイド",
+    "readMore": "続きを読む",
+    "readTime": "分で読めます",
+    "relatedTools": "関連ツール",
+    "relatedPosts": "関連記事",
+    "backToBlog": "ブログに戻る",
+    "shareArticle": "記事をシェア",
+    "categories": {
+      "encoders": "エンコーダー",
+      "formatters": "フォーマッター",
+      "generators": "ジェネレーター",
+      "converters": "コンバーター",
+      "utilities": "ユーティリティ"
+    },
+    "posts": {
+      "what-is-json": {
+        "title": "JSONとは？JavaScript Object Notationガイド",
+        "description": "JSON（JavaScript Object Notation）フォーマット、歴史、使用例。モダンなWebアプリケーションにおけるデータ交換の基盤。",
+        "content": "JSON（JavaScript Object Notation）は、モダンなWebアプリケーションでのデータ交換に使用される軽量で人間が読めるプラットフォーム非依存のデータフォーマットです。2000年代初頭にDouglas Crockfordによって開発され、今日ではWeb APIの事実上の標準となっています。"
+      },
+      "what-is-xml": {
+        "title": "XMLとは？Extensible Markup Languageガイド",
+        "description": "XML（Extensible Markup Language）フォーマット、歴史、使用例、ベストプラクティス。データ転送と保存の強力な標準。",
+        "content": "XML（Extensible Markup Language）は、1998年にW3Cによって標準化された、人間と機械の両方が読める構造化データフォーマットです。HTMLとは異なり、ユーザー定義のタグを許可し、データ転送に焦点を当てています。"
+      },
+      "what-is-base64": {
+        "title": "Base64とは？エンコードとデコードガイド",
+        "description": "Base64エンコーディングシステム、仕組み、使用例。テキストベースシステムでのバイナリデータ転送に不可欠。",
+        "content": "Base64は、バイナリデータをASCIIテキスト形式に変換するエンコーディングスキームです。電子メール、JSON、XMLなどのテキストベースプロトコルでバイナリデータを転送するために広く使用されています。"
+      },
+      "what-is-uuid": {
+        "title": "UUIDとは？Universally Unique Identifierガイド",
+        "description": "UUID（Universally Unique Identifier）フォーマット、バージョン、生成方法、使用例。一意識別の標準。",
+        "content": "UUID（Universally Unique Identifier）は、コンピュータシステムで情報を一意に識別するために使用される128ビットの番号です。GUIDとしても知られ、中央機関を必要とせずに空間と時間を超えて一意になるように設計されています。"
+      },
+      "what-is-hash": {
+        "title": "ハッシュとは？暗号学的ハッシュ関数ガイド",
+        "description": "ハッシュ関数、MD5、SHA-256、使用例とセキュリティ。データ整合性とパスワードセキュリティに不可欠。",
+        "content": "ハッシュ関数は、任意のサイズの入力データを固定サイズの出力（ハッシュ値またはダイジェスト）に変換する数学的アルゴリズムです。MD5、SHA-1、SHA-256などの暗号学的ハッシュ関数は一方向関数です。"
+      },
+      "what-is-jwt": {
+        "title": "JWTとは？JSON Web Tokenセキュリティガイド",
+        "description": "JWT（JSON Web Token）構造、使用例とセキュリティ。モダンなWebアプリケーションにおける認証の標準。",
+        "content": "JWT（JSON Web Token）は、当事者間で情報を安全に送信する方法を提供するオープンスタンダード（RFC 7519）です。主に認証と情報交換に使用されます。JWTは、Header、Payload、Signatureの3つの部分で構成されています。"
+      },
+      "what-is-regex": {
+        "title": "Regexとは？正規表現総合ガイド",
+        "description": "Regular Expression（Regex）の定義、使用方法、例とベストプラクティス。テキスト処理とパターンマッチングのための強力なツール。",
+        "content": "Regular Expression（Regex）は、テキスト内の特定のパターンを検索、マッチング、置換するための強力なツールです。ほぼすべてのプログラミング言語でサポートされており、データ検証、テキスト処理、ログ分析など多くの分野で使用されています。"
+      },
+      "markdown-guide": {
+        "title": "Markdownガイド：迅速で簡単なドキュメンテーション",
+        "description": "Markdown構文、使用例とベストプラクティス。README、ドキュメント、ブログ投稿に最適なフォーマット。",
+        "content": "Markdownは、プレーンテキストをフォーマットされたテキストに変換するための軽量マークアップ言語です。2004年にJohn Gruberによって作成され、GitHub、Stack Overflow、Redditなどのプラットフォームで広く使用されています。"
+      },
+      "sql-optimization": {
+        "title": "SQL最適化：より高速なクエリのためのヒント",
+        "description": "SQLクエリ最適化、インデックス使用、ベストプラクティス。データベースパフォーマンス向上ガイド。",
+        "content": "SQL最適化は、データベースクエリをより速く実行するための改善を含みます。適切なインデックス使用、クエリプランの理解、ベストプラクティスの遵守により、データベースパフォーマンスを大幅に向上させることができます。"
+      },
+      "password-security": {
+        "title": "安全なパスワード作成：ベストプラクティスガイド",
+        "description": "強力なパスワード作成、パスワード管理とセキュリティのベストプラクティス。アカウントセキュリティに不可欠な情報。",
+        "content": "強力なパスワードは、オンラインセキュリティの基盤です。パスワードは、大文字と小文字、数字、特殊文字を含む最低12文字を含む必要があります。パスワードマネージャーの使用と二要素認証（2FA）が推奨されます。"
+      }
     }
   }
 }

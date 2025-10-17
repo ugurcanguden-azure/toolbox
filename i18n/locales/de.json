@@ -45,7 +45,90 @@
   "navigation": {
     "home": "Startseite",
     "tools": "Tools",
+    "blog": "Blog",
     "about": "Über uns"
+  },
+  "about": {
+    "title": "Über Mich",
+    "subtitle": "Uğurcan Güden",
+    "intro": "Software-Entwickler",
+    "description": "Ich bin Uğurcan Güden, ein Softwareentwickler mit Fokus auf .NET/Microservices und React/Next.js. Ich arbeite an Skalierbarkeit, Sicherheit und Leistung in Projekten wie QQRCHEF und Free Dev Tools. Ich pflege auch guden-core (NPM) und Guden.Lib* (NuGet), um gemeinsame Anforderungen zu standardisieren.",
+    "experience": {
+      "title": "Erfahrung & Expertise",
+      "frontend": {
+        "title": "Frontend-Entwicklung",
+        "description": "Entwicklung dynamischer, responsiver und benutzerfreundlicher Oberflächen mit React, Next.js und modernen JavaScript-Frameworks. Erstellung moderner UI/UX-Lösungen mit Ant Design und Tailwind CSS."
+      },
+      "backend": {
+        "title": "Backend-Entwicklung", 
+        "description": "Entwurf sicherer, skalierbarer und hochperformanter Backend-Systeme mit .NET Core, Microservice-Architekturen, EF Core, Redis und PostgreSQL/MSSQL. Entwicklung sicherheitsorientierter Lösungen mit JWT und rollenbasierter Authentifizierung."
+      },
+      "devops": {
+        "title": "DevOps & Deployment",
+        "description": "Einrichtung von CI/CD-Pipelines mit Docker-Container-Technologie, benutzerdefinierter Image-Registry, Nginx Reverse Proxy, GitHub Actions und Azure DevOps. Erstellung skalierbarer und sicherer Deployment-Prozesse."
+      },
+      "mobile": {
+        "title": "Open Source",
+        "description": "Bereitstellung wiederverwendbarer, leicht wartbarer und standardisierter Lösungen mit guden-core (NPM) und Guden.Lib* (NuGet) Paketen. Ich schätze den Austausch mit der Community und kontinuierliches Lernen."
+      }
+    },
+    "tools": {
+      "title": "QQRCHEF & Free Dev Tools",
+      "description": "Zu den Projekten, die ich aktiv entwickle, gehören QQRCHEF (.NET Core + Next.js) und Free Dev Tools (browserbasierte kostenlose Tools für Entwickler).",
+      "features": {
+        "title": "QQRCHEF Funktionen",
+        "feature1": "Docker + Custom Registry",
+        "feature2": "Rollenbasierte Auth",
+        "feature3": "E-Mail-Verifizierung",
+        "feature4": "In-Memory Cache",
+        "feature5": "Unit of Work Pattern",
+        "feature6": "Nginx Reverse Proxy"
+      },
+      "tech": {
+        "title": "Technologie-Stack",
+        "tech1": "⚙️ .NET Core + Microservices",
+        "tech2": "⚛️ React/Next.js + Ant Design",
+        "tech3": "🐳 Docker + Nginx",
+        "tech4": "🗄️ PostgreSQL/MSSQL + Redis",
+        "tech5": "🔐 JWT + Rollenbasierte Auth",
+        "tech6": "📦 NPM + NuGet Pakete"
+      }
+    },
+    "philosophy": {
+      "title": "Meine Arbeitswerte",
+      "principle1": {
+        "title": "Ehrlichkeit",
+        "description": "Ehrlichkeit und Transparenz in Arbeit und Beziehungen sind für mich immer Prioritäten."
+      },
+      "principle2": {
+        "title": "Disziplin",
+        "description": "Ich schätze die Disziplin des kontinuierlichen Lernens, regelmäßiger Arbeit und qualitätsorientierter Entwicklung."
+      },
+      "principle3": {
+        "title": "Verantwortung",
+        "description": "Ich übernehme Verantwortung für Aufgaben und strebe danach, zum Teamerfolg beizutragen."
+      },
+      "principle4": {
+        "title": "Teamharmonie",
+        "description": "Ich bin ein kooperatives und lernorientiertes Teammitglied. Ich glaube daran, gemeinsam besser zu werden."
+      }
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Kontaktieren Sie mich für Ideen, Vorschläge und Kooperationen!",
+      "email": "E-Mail",
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "website": "Website",
+      "message": "Lassen Sie uns Ideen austauschen und großartige Dinge gemeinsam schaffen! 🚀"
+    },
+    "stats": {
+      "title": "Statistiken",
+      "experience": "Jahre Erfahrung",
+      "projects": "Abgeschlossene Projekte",
+      "tools": "Entwicklertools",
+      "languages": "Unterstützte Sprachen"
+    }
   },
   "categories": {
     "encoders": "Encoder/Decoder",
@@ -841,6 +924,75 @@
     "contact": {
       "title": "Kontakt",
       "content": "Wenn Sie Fragen zu dieser Datenschutzrichtlinie haben, kontaktieren Sie uns bitte unter: ugurcanguden@gmail.com"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Tools, Formate und Best Practices Leitfaden",
+    "readMore": "Weiterlesen",
+    "readTime": "min Lesezeit",
+    "relatedTools": "Verwandte Tools",
+    "relatedPosts": "Verwandte Artikel",
+    "backToBlog": "Zurück zum Blog",
+    "shareArticle": "Artikel teilen",
+    "categories": {
+      "encoders": "Kodierer",
+      "formatters": "Formatierer",
+      "generators": "Generatoren",
+      "converters": "Konverter",
+      "utilities": "Dienstprogramme"
+    },
+    "posts": {
+      "what-is-json": {
+        "title": "Was ist JSON? JavaScript Object Notation Leitfaden",
+        "description": "JSON (JavaScript Object Notation) Format, Geschichte, Anwendungsfälle und Beispiele. Der Grundstein des Datenaustauschs in modernen Webanwendungen.",
+        "content": "JSON (JavaScript Object Notation) ist ein leichtgewichtiges, menschenlesbares und plattformunabhängiges Datenformat für den Datenaustausch in modernen Webanwendungen. Es wurde in den frühen 2000er Jahren von Douglas Crockford entwickelt und ist heute der De-facto-Standard für Web-APIs."
+      },
+      "what-is-xml": {
+        "title": "Was ist XML? Extensible Markup Language Leitfaden",
+        "description": "XML (Extensible Markup Language) Format, Geschichte, Anwendungsfälle und Best Practices. Der leistungsstarke Standard für Datentransport und Speicherung.",
+        "content": "XML (Extensible Markup Language) ist ein strukturiertes Datenformat, das sowohl von Menschen als auch von Maschinen lesbar ist und 1998 vom W3C standardisiert wurde. Im Gegensatz zu HTML erlaubt es benutzerdefinierte Tags und ist auf den Datentransport ausgerichtet."
+      },
+      "what-is-base64": {
+        "title": "Was ist Base64? Kodierung und Dekodierung Leitfaden",
+        "description": "Base64-Kodierungssystem, wie es funktioniert, Anwendungsfälle und Beispiele. Unerlässlich für die Übertragung von Binärdaten in textbasierten Systemen.",
+        "content": "Base64 ist ein Kodierungsschema, das Binärdaten in ASCII-Textformat konvertiert. Es wird häufig für die Übertragung von Binärdaten über textbasierte Protokolle wie E-Mail, JSON und XML verwendet."
+      },
+      "what-is-uuid": {
+        "title": "Was ist UUID? Universally Unique Identifier Leitfaden",
+        "description": "UUID (Universally Unique Identifier) Format, Versionen, Generierungsmethoden und Anwendungsfälle. Der Standard für eindeutige Identifikation.",
+        "content": "UUID (Universally Unique Identifier) ist eine 128-Bit-Nummer zur eindeutigen Identifizierung von Informationen in Computersystemen. Auch als GUID bekannt, sind UUIDs so konzipiert, dass sie über Raum und Zeit hinweg eindeutig sind."
+      },
+      "what-is-hash": {
+        "title": "Was ist Hash? Kryptografische Hash-Funktionen Leitfaden",
+        "description": "Hash-Funktionen, MD5, SHA-256, Anwendungsfälle und Sicherheit. Unerlässlich für Datenintegrität und Passwortsicherheit.",
+        "content": "Eine Hash-Funktion ist ein mathematischer Algorithmus, der Eingabedaten beliebiger Größe in eine Ausgabe fester Größe (Hash-Wert oder Digest) umwandelt. Kryptografische Hash-Funktionen wie MD5, SHA-1 und SHA-256 sind Einwegfunktionen."
+      },
+      "what-is-jwt": {
+        "title": "Was ist JWT? JSON Web Token Sicherheitsleitfaden",
+        "description": "JWT (JSON Web Token) Struktur, Anwendungsfälle und Sicherheit. Der Standard für Authentifizierung in modernen Webanwendungen.",
+        "content": "JWT (JSON Web Token) ist ein offener Standard (RFC 7519), der einen sicheren Weg zum Informationsaustausch zwischen Parteien bietet. Es wird hauptsächlich für Authentifizierung und Informationsaustausch verwendet. JWT besteht aus drei Teilen: Header, Payload und Signature."
+      },
+      "what-is-regex": {
+        "title": "Was ist Regex? Umfassender Reguläre Ausdrücke Leitfaden",
+        "description": "Regular Expression (Regex) Definition, Verwendung, Beispiele und Best Practices. Leistungsstarkes Tool für Textverarbeitung und Mustererkennung.",
+        "content": "Regular Expression (Regex) ist ein leistungsstarkes Tool zum Suchen, Abgleichen und Ersetzen bestimmter Muster in Text. In fast allen Programmiersprachen unterstützt, wird es in vielen Bereichen wie Datenvalidierung, Textverarbeitung und Log-Analyse verwendet."
+      },
+      "markdown-guide": {
+        "title": "Markdown Leitfaden: Schnelle und Einfache Dokumentation",
+        "description": "Markdown-Syntax, Anwendungsfälle und Best Practices. Ideales Format für README, Dokumentation und Blogbeiträge.",
+        "content": "Markdown ist eine leichtgewichtige Auszeichnungssprache zur Umwandlung von Klartext in formatierten Text. Erstellt von John Gruber im Jahr 2004, wird es weit verbreitet auf Plattformen wie GitHub, Stack Overflow und Reddit verwendet."
+      },
+      "sql-optimization": {
+        "title": "SQL-Optimierung: Tipps für Schnellere Abfragen",
+        "description": "SQL-Abfragenoptimierung, Index-Nutzung, Best Practices. Leitfaden zur Verbesserung der Datenbankleistung.",
+        "content": "SQL-Optimierung umfasst Verbesserungen, um Datenbankabfragen schneller auszuführen. Die Datenbankleistung kann durch richtigen Index-Einsatz, Verständnis von Abfrageplänen und Best Practices erheblich verbessert werden."
+      },
+      "password-security": {
+        "title": "Sichere Passworterstellung: Best Practices Leitfaden",
+        "description": "Starke Passworterstellung, Passwortverwaltung und Sicherheits-Best-Practices. Unverzichtbare Informationen für Kontosicherheit.",
+        "content": "Starke Passwörter sind das Fundament der Online-Sicherheit. Passwörter sollten mindestens 12 Zeichen enthalten, einschließlich Groß- und Kleinbuchstaben, Zahlen und Sonderzeichen. Passwort-Manager-Nutzung und Zwei-Faktor-Authentifizierung (2FA) werden empfohlen."
+      }
     }
   }
 }

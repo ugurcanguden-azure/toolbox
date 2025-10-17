@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { SITE_CONFIG } from "@/lib/config";
 import { GoogleAdSense } from "next-google-adsense";
+import { GoogleAnalytics } from "@/components/analytics";
 
 // 🎨 FONT OPTIMIZATION - Critical for PageSpeed
 const inter = Inter({ 
@@ -39,9 +40,14 @@ export const metadata: Metadata = {
     // Utilities
     "qr code generator", "css minifier", "credit card validator"
   ],
-  authors: [{ name: "Toolbox" }],
-  creator: "Toolbox",
-  publisher: "Toolbox",
+  authors: [
+    { 
+      name: "Uğurcan Güden",
+      url: "https://github.com/ugurcanguden"
+    }
+  ],
+  creator: "Uğurcan Güden",
+  publisher: "Uğurcan Güden",
   formatDetection: {
     email: false,
     address: false,
@@ -70,7 +76,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Toolbox - 30+ Free Developer Tools",
     description: "Free online toolbox with 30+ tools for developers. JSON, Base64, UUID, Hash, Regex, String Tools and more!",
-    creator: "@toolbox",
+    creator: "@ugurcanguden",
+    site: "@ugurcanguden",
   },
   robots: {
     index: true,
@@ -111,7 +118,38 @@ export default function RootLayout({
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "Any",
     "browserRequirements": "Requires JavaScript. Requires HTML5.",
-    "softwareVersion": "2.0.0",
+    "softwareVersion": "2.1.0",
+    "author": {
+      "@type": "Person",
+      "name": "Uğurcan Güden",
+      "url": "https://github.com/ugurcanguden",
+      "sameAs": [
+        "https://github.com/ugurcanguden",
+        "https://linkedin.com/in/ugurcanguden",
+        "https://free-dev-tools.net.tr"
+      ],
+      "jobTitle": "Software Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "İntertech"
+      },
+      "knowsAbout": [
+        ".NET Core",
+        "Microservices",
+        "React",
+        "Next.js",
+        "Docker",
+        "PostgreSQL",
+        "Redis",
+        "TypeScript",
+        "Web Development"
+      ]
+    },
+    "creator": {
+      "@type": "Person",
+      "name": "Uğurcan Güden",
+      "url": "https://github.com/ugurcanguden"
+    },
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -204,7 +242,10 @@ export default function RootLayout({
           suppressHydrationWarning
         />
       </head>
-      <body className={`${inter.className} ${inter.variable}`}>
+      <body className={`${inter.className} ${inter.variable}`} suppressHydrationWarning>
+        {/* Google Analytics */}
+        <GoogleAnalytics />
+        
         {/* Google AdSense Script (via next-google-adsense) */}
         <GoogleAdSense publisherId="pub-9339461513261360" />
         {children}

@@ -45,7 +45,90 @@
   "navigation": {
     "home": "Ana Sayfa",
     "tools": "Araçlar",
+    "blog": "Blog",
     "about": "Hakkında"
+  },
+  "about": {
+    "title": "Hakkımda",
+    "subtitle": "Uğurcan Güden",
+    "intro": "Software Developer",
+    "description": "Muğla'da yaşayan bir yazılım geliştiriciyim. .NET Core, mikroservis mimarileri, EF Core ve Redis ile backend; React/Next.js, Docker ve Nginx ile uçtan uca çözümler geliştiriyorum. QQRCHEF'te role-based auth, e-posta doğrulama ve in-memory cache katmanlarıyla performansı iyileştirdim; Free Dev Tools ile geliştiricilere tarayıcı üzerinden pratik araçlar sunuyorum. Açık kaynakta guden-core (NPM) ve Guden.Lib* (NuGet) paketleriyle ortak ihtiyaçları standart hale getiriyorum.",
+    "experience": {
+      "title": "Deneyim & Uzmanlık",
+      "frontend": {
+        "title": "Frontend Geliştirme",
+        "description": "React, Next.js ve modern JavaScript framework'leri ile dinamik, responsive ve kullanıcı dostu arayüzler geliştiriyorum. Ant Design ve Tailwind CSS ile modern UI/UX çözümleri üretiyorum."
+      },
+      "backend": {
+        "title": "Backend Geliştirme", 
+        "description": ".NET Core, mikroservis mimarileri, EF Core, Redis ve PostgreSQL/MSSQL ile güvenli, ölçeklenebilir ve yüksek performanslı backend sistemleri tasarlıyorum. JWT ve role-based auth ile güvenlik öncelikli çözümler geliştiriyorum."
+      },
+      "devops": {
+        "title": "DevOps & Dağıtım",
+        "description": "Docker konteyner teknolojisi, özel image registry, Nginx reverse proxy, GitHub Actions ve Azure DevOps ile CI/CD pipeline'ları kuruyorum. Ölçeklenebilir ve güvenli deployment süreçleri oluşturuyorum."
+      },
+      "mobile": {
+        "title": "Açık Kaynak",
+        "description": "guden-core (NPM) ve Guden.Lib* (NuGet) paketleriyle tekrar kullanılabilir, bakımı kolay ve standart çözümler sunuyorum. Topluluk ile paylaşmayı ve sürekli öğrenmeyi önemsiyorum."
+      }
+    },
+    "tools": {
+      "title": "QQRCHEF & Free Dev Tools",
+      "description": "Aktif olarak geliştirdiğim projeler arasında QQRCHEF (.NET Core + Next.js) ve Free Dev Tools (geliştiriciler için tarayıcı tabanlı ücretsiz araçlar) bulunuyor.",
+      "features": {
+        "title": "QQRCHEF Özellikleri",
+        "feature1": "Docker + Özel Registry",
+        "feature2": "Role-Based Auth",
+        "feature3": "E-posta Doğrulama",
+        "feature4": "In-Memory Cache",
+        "feature5": "Unit of Work Pattern",
+        "feature6": "Nginx Reverse Proxy"
+      },
+      "tech": {
+        "title": "Teknoloji Stack",
+        "tech1": "⚙️ .NET Core + Mikroservis",
+        "tech2": "⚛️ React/Next.js + Ant Design",
+        "tech3": "🐳 Docker + Nginx",
+        "tech4": "🗄️ PostgreSQL/MSSQL + Redis",
+        "tech5": "🔐 JWT + Role-Based Auth",
+        "tech6": "📦 NPM + NuGet Paketleri"
+      }
+    },
+    "philosophy": {
+      "title": "Çalışma Değerlerim",
+      "principle1": {
+        "title": "Dürüstlük",
+        "description": "İş ve ilişkilerde dürüstlük ve şeffaflık benim için her zaman önceliklidir."
+      },
+      "principle2": {
+        "title": "Disiplin",
+        "description": "Sürekli öğrenme, düzenli çalışma ve kalite odaklı geliştirme disiplinini önemsiyorum."
+      },
+      "principle3": {
+        "title": "Sorumluluk",
+        "description": "Aldığım görevleri sahiplenir, ekip başarısına katkı sunmayı hedeflerim."
+      },
+      "principle4": {
+        "title": "Ekip Uyumu",
+        "description": "Paylaşımcı ve öğrenmeye açık bir ekip arkadaşıyım. Birlikte daha iyisini yapmaya inanıyorum."
+      }
+    },
+    "contact": {
+      "title": "İletişim",
+      "description": "Fikir, öneri ve işbirlikleri için benimle iletişime geçin!",
+      "email": "E-posta",
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "website": "Web Sitesi",
+      "message": "Fikirlerinizi paylaşın, birlikte harika şeyler yapalım! 🚀"
+    },
+    "stats": {
+      "title": "İstatistikler",
+      "experience": "Yıllık Deneyim",
+      "projects": "Tamamlanan Proje",
+      "tools": "Geliştirici Aracı",
+      "languages": "Desteklenen Dil"
+    }
   },
   "categories": {
     "encoders": "Kodlayıcılar/Çözücüler",
@@ -844,6 +927,75 @@
     "contact": {
       "title": "İletişim",
       "content": "Bu Gizlilik Politikası hakkında herhangi bir sorunuz varsa, lütfen bizimle iletişime geçin: ugurcanguden@gmail.com"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Araçlar, Formatlar ve Best Practices Rehberi",
+    "readMore": "Devamını Oku",
+    "readTime": "dk okuma",
+    "relatedTools": "İlgili Araçlar",
+    "relatedPosts": "İlgili Makaleler",
+    "backToBlog": "Blog'a Dön",
+    "shareArticle": "Makaleyi Paylaş",
+    "categories": {
+      "encoders": "Kodlayıcılar",
+      "formatters": "Formatlayıcılar", 
+      "generators": "Üreteçler",
+      "converters": "Dönüştürücüler",
+      "utilities": "Yardımcılar"
+    },
+    "posts": {
+      "what-is-json": {
+        "title": "JSON Nedir? JavaScript Object Notation Rehberi",
+        "description": "JSON (JavaScript Object Notation) formatı, tarihçesi, kullanım alanları ve örnekleri. Modern web uygulamalarında veri alışverişinin temel taşı.",
+        "content": "JSON (JavaScript Object Notation), modern web uygulamalarında veri alışverişi için kullanılan hafif, okunabilir ve platform bağımsız bir veri formatıdır. 2000'li yılların başında Douglas Crockford tarafından geliştirilmiş ve günümüzde web API'lerinin de facto standardı haline gelmiştir. JSON, JavaScript'in nesne gösterim sözdizimine dayanan ve XML'e göre daha sade ve okunabilir bir alternatif olarak ortaya çıkmıştır."
+      },
+      "what-is-xml": {
+        "title": "XML Nedir? Extensible Markup Language Rehberi",
+        "description": "XML (Extensible Markup Language) formatı, tarihçesi, kullanım alanları ve best practices. Veri taşıma ve depolamanın güçlü standardı.",
+        "content": "XML (Extensible Markup Language), 1998 yılında W3C tarafından standartlaştırılan, hem insan hem makine tarafından okunabilen, yapılandırılmış veri formatıdır. HTML'den farklı olarak kullanıcı tanımlı etiketlere izin verir ve veri taşıma odaklıdır. XML, SGML'in (Standard Generalized Markup Language) basitleştirilmiş bir versiyonu olarak tasarlanmıştır."
+      },
+      "what-is-base64": {
+        "title": "Base64 Nedir? Kodlama ve Kod Çözme Rehberi",
+        "description": "Base64 kodlama sistemi, nasıl çalışır, kullanım alanları ve örnekleri. Metin tabanlı sistemlerde binary veri transferi için vazgeçilmez.",
+        "content": "Base64, binary (ikili) verileri ASCII metin formatına dönüştüren bir kodlama şemasıdır. E-posta, JSON ve XML gibi metin tabanlı protokoller üzerinden binary veri transfer etmek için yaygın olarak kullanılır. Base64, binary verileri temsil etmek için 64 karakter (A-Z, a-z, 0-9, +, /) kullanır."
+      },
+      "what-is-uuid": {
+        "title": "UUID Nedir? Evrensel Benzersiz Tanımlayıcı Rehberi",
+        "description": "UUID (Universally Unique Identifier) formatı, versiyonları, üretim yöntemleri ve kullanım alanları. Benzersiz tanımlama için standart.",
+        "content": "UUID (Universally Unique Identifier), bilgisayar sistemlerinde bilgiyi benzersiz şekilde tanımlamak için kullanılan 128-bit bir numaradır. GUID (Globally Unique Identifier) olarak da bilinir ve merkezi bir otoriteye ihtiyaç duymadan uzay ve zaman boyunca benzersiz olacak şekilde tasarlanmıştır."
+      },
+      "what-is-hash": {
+        "title": "Hash Nedir? Kriptografik Hash Fonksiyonları Rehberi",
+        "description": "Hash fonksiyonları, MD5, SHA-256, kullanım alanları ve güvenlik. Veri bütünlüğü ve parola güvenliği için vazgeçilmez.",
+        "content": "Hash fonksiyonu, herhangi bir boyuttaki giriş verisini sabit boyutlu bir çıktıya (hash değeri veya özet) dönüştüren matematiksel bir algoritmadır. MD5, SHA-1 ve SHA-256 gibi kriptografik hash fonksiyonları, veri bütünlüğü, parola saklama ve dijital imzalar için kullanılan tek yönlü fonksiyonlardır."
+      },
+      "what-is-jwt": {
+        "title": "JWT Nedir? JSON Web Token Güvenlik Rehberi",
+        "description": "JWT (JSON Web Token) yapısı, kullanım alanları ve güvenlik. Modern web uygulamalarında kimlik doğrulama standardı.",
+        "content": "JWT (JSON Web Token), taraflar arasında bilgi aktarımı için güvenli bir yol sağlayan açık bir standarttır (RFC 7519). Özellikle kimlik doğrulama ve bilgi alışverişinde kullanılır. JWT, Header, Payload ve Signature olmak üzere üç bölümden oluşur."
+      },
+      "what-is-regex": {
+        "title": "Regex Nedir? Düzenli İfadeler Kapsamlı Rehberi",
+        "description": "Regular Expression (Regex) nedir, nasıl kullanılır, örnekler ve best practices. Metin işleme ve pattern matching için güçlü araç.",
+        "content": "Regular Expression (Regex), metin içinde belirli kalıpları aramak, eşleştirmek ve değiştirmek için kullanılan güçlü bir araçtır. Neredeyse tüm programlama dillerinde desteklenir ve veri validasyonu, metin işleme ve log analizi gibi birçok alanda kullanılır."
+      },
+      "markdown-guide": {
+        "title": "Markdown Rehberi: Hızlı ve Kolay Dokümantasyon",
+        "description": "Markdown syntax, kullanım alanları ve best practices. README, dokümantasyon ve blog yazıları için ideal format.",
+        "content": "Markdown, düz metni formatlı metne dönüştürmek için kullanılan hafif bir işaretleme dilidir. 2004 yılında John Gruber tarafından oluşturulmuş ve GitHub, Stack Overflow, Reddit gibi platformlarda yaygın olarak kullanılmaktadır."
+      },
+      "sql-optimization": {
+        "title": "SQL Optimizasyonu: Daha Hızlı Sorgular İçin İpuçları",
+        "description": "SQL query optimizasyonu, index kullanımı, best practices. Veritabanı performansını artırma rehberi.",
+        "content": "SQL optimizasyonu, veritabanı sorgularının daha hızlı çalışmasını sağlamak için yapılan iyileştirmelerdir. Doğru index kullanımı, query planının anlaşılması ve best practices ile veritabanı performansı önemli ölçüde artırılabilir."
+      },
+      "password-security": {
+        "title": "Güvenli Parola Oluşturma: Best Practices Rehberi",
+        "description": "Güçlü parola oluşturma, parola yönetimi ve güvenlik best practices. Hesap güvenliği için vazgeçilmez bilgiler.",
+        "content": "Güçlü parolalar, çevrimiçi güvenliğin temel taşıdır. En az 12 karakter, büyük-küçük harf, rakam ve özel karakterler içeren parolalar oluşturulmalıdır. Password manager kullanımı ve iki faktörlü kimlik doğrulama (2FA) önerilir."
+      }
     }
   }
 }
