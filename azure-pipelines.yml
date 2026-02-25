@@ -1,8 +1,7 @@
 trigger:
   tags:
     include:
-      - prod-*
-
+      - v-*
 variables:
   - group: GlobalConfig
 
