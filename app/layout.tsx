@@ -242,12 +242,12 @@ export default function RootLayout({
           suppressHydrationWarning
         />
       </head>
-      <body className={`${inter.className} ${inter.variable}`} suppressHydrationWarning>
+      <body className={inter.className} suppressHydrationWarning>
         {/* Google Analytics */}
         <GoogleAnalytics />
         
-        {/* Google AdSense Script (via next-google-adsense) */}
-        <GoogleAdSense publisherId="pub-9339461513261360" />
+        {/* Google AdSense Script (via next-google-adsense) - temporarily disabled */}
+        {/* <GoogleAdSense publisherId="pub-9339461513261360" /> */}
         {children}
       </body>
     </html>

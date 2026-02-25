@@ -10,10 +10,11 @@ import { Button } from '@/components/ui/button';
 import { useFavorites } from '@/hooks';
 import type { Tool } from '@/types';
 
-export default function HomePage() {
+import { use } from 'react';
+
+export default function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const t = useTranslations();
-  const params = useParams();
-  const locale = params.locale as string;
+  const { locale } = use(params);
   const { favorites, recent, toggleFavorite, addToRecent, clearRecent, isFavorite } = useFavorites();
 
   const [searchQuery, setSearchQuery] = useState("");
@@ -26,7 +27,7 @@ export default function HomePage() {
       description: t('tools.jsonFormatter.description'),
       category: 'formatters',
       icon: 'Braces',
-      href: `/${params.locale}/tools/json-formatter`,
+      href: `/${locale}/tools/json-formatter`,
     },
     {
       id: 'xml-formatter',
@@ -34,7 +35,7 @@ export default function HomePage() {
       description: t('tools.xmlFormatter.description'),
       category: 'formatters',
       icon: 'FileCode',
-      href: `/${params.locale}/tools/xml-formatter`,
+      href: `/${locale}/tools/xml-formatter`,
     },
     {
       id: 'base64',
@@ -42,7 +43,7 @@ export default function HomePage() {
       description: t('tools.base64.description'),
       category: 'encoders',
       icon: 'Lock',
-      href: `/${params.locale}/tools/base64`,
+      href: `/${locale}/tools/base64`,
     },
     {
       id: 'url-encoder',
@@ -50,7 +51,7 @@ export default function HomePage() {
       description: t('tools.urlEncoder.description'),
       category: 'encoders',
       icon: 'Link',
-      href: `/${params.locale}/tools/url-encoder`,
+      href: `/${locale}/tools/url-encoder`,
     },
     {
       id: 'uuid-generator',
@@ -58,7 +59,7 @@ export default function HomePage() {
       description: t('tools.uuidGenerator.description'),
       category: 'generators',
       icon: 'Fingerprint',
-      href: `/${params.locale}/tools/uuid-generator`,
+      href: `/${locale}/tools/uuid-generator`,
     },
     {
       id: 'hash-generator',
@@ -66,7 +67,7 @@ export default function HomePage() {
       description: t('tools.hashGenerator.description'),
       category: 'generators',
       icon: 'Shield',
-      href: `/${params.locale}/tools/hash-generator`,
+      href: `/${locale}/tools/hash-generator`,
     },
     {
       id: 'password-generator',
@@ -74,7 +75,7 @@ export default function HomePage() {
       description: t('tools.passwordGenerator.description'),
       category: 'generators',
       icon: 'Key',
-      href: `/${params.locale}/tools/password-generator`,
+      href: `/${locale}/tools/password-generator`,
     },
     {
       id: 'qr-generator',
@@ -82,7 +83,7 @@ export default function HomePage() {
       description: t('tools.qrGenerator.description'),
       category: 'utilities',
       icon: 'QrCode',
-      href: `/${params.locale}/tools/qr-generator`,
+      href: `/${locale}/tools/qr-generator`,
     },
     {
       id: 'color-converter',
@@ -90,7 +91,7 @@ export default function HomePage() {
       description: t('tools.colorConverter.description'),
       category: 'converters',
       icon: 'Palette',
-      href: `/${params.locale}/tools/color-converter`,
+      href: `/${locale}/tools/color-converter`,
     },
     {
       id: 'regex-tester',
@@ -98,7 +99,7 @@ export default function HomePage() {
       description: t('tools.regexTester.description'),
       category: 'text',
       icon: 'Search',
-      href: `/${params.locale}/tools/regex-tester`,
+      href: `/${locale}/tools/regex-tester`,
     },
     {
       id: 'string-tools',
@@ -106,7 +107,7 @@ export default function HomePage() {
       description: t('tools.stringTools.description'),
       category: 'text',
       icon: 'Type',
-      href: `/${params.locale}/tools/string-tools`,
+      href: `/${locale}/tools/string-tools`,
     },
     {
       id: 'text-compare',
@@ -114,7 +115,7 @@ export default function HomePage() {
       description: t('tools.textCompare.description'),
       category: 'text',
       icon: 'FileText',
-      href: `/${params.locale}/tools/text-compare`,
+      href: `/${locale}/tools/text-compare`,
     },
     {
       id: 'markdown-preview',
@@ -122,7 +123,7 @@ export default function HomePage() {
       description: t('tools.markdownPreview.description'),
       category: 'formatters',
       icon: 'FileCode',
-      href: `/${params.locale}/tools/markdown-preview`,
+      href: `/${locale}/tools/markdown-preview`,
     },
     {
       id: 'jwt-decoder',
@@ -130,7 +131,7 @@ export default function HomePage() {
       description: t('tools.jwtDecoder.description'),
       category: 'encoders',
       icon: 'Key',
-      href: `/${params.locale}/tools/jwt-decoder`,
+      href: `/${locale}/tools/jwt-decoder`,
     },
     {
       id: 'timestamp-converter',
@@ -138,7 +139,7 @@ export default function HomePage() {
       description: t('tools.timestampConverter.description'),
       category: 'converters',
       icon: 'Clock',
-      href: `/${params.locale}/tools/timestamp-converter`,
+      href: `/${locale}/tools/timestamp-converter`,
     },
     {
       id: 'lorem-generator',
@@ -146,7 +147,7 @@ export default function HomePage() {
       description: t('tools.loremGenerator.description'),
       category: 'generators',
       icon: 'FileText',
-      href: `/${params.locale}/tools/lorem-generator`,
+      href: `/${locale}/tools/lorem-generator`,
     },
     {
       id: 'case-converter',
@@ -154,7 +155,7 @@ export default function HomePage() {
       description: t('tools.caseConverter.description'),
       category: 'text',
       icon: 'Type',
-      href: `/${params.locale}/tools/case-converter`,
+      href: `/${locale}/tools/case-converter`,
     },
     {
       id: 'html-formatter',
@@ -162,7 +163,7 @@ export default function HomePage() {
       description: t('tools.htmlFormatter.description'),
       category: 'formatters',
       icon: 'Code',
-      href: `/${params.locale}/tools/html-formatter`,
+      href: `/${locale}/tools/html-formatter`,
     },
     {
       id: 'css-minifier',
@@ -170,7 +171,7 @@ export default function HomePage() {
       description: t('tools.cssMinifier.description'),
       category: 'utilities',
       icon: 'Minimize2',
-      href: `/${params.locale}/tools/css-minifier`,
+      href: `/${locale}/tools/css-minifier`,
     },
     {
       id: 'sql-formatter',
@@ -178,7 +179,7 @@ export default function HomePage() {
       description: t('tools.sqlFormatter.description'),
       category: 'formatters',
       icon: 'Database',
-      href: `/${params.locale}/tools/sql-formatter`,
+      href: `/${locale}/tools/sql-formatter`,
     },
     {
       id: 'image-to-base64',
@@ -186,7 +187,7 @@ export default function HomePage() {
       description: t('tools.imageToBase64.description'),
       category: 'converters',
       icon: 'Image',
-      href: `/${params.locale}/tools/image-to-base64`,
+      href: `/${locale}/tools/image-to-base64`,
     },
     {
       id: 'number-base-converter',
@@ -194,7 +195,7 @@ export default function HomePage() {
       description: t('tools.numberBaseConverter.description'),
       category: 'converters',
       icon: 'Binary',
-      href: `/${params.locale}/tools/number-base-converter`,
+      href: `/${locale}/tools/number-base-converter`,
     },
     {
       id: 'word-counter',
@@ -202,7 +203,7 @@ export default function HomePage() {
       description: t('tools.wordCounter.description'),
       category: 'text',
       icon: 'FileText',
-      href: `/${params.locale}/tools/word-counter`,
+      href: `/${locale}/tools/word-counter`,
     },
     {
       id: 'line-sorter',
@@ -210,7 +211,7 @@ export default function HomePage() {
       description: t('tools.lineSorter.description'),
       category: 'text',
       icon: 'ArrowDownAZ',
-      href: `/${params.locale}/tools/line-sorter`,
+      href: `/${locale}/tools/line-sorter`,
     },
     {
       id: 'duplicate-remover',
@@ -218,7 +219,7 @@ export default function HomePage() {
       description: t('tools.duplicateRemover.description'),
       category: 'text',
       icon: 'Trash2',
-      href: `/${params.locale}/tools/duplicate-remover`,
+      href: `/${locale}/tools/duplicate-remover`,
     },
     {
       id: 'html-entity-encoder',
@@ -226,7 +227,7 @@ export default function HomePage() {
       description: t('tools.htmlEntityEncoder.description'),
       category: 'encoders',
       icon: 'Code',
-      href: `/${params.locale}/tools/html-entity-encoder`,
+      href: `/${locale}/tools/html-entity-encoder`,
     },
     {
       id: 'json-to-csv',
@@ -234,7 +235,7 @@ export default function HomePage() {
       description: t('tools.jsonToCsv.description'),
       category: 'converters',
       icon: 'FileSpreadsheet',
-      href: `/${params.locale}/tools/json-to-csv`,
+      href: `/${locale}/tools/json-to-csv`,
     },
     {
       id: 'csv-to-json',
@@ -242,7 +243,7 @@ export default function HomePage() {
       description: t('tools.csvToJson.description'),
       category: 'converters',
       icon: 'FileJson',
-      href: `/${params.locale}/tools/csv-to-json`,
+      href: `/${locale}/tools/csv-to-json`,
     },
     {
       id: 'yaml-formatter',
@@ -250,7 +251,7 @@ export default function HomePage() {
       description: t('tools.yamlFormatter.description'),
       category: 'formatters',
       icon: 'FileCode',
-      href: `/${params.locale}/tools/yaml-formatter`,
+      href: `/${locale}/tools/yaml-formatter`,
     },
     {
       id: 'credit-card-validator',
@@ -260,7 +261,7 @@ export default function HomePage() {
       icon: 'CreditCard',
       href: `/${locale}/tools/credit-card-validator`,
     },
-  ], [t, locale, params.locale]);
+  ], [t, locale]);
 
   // Categories
   const categories = [
@@ -309,10 +310,10 @@ export default function HomePage() {
       </div>
 
       {/* Ad - Top Banner (after hero) */}
-      <AdBanner 
+      {/* <AdBanner 
         dataAdSlot="1234567890"
         className="max-w-7xl mx-auto mb-12"
-      />
+      /> */}
 
       {/* Search & Filter Section */}
       <div className="mb-12 space-y-6">
@@ -361,10 +362,10 @@ export default function HomePage() {
       </div>
 
       {/* Ad - After Search/Filter */}
-      <AdBanner 
+      {/* <AdBanner 
         dataAdSlot="0987654321"
         className="max-w-7xl mx-auto mb-12"
-      />
+      /> */}
 
       {/* Favorites Section */}
       {favoriteTools.length > 0 && searchQuery === "" && selectedCategory === "all" && (
@@ -447,10 +448,10 @@ export default function HomePage() {
       </div>
 
       {/* Ad - Bottom Banner */}
-      <AdBanner 
+      {/* <AdBanner 
         dataAdSlot="5555555555"
         className="max-w-7xl mx-auto mb-12"
-      />
+      /> */}
     </div>
   );
 }

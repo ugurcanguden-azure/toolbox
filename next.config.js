@@ -6,7 +6,6 @@ const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 const nextConfig = {
   // 🚀 PERFORMANCE OPTIMIZATIONS
   reactStrictMode: true,
-  swcMinify: true,
   
   // Output configuration for Docker
   output: 'standalone',
@@ -14,11 +13,10 @@ const nextConfig = {
   // Compression - Enable aggressive compression
   compress: true,
   
-  // 🔥 EXPERIMENTAL FEATURES FOR PERFORMANCE
-  experimental: {
-    // Enable server components optimization
-    serverComponentsExternalPackages: ['sharp'],
-  },
+  // 🔥 SERVER EXTERNAL PACKAGES
+  serverExternalPackages: ['sharp'],
+  
+  experimental: {},
   
   // 🌐 FORCE DYNAMIC RENDERING (for next-intl compatibility)
   // This disables static optimization but allows build to complete
@@ -136,13 +134,7 @@ const nextConfig = {
   
   // 🔄 REDIRECTS FOR SEO
   async redirects() {
-    const defaultRedirects = [
-      {
-        source: '/',
-        destination: '/en',
-        permanent: true,
-      },
-    ];
+    const defaultRedirects = [];
     
     // Load SEO redirects if they exist
     try {
