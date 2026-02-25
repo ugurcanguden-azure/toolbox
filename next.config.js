@@ -153,6 +153,13 @@ const nextConfig = {
         source: '/sitemap.xml',
         destination: '/api/sitemap',
       },
+      // TODO: Stirling-PDF proxy (uncomment when ready)
+      // {
+      //   source: '/pdf/api/:path*',
+      //   destination: process.env.STIRLING_PDF_URL 
+      //     ? `${process.env.STIRLING_PDF_URL}/api/v1/:path*` 
+      //     : 'http://localhost:8080/api/v1/:path*',
+      // },
     ]
   }
 };

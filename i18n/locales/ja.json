@@ -33,7 +33,9 @@
     "download": "ダウンロード",
     "options": "オプション",
     "loadingTool": "ツールを読み込み中",
-    "pleaseWait": "少々お待ちください..."
+    "pleaseWait": "少々お待ちください...",
+    "searchTools": "Search tools",
+    "privacyClientSideOnly": "100% Client-Side Only (No Server Tracking)"
   },
   "cookieConsent": {
     "title": "🍪 Cookieの使用について",

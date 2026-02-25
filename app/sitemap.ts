@@ -1,42 +1,12 @@
 import { MetadataRoute } from 'next';
 import { locales } from '@/i18n/request';
 
+import fs from 'fs';
+import path from 'path';
+
 const baseUrl = 'https://free-dev-tools.net.tr';
 
-const tools = [
-  'json-formatter',
-  'xml-formatter',
-  'base64',
-  'url-encoder',
-  'uuid-generator',
-  'password-generator',
-  'hash-generator',
-  'color-converter',
-  'qr-generator',
-  'regex-tester',
-  'string-tools',
-  'markdown-preview',
-  'jwt-decoder',
-  'timestamp-converter',
-  'lorem-generator',
-  'case-converter',
-  'html-formatter',
-  'css-minifier',
-  'sql-formatter',
-  'image-to-base64',
-  'number-base-converter',
-  'word-counter',
-  'line-sorter',
-  'duplicate-remover',
-  'html-entity-encoder',
-  'json-to-csv',
-  'csv-to-json',
-  'yaml-formatter',
-  'credit-card-validator',
-  'text-compare',
-];
-
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const routes: MetadataRoute.Sitemap = [];
   const currentDate = new Date();
 
@@ -63,7 +33,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   });
 
-  // Define tool categories with priorities
+  // Dynamically get tools from the directory
+  const toolsDir = path.join(process.cwd(), 'app', '[locale]', 'tools');
+  let tools: string[] = [];
+  try {
+    const entries = fs.readdirSync(toolsDir, { withFileTypes: true });
+    tools = entries
+      .filter((entry) => entry.isDirectory() && !entry.name.startsWith('[') && !entry.name.startsWith('_'))
+      .map((entry) => entry.name);
+  } catch (e) {
+    console.error('Failed to read tools directory for sitemap:', e);
+  }
+
+  // Define high priority tool categories
   const highPriorityTools = [
     'json-formatter',
     'base64',

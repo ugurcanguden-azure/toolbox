@@ -146,6 +146,7 @@ export default function ImageToBase64Page() {
             </CardHeader>
             <CardContent>
               <div className="flex justify-center p-4 bg-muted rounded-lg">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={preview} alt="Preview" className="max-w-full max-h-96 object-contain" />
               </div>
             </CardContent>

@@ -101,6 +101,9 @@ export const metadata: Metadata = {
     ],
   },
   manifest: "/manifest.json",
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "bIxfo-zqtnjZmEcwbIgclHMqLIo8C6RdmYeeiLEIZJ4",
+  },
 };
 
 export default function RootLayout({
@@ -219,8 +222,7 @@ export default function RootLayout({
       {/* Favicon */}
       <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       
-      {/* Google Site Verification */}
-      <meta name="google-site-verification" content="JTl7ocUCsAiICDbWUYpv8B3wfSKQSdRLdg1tPXDDTac" />
+      {/* Google Site Verification handled by Next.js metadata */}
       
       {/* Google AdSense Account Meta */}
       <meta name="google-adsense-account" content="ca-pub-9339461513261360" />

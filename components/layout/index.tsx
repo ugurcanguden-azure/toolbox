@@ -1,9 +1,13 @@
 export { ThemeProvider } from './theme-provider';
 export { ThemeToggle } from './theme-toggle';
-export { LocaleSwitcher } from './locale-switcher';
 export { Header } from './header';
 export { Footer } from './footer';
 export { CookieConsent } from './cookie-consent';
 export { CookieConsentManager } from './cookie-consent-manager';
 export { GlobalLoading } from './global-loading';
-export { NavigationListener } from './navigation-listener';
+export * from './locale-switcher';
+export * from './navigation-listener';
+export * from './cookie-consent-manager';
+export * from './sidebar';
+export * from './command-palette';
+export * from './smart-redirect';

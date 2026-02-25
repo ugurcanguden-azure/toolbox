@@ -2,25 +2,57 @@
 
 import { useState, useMemo } from "react";
 import { useTranslations } from "next-intl";
-import { FileText } from "lucide-react";
+import { FileText, BarChart2 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
+import { Progress } from "@/components/ui/progress";
+
+const STOP_WORDS = new Set([
+  'a', 'an', 'and', 'are', 'as', 'at', 'be', 'but', 'by', 'for', 'if', 'in', 'into', 'is', 'it',
+  'no', 'not', 'of', 'on', 'or', 'such', 'that', 'the', 'their', 'then', 'there', 'these',
+  'they', 'this', 'to', 'was', 'will', 'with'
+]);
 
 export default function WordCounterPage() {
   const t = useTranslations("tools.wordCounter");
+  const tc = useTranslations("common");
 
   const [text, setText] = useState("");
 
-  const stats = useMemo(() => {
+  const { stats, keywords } = useMemo(() => {
     const characters = text.length;
     const charactersNoSpaces = text.replace(/\s/g, "").length;
-    const words = text.trim() === "" ? 0 : text.trim().split(/\s+/).length;
+    const wordsArray = text.trim() === "" ? [] : text.trim().toLowerCase().split(/[\s.,!?();:'""\-]+/);
+    const words = wordsArray.filter(w => w.length > 0).length;
     const sentences = text.trim() === "" ? 0 : text.split(/[.!?]+/).filter((s) => s.trim()).length;
     const paragraphs = text.trim() === "" ? 0 : text.split(/\n\n+/).filter((p) => p.trim()).length;
     const lines = text === "" ? 0 : text.split(/\n/).length;
     const readingTime = Math.ceil(words / 200);
 
-    return { characters, charactersNoSpaces, words, sentences, paragraphs, lines, readingTime };
+    // Calculate Keyword Density
+    const wordCounts: Record<string, number> = {};
+    let totalValidWords = 0;
+    
+    wordsArray.forEach(word => {
+      if (word.length > 2 && !STOP_WORDS.has(word) && !/^\d+$/.test(word)) {
+        wordCounts[word] = (wordCounts[word] || 0) + 1;
+        totalValidWords++;
+      }
+    });
+
+    const topKeywords = Object.entries(wordCounts)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 5)
+      .map(([word, count]) => ({
+        word,
+        count,
+        percentage: totalValidWords > 0 ? ((count / words) * 100).toFixed(1) : "0" // Percentage relative to total words
+      }));
+
+    return { 
+      stats: { characters, charactersNoSpaces, words, sentences, paragraphs, lines, readingTime },
+      keywords: topKeywords
+    };
   }, [text]);
 
   return (
@@ -31,69 +63,108 @@ export default function WordCounterPage() {
           <p className="text-muted-foreground">{t("description")}</p>
         </div>
 
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <FileText className="h-5 w-5" />
-              {t("textInput")}
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <Textarea
-              placeholder={t("inputPlaceholder")}
-              value={text}
-              onChange={(e) => setText(e.target.value)}
-              className="min-h-[300px]"
-            />
-          </CardContent>
-        </Card>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="lg:col-span-2 space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <FileText className="h-5 w-5" />
+                  {t("textInput")}
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <Textarea
+                  placeholder={t("inputPlaceholder")}
+                  value={text}
+                  onChange={(e) => setText(e.target.value)}
+                  className="min-h-[300px]"
+                />
+              </CardContent>
+            </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>{t("statistics")}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="space-y-1">
-                <p className="text-sm text-muted-foreground">{t("characters")}</p>
-                <p className="text-3xl font-bold">{stats.characters}</p>
-              </div>
-              <div className="space-y-1">
-                <p className="text-sm text-muted-foreground">{t("charactersNoSpaces")}</p>
-                <p className="text-3xl font-bold">{stats.charactersNoSpaces}</p>
-              </div>
-              <div className="space-y-1">
-                <p className="text-sm text-muted-foreground">{t("words")}</p>
-                <p className="text-3xl font-bold">{stats.words}</p>
-              </div>
-              <div className="space-y-1">
-                <p className="text-sm text-muted-foreground">{t("sentences")}</p>
-                <p className="text-3xl font-bold">{stats.sentences}</p>
-              </div>
-              <div className="space-y-1">
-                <p className="text-sm text-muted-foreground">{t("paragraphs")}</p>
-                <p className="text-3xl font-bold">{stats.paragraphs}</p>
-              </div>
-              <div className="space-y-1">
-                <p className="text-sm text-muted-foreground">{t("lines")}</p>
-                <p className="text-3xl font-bold">{stats.lines}</p>
-              </div>
-              <div className="space-y-1">
-                <p className="text-sm text-muted-foreground">{t("readingTime")}</p>
-                <p className="text-3xl font-bold">
-                  {stats.readingTime} {t("minutes")}
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>{t("statistics")}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                  <div className="space-y-1">
+                    <p className="text-xs text-muted-foreground uppercase">{t("characters")}</p>
+                    <p className="text-3xl font-bold">{stats.characters}</p>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-xs text-muted-foreground uppercase">{t("charactersNoSpaces")}</p>
+                    <p className="text-3xl font-bold">{stats.charactersNoSpaces}</p>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-xs text-muted-foreground uppercase">{t("words")}</p>
+                    <p className="text-3xl font-bold">{stats.words}</p>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-xs text-muted-foreground uppercase">{t("sentences")}</p>
+                    <p className="text-3xl font-bold">{stats.sentences}</p>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-xs text-muted-foreground uppercase">{t("paragraphs")}</p>
+                    <p className="text-3xl font-bold">{stats.paragraphs}</p>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-xs text-muted-foreground uppercase">{t("lines")}</p>
+                    <p className="text-3xl font-bold">{stats.lines}</p>
+                  </div>
+                  <div className="col-span-2 space-y-1">
+                    <p className="text-xs text-muted-foreground uppercase">{t("readingTime")} (~200 wpm)</p>
+                    <p className="text-3xl font-bold">
+                      {stats.readingTime} <span className="text-sm font-normal text-muted-foreground">{t("minutes")}</span>
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>{t("info.title")}</CardTitle>
-            <CardDescription>{t("info.description")}</CardDescription>
-          </CardHeader>
-        </Card>
+          <div className="lg:col-span-1 space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-lg">
+                  <BarChart2 className="w-5 h-5" />
+                  Keyword Density
+                </CardTitle>
+                <CardDescription>
+                  Top keywords excluding common stop words.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                {keywords.length > 0 ? (
+                  <div className="space-y-4">
+                    {keywords.map((k, i) => (
+                      <div key={i} className="space-y-1">
+                        <div className="flex justify-between items-center text-sm">
+                          <span className="font-medium truncate max-w-[120px]" title={k.word}>{k.word}</span>
+                          <span className="text-muted-foreground">{k.count} ({k.percentage}%)</span>
+                        </div>
+                        <Progress value={parseFloat(k.percentage) * 2} className="h-1.5" />
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="text-center text-sm text-muted-foreground py-8">
+                    Not enough text to analyze.
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">{t("info.title")}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">{t("info.description")}</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
       </div>
     </div>
   );

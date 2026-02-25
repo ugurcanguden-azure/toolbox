@@ -33,7 +33,9 @@
     "download": "Scarica",
     "options": "Opzioni",
     "loadingTool": "Caricamento Strumento",
-    "pleaseWait": "Si prega di attendere un momento..."
+    "pleaseWait": "Si prega di attendere un momento...",
+    "searchTools": "Search tools",
+    "privacyClientSideOnly": "100% Client-Side Only (No Server Tracking)"
   },
   "cookieConsent": {
     "title": "🍪 Usiamo i Cookie",

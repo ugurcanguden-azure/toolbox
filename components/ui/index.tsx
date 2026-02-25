@@ -18,4 +18,6 @@ export {
   DialogTitle, 
   DialogDescription 
 } from './dialog';
+export { PrivacyBadge } from './privacy-badge';
+export { Progress } from './progress';
 

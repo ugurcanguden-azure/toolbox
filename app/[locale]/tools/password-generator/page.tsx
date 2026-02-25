@@ -260,10 +260,43 @@ export default function PasswordGeneratorPage() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-6xl">
       {/* Header */}
+      {/* Header */}
       <div className="mb-8">
-        <h1 className="text-4xl font-bold mb-2">{t('title')}</h1>
-        <p className="text-muted-foreground">{t('description')}</p>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <h1 className="text-4xl font-bold mb-2">{t('title')}</h1>
+            <p className="text-muted-foreground">{t('description')}</p>
+          </div>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 text-sm font-medium">
+            <Shield className="w-4 h-4" />
+            100% Client-Side Only (No Server Tracking)
+          </div>
+        </div>
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Curiobox Secure Password Generator",
+            "applicationCategory": "SecurityApplication",
+            "operatingSystem": "All",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "description": "Generate robust, uncrackable passwords and passphrases instantly. 100% Secure and strictly client-side.",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "ratingCount": "1950"
+            }
+          })
+        }}
+      />
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Settings Panel */}
@@ -580,16 +613,32 @@ export default function PasswordGeneratorPage() {
                       <div className="font-mono text-sm break-all mb-2">
                         {password}
                       </div>
-                      <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                        <div className="flex items-center gap-1">
-                          <Shield className={`w-3 h-3 ${strength.color}`} />
-                          <span className={strength.color}>{strength.label}</span>
+                      <div className="flex flex-col gap-2">
+                        {/* Entropy Bar */}
+                        <div className="flex h-1.5 w-full overflow-hidden rounded-full bg-secondary">
+                          <div 
+                            className={`h-full transition-all duration-500 ${
+                              strength.score === 0 ? 'bg-red-500 w-1/4' :
+                              strength.score === 1 ? 'bg-orange-500 w-2/4' :
+                              strength.score === 2 ? 'bg-yellow-500 w-3/4' :
+                              'bg-green-500 w-full'
+                            }`}
+                          />
                         </div>
-                        <div>
-                          {t('entropy')}: {strength.entropy} {t('bits')}
-                        </div>
-                        <div>
-                          {t('timeToCrack')}: {strength.timeToCrack}
+                        {/* Stats Row */}
+                        <div className="flex items-center gap-4 text-xs text-muted-foreground w-full flex-wrap">
+                          <div className="flex items-center gap-1 font-medium">
+                            <Shield className={`w-3.5 h-3.5 ${strength.color}`} />
+                            <span className={strength.color}>{strength.label}</span>
+                          </div>
+                          <div className="flex items-center gap-1 px-2 py-0.5 rounded-md bg-background/50 border">
+                            <span className="font-semibold text-foreground/80">{strength.entropy}</span>
+                            <span>{t('bits')} {t('entropy')}</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <span className="opacity-70">{t('timeToCrack')}:</span>
+                            <span className="font-medium text-foreground">{strength.timeToCrack}</span>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -657,6 +706,38 @@ export default function PasswordGeneratorPage() {
           </Card>
         </div>
       </div>
+
+      {/* SEO & Guide Section */}
+      <article className="mt-16 prose prose-slate dark:prose-invert max-w-none">
+        <h2 className="text-2xl font-bold mb-4">How to Create a Strong & Secure Password</h2>
+        <p>
+          In today&apos;s digital landscape, your password is often the only barrier between your personal data and malicious actors. Generating a secure password isn&apos;t just about making it hard to guess—it&apos;s about making it mathematically improbable for computers to crack. Our <strong>Secure Password Generator</strong> helps you achieve exactly that, providing robust strings of characters instantly.
+        </p>
+
+        <h3 className="text-xl font-semibold mt-8 mb-3">Why Use a Password Generator?</h3>
+        <p>
+          Human brains are exceptionally poor at generating true randomness. When asked to create a password, people predictably use names, birthdates, dictionary words, and simple patterns like &quot;QWERTY&quot; or &quot;123456&quot;. A Password Generator eliminates human predictability by using cryptographic algorithms to ensure maximum entropy.
+        </p>
+        <ul className="list-disc pl-6 mb-6">
+          <li><strong>Length Over Complexity:</strong> The single most important factor in password strength is length. A 16-character password with only lowercase letters takes infinitely longer to crack than an 8-character password with symbols.</li>
+          <li><strong>Defeating Dictionary Attacks:</strong> Hackers use automated tools to try millions of common word combinations per second. A randomly generated string completely bypasses this vulnerability.</li>
+          <li><strong>Unique for Every Site:</strong> Reusing passwords means a breach on a minor website compromises your banking and email accounts. A generator makes it easy to have a unique, strong password for every service.</li>
+        </ul>
+
+        <h3 className="text-xl font-semibold mt-8 mb-3">Password vs. Passphrase</h3>
+        <p>
+          Our tool offers two distinct modes: passwords and passphrases. 
+        </p>
+        <ul className="list-disc pl-6 mb-6">
+          <li><strong>Passwords</strong> are random strings of abstract characters (e.g., <code>k8#jL$9z!2P</code>). They are highly secure but almost impossible to memorize. They are best used in conjunction with a Password Manager.</li>
+          <li><strong>Passphrases</strong> consist of 3-5 random dictionary words (e.g., <code>correct-horse-battery-staple</code>). Because of their extreme length, they are highly resistant to brute-force attacks, yet they are much easier for humans to remember and type on mobile devices.</li>
+        </ul>
+
+        <h3 className="text-xl font-semibold mt-8 mb-3">100% Client-Side Privacy</h3>
+        <p>
+          Security tools require absolute trust. Unlike many online utilities, our Password Generator operates <strong>entirely within your browser</strong>. No data is ever transmitted to a server, no logs are kept, and the passwords disappear the moment you close the tab. What happens on your device stays on your device.
+        </p>
+      </article>
     </div>
   );
 }

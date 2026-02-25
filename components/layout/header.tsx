@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { ThemeToggle } from './theme-toggle';
 import { LocaleSwitcher } from './locale-switcher';
+import { CommandPalette } from './command-palette';
 import type { Locale } from '@/i18n/request';
 import { Code2, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -39,7 +40,10 @@ export function Header({ locale }: HeaderProps) {
           </Link>
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex flex-1 items-center justify-end gap-2 px-4 md:px-0">
+          <div className="w-full max-w-sm ml-auto sm:w-auto">
+            <CommandPalette locale={locale} />
+          </div>
           <LocaleSwitcher currentLocale={locale} />
           <ThemeToggle />
           

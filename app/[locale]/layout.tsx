@@ -1,8 +1,9 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
+import { Toaster } from 'sonner';
 import { Inter } from 'next/font/google';
-import { ThemeProvider, Header, Footer, CookieConsent, GlobalLoading, NavigationListener } from '@/components';
+import { ThemeProvider, Header, Footer, CookieConsent, GlobalLoading, NavigationListener, Sidebar, SmartRedirectListener } from '@/components';
 import { LoadingProvider } from '@/contexts';
 import { locales, type Locale } from '@/i18n/request';
 import '@/styles/globals.css';
@@ -153,10 +154,15 @@ export default async function LocaleLayout({
               <GlobalLoading />
               <div className="flex min-h-screen flex-col">
                 <Header locale={locale as Locale} />
-                <main className="flex-1">{children}</main>
+                <div className="flex flex-1 overflow-hidden">
+                  <Sidebar locale={locale} />
+                  <main className="flex-1 overflow-y-auto">{children}</main>
+                </div>
                 <Footer />
               </div>
               <CookieConsent />
+              <SmartRedirectListener locale={locale} />
+              <Toaster />
             </LoadingProvider>
           </NextIntlClientProvider>
         </ThemeProvider>

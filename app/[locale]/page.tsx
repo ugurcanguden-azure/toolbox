@@ -1,16 +1,70 @@
 "use client";
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, use } from 'react';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
-import { Search, Star, Clock, X } from 'lucide-react';
+import { Search, Star, Clock, X, GripHorizontal } from 'lucide-react';
 import { ToolCard, AdBanner } from '@/components';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { useFavorites } from '@/hooks';
+import { useFavorites, useTools } from '@/hooks';
 import type { Tool } from '@/types';
+import { 
+  DndContext, 
+  closestCenter,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+  DragEndEvent
+} from '@dnd-kit/core';
+import {
+  arrayMove,
+  SortableContext,
+  sortableKeyboardCoordinates,
+  rectSortingStrategy,
+  useSortable
+} from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
 
-import { use } from 'react';
+// Wrapper component for draggable items
+function DraggableToolCard({ tool, isFavorite, onToggleFavorite, onCardClick }: any) {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging
+  } = useSortable({ id: tool.id });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.5 : 1,
+    zIndex: isDragging ? 10 : 1,
+    position: 'relative' as const,
+  };
+
+  return (
+    <div ref={setNodeRef} style={style} className="h-full">
+      <div 
+        {...attributes} 
+        {...listeners} 
+        className="absolute top-2 left-2 p-1.5 cursor-grab active:cursor-grabbing z-20 text-muted-foreground/50 hover:text-foreground bg-background/60 hover:bg-background/90 rounded-md border border-border/50 hover:border-border transition-all"
+        title="Sürükleyerek sırala"
+      >
+        <GripHorizontal className="w-4 h-4" />
+      </div>
+      <ToolCard
+        tool={tool}
+        isFavorite={isFavorite}
+        onToggleFavorite={onToggleFavorite}
+        onCardClick={onCardClick}
+      />
+    </div>
+  );
+}
 
 export default function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const t = useTranslations();
@@ -20,263 +74,39 @@ export default function HomePage({ params }: { params: Promise<{ locale: string 
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
-  const tools: Tool[] = useMemo(() => [
-    {
-      id: 'json-formatter',
-      title: t('tools.jsonFormatter.title'),
-      description: t('tools.jsonFormatter.description'),
-      category: 'formatters',
-      icon: 'Braces',
-      href: `/${locale}/tools/json-formatter`,
-    },
-    {
-      id: 'xml-formatter',
-      title: t('tools.xmlFormatter.title'),
-      description: t('tools.xmlFormatter.description'),
-      category: 'formatters',
-      icon: 'FileCode',
-      href: `/${locale}/tools/xml-formatter`,
-    },
-    {
-      id: 'base64',
-      title: t('tools.base64.title'),
-      description: t('tools.base64.description'),
-      category: 'encoders',
-      icon: 'Lock',
-      href: `/${locale}/tools/base64`,
-    },
-    {
-      id: 'url-encoder',
-      title: t('tools.urlEncoder.title'),
-      description: t('tools.urlEncoder.description'),
-      category: 'encoders',
-      icon: 'Link',
-      href: `/${locale}/tools/url-encoder`,
-    },
-    {
-      id: 'uuid-generator',
-      title: t('tools.uuidGenerator.title'),
-      description: t('tools.uuidGenerator.description'),
-      category: 'generators',
-      icon: 'Fingerprint',
-      href: `/${locale}/tools/uuid-generator`,
-    },
-    {
-      id: 'hash-generator',
-      title: t('tools.hashGenerator.title'),
-      description: t('tools.hashGenerator.description'),
-      category: 'generators',
-      icon: 'Shield',
-      href: `/${locale}/tools/hash-generator`,
-    },
-    {
-      id: 'password-generator',
-      title: t('tools.passwordGenerator.title'),
-      description: t('tools.passwordGenerator.description'),
-      category: 'generators',
-      icon: 'Key',
-      href: `/${locale}/tools/password-generator`,
-    },
-    {
-      id: 'qr-generator',
-      title: t('tools.qrGenerator.title'),
-      description: t('tools.qrGenerator.description'),
-      category: 'utilities',
-      icon: 'QrCode',
-      href: `/${locale}/tools/qr-generator`,
-    },
-    {
-      id: 'color-converter',
-      title: t('tools.colorConverter.title'),
-      description: t('tools.colorConverter.description'),
-      category: 'converters',
-      icon: 'Palette',
-      href: `/${locale}/tools/color-converter`,
-    },
-    {
-      id: 'regex-tester',
-      title: t('tools.regexTester.title'),
-      description: t('tools.regexTester.description'),
-      category: 'text',
-      icon: 'Search',
-      href: `/${locale}/tools/regex-tester`,
-    },
-    {
-      id: 'string-tools',
-      title: t('tools.stringTools.title'),
-      description: t('tools.stringTools.description'),
-      category: 'text',
-      icon: 'Type',
-      href: `/${locale}/tools/string-tools`,
-    },
-    {
-      id: 'text-compare',
-      title: t('tools.textCompare.title'),
-      description: t('tools.textCompare.description'),
-      category: 'text',
-      icon: 'FileText',
-      href: `/${locale}/tools/text-compare`,
-    },
-    {
-      id: 'markdown-preview',
-      title: t('tools.markdownPreview.title'),
-      description: t('tools.markdownPreview.description'),
-      category: 'formatters',
-      icon: 'FileCode',
-      href: `/${locale}/tools/markdown-preview`,
-    },
-    {
-      id: 'jwt-decoder',
-      title: t('tools.jwtDecoder.title'),
-      description: t('tools.jwtDecoder.description'),
-      category: 'encoders',
-      icon: 'Key',
-      href: `/${locale}/tools/jwt-decoder`,
-    },
-    {
-      id: 'timestamp-converter',
-      title: t('tools.timestampConverter.title'),
-      description: t('tools.timestampConverter.description'),
-      category: 'converters',
-      icon: 'Clock',
-      href: `/${locale}/tools/timestamp-converter`,
-    },
-    {
-      id: 'lorem-generator',
-      title: t('tools.loremGenerator.title'),
-      description: t('tools.loremGenerator.description'),
-      category: 'generators',
-      icon: 'FileText',
-      href: `/${locale}/tools/lorem-generator`,
-    },
-    {
-      id: 'case-converter',
-      title: t('tools.caseConverter.title'),
-      description: t('tools.caseConverter.description'),
-      category: 'text',
-      icon: 'Type',
-      href: `/${locale}/tools/case-converter`,
-    },
-    {
-      id: 'html-formatter',
-      title: t('tools.htmlFormatter.title'),
-      description: t('tools.htmlFormatter.description'),
-      category: 'formatters',
-      icon: 'Code',
-      href: `/${locale}/tools/html-formatter`,
-    },
-    {
-      id: 'css-minifier',
-      title: t('tools.cssMinifier.title'),
-      description: t('tools.cssMinifier.description'),
-      category: 'utilities',
-      icon: 'Minimize2',
-      href: `/${locale}/tools/css-minifier`,
-    },
-    {
-      id: 'sql-formatter',
-      title: t('tools.sqlFormatter.title'),
-      description: t('tools.sqlFormatter.description'),
-      category: 'formatters',
-      icon: 'Database',
-      href: `/${locale}/tools/sql-formatter`,
-    },
-    {
-      id: 'image-to-base64',
-      title: t('tools.imageToBase64.title'),
-      description: t('tools.imageToBase64.description'),
-      category: 'converters',
-      icon: 'Image',
-      href: `/${locale}/tools/image-to-base64`,
-    },
-    {
-      id: 'number-base-converter',
-      title: t('tools.numberBaseConverter.title'),
-      description: t('tools.numberBaseConverter.description'),
-      category: 'converters',
-      icon: 'Binary',
-      href: `/${locale}/tools/number-base-converter`,
-    },
-    {
-      id: 'word-counter',
-      title: t('tools.wordCounter.title'),
-      description: t('tools.wordCounter.description'),
-      category: 'text',
-      icon: 'FileText',
-      href: `/${locale}/tools/word-counter`,
-    },
-    {
-      id: 'line-sorter',
-      title: t('tools.lineSorter.title'),
-      description: t('tools.lineSorter.description'),
-      category: 'text',
-      icon: 'ArrowDownAZ',
-      href: `/${locale}/tools/line-sorter`,
-    },
-    {
-      id: 'duplicate-remover',
-      title: t('tools.duplicateRemover.title'),
-      description: t('tools.duplicateRemover.description'),
-      category: 'text',
-      icon: 'Trash2',
-      href: `/${locale}/tools/duplicate-remover`,
-    },
-    {
-      id: 'html-entity-encoder',
-      title: t('tools.htmlEntityEncoder.title'),
-      description: t('tools.htmlEntityEncoder.description'),
-      category: 'encoders',
-      icon: 'Code',
-      href: `/${locale}/tools/html-entity-encoder`,
-    },
-    {
-      id: 'json-to-csv',
-      title: t('tools.jsonToCsv.title'),
-      description: t('tools.jsonToCsv.description'),
-      category: 'converters',
-      icon: 'FileSpreadsheet',
-      href: `/${locale}/tools/json-to-csv`,
-    },
-    {
-      id: 'csv-to-json',
-      title: t('tools.csvToJson.title'),
-      description: t('tools.csvToJson.description'),
-      category: 'converters',
-      icon: 'FileJson',
-      href: `/${locale}/tools/csv-to-json`,
-    },
-    {
-      id: 'yaml-formatter',
-      title: t('tools.yamlFormatter.title'),
-      description: t('tools.yamlFormatter.description'),
-      category: 'formatters',
-      icon: 'FileCode',
-      href: `/${locale}/tools/yaml-formatter`,
-    },
-    {
-      id: 'credit-card-validator',
-      title: t('tools.creditCardValidator.title'),
-      description: t('tools.creditCardValidator.description'),
-      category: 'utilities',
-      icon: 'CreditCard',
-      href: `/${locale}/tools/credit-card-validator`,
-    },
-  ], [t, locale]);
+  const { tools, categories } = useTools(locale);
 
-  // Categories
-  const categories = [
-    { id: 'all', label: t('common.allTools') },
-    { id: 'formatters', label: t('categories.formatters') },
-    { id: 'encoders', label: t('categories.encoders') },
-    { id: 'generators', label: t('categories.generators') },
-    { id: 'converters', label: t('categories.converters') },
-    { id: 'text', label: t('categories.text') },
-    { id: 'utilities', label: t('categories.utilities') },
-  ];
+  const [orderedToolIds, setOrderedToolIds] = useState<string[]>([]);
+
+  // Load saved order on mount
+  useEffect(() => {
+    const saved = localStorage.getItem('curiobox-tool-order');
+    if (saved) {
+      try {
+        setOrderedToolIds(JSON.parse(saved));
+      } catch (e) {
+        // ignore
+      }
+    }
+  }, []);
 
   // Filter tools
   const filteredTools = useMemo(() => {
-    return tools.filter((tool) => {
+    // Determine the base list, sorted by custom order if available
+    let orderedList = [...tools];
+    if (orderedToolIds.length > 0) {
+      orderedList.sort((a, b) => {
+        const indexA = orderedToolIds.indexOf(a.id);
+        const indexB = orderedToolIds.indexOf(b.id);
+        
+        if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+        if (indexA !== -1) return -1;
+        if (indexB !== -1) return 1;
+        return 0;
+      });
+    }
+
+    return orderedList.filter((tool) => {
       const matchesSearch = 
         tool.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         tool.description.toLowerCase().includes(searchQuery.toLowerCase());
@@ -285,7 +115,7 @@ export default function HomePage({ params }: { params: Promise<{ locale: string 
 
       return matchesSearch && matchesCategory;
     });
-  }, [tools, searchQuery, selectedCategory]);
+  }, [tools, searchQuery, selectedCategory, orderedToolIds]);
 
   // Favorite tools
   const favoriteTools = useMemo(() => {
@@ -296,6 +126,31 @@ export default function HomePage({ params }: { params: Promise<{ locale: string 
   const recentTools = useMemo(() => {
     return recent.map((id) => tools.find((tool) => tool.id === id)).filter(Boolean) as Tool[];
   }, [tools, recent]);
+
+  // DnD Sensors
+  const sensors = useSensors(
+    useSensor(PointerSensor, {
+      activationConstraint: {
+        distance: 8, // Require 8px movement before drag starts so clicking still works
+      },
+    }),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  );
+
+  const handleDragEnd = (event: DragEndEvent) => {
+    const { active, over } = event;
+
+    if (over && active.id !== over.id) {
+      const oldIndex = filteredTools.findIndex(t => t.id === active.id);
+      const newIndex = filteredTools.findIndex(t => t.id === over.id);
+
+      const newOrderIds = arrayMove(filteredTools.map(t => t.id), oldIndex, newIndex);
+      setOrderedToolIds(newOrderIds);
+      localStorage.setItem('curiobox-tool-order', JSON.stringify(newOrderIds));
+    }
+  };
 
   return (
     <div className="container mx-auto px-4 py-12">
@@ -418,26 +273,37 @@ export default function HomePage({ params }: { params: Promise<{ locale: string 
         </div>
       )}
 
-      {/* All Tools Grid */}
+      {/* All Tools Grid with DnD */}
       <div className="mb-12">
         <h2 className="text-2xl font-semibold mb-6">{t('common.allTools')}</h2>
         {filteredTools.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredTools.map((tool, index) => (
-              <div
-                key={tool.id}
-                className="animate-in fade-in slide-in-from-bottom-4"
-                style={{ animationDelay: `${index * 50}ms`, animationFillMode: 'backwards' }}
-              >
-                <ToolCard
-                  tool={tool}
-                  isFavorite={isFavorite(tool.id)}
-                  onToggleFavorite={toggleFavorite}
-                  onCardClick={addToRecent}
-                />
+          <DndContext 
+            sensors={sensors}
+            collisionDetection={closestCenter}
+            onDragEnd={handleDragEnd}
+          >
+            <SortableContext 
+              items={filteredTools.map(t => t.id)}
+              strategy={rectSortingStrategy}
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredTools.map((tool, index) => (
+                  <div
+                    key={tool.id}
+                    className="relative animate-in fade-in slide-in-from-bottom-4 group"
+                    style={{ animationDelay: `${index * 50}ms`, animationFillMode: 'backwards' }}
+                  >
+                    <DraggableToolCard
+                      tool={tool}
+                      isFavorite={isFavorite(tool.id)}
+                      onToggleFavorite={toggleFavorite}
+                      onCardClick={addToRecent}
+                    />
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </SortableContext>
+          </DndContext>
         ) : (
           <div className="text-center py-12 animate-in fade-in duration-500">
             <Search className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />

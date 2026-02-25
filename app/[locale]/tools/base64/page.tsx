@@ -413,7 +413,7 @@ export default function Base64Page() {
       </div>
 
       {/* Ad - After Info */}
-      <InArticleAd dataAdSlot="3333333333" />
+      {/* <InArticleAd dataAdSlot="3333333333" /> */}
     </div>
   );
 }

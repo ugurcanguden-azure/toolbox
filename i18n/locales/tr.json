@@ -33,7 +33,9 @@
     "download": "İndir",
     "options": "Seçenekler",
     "loadingTool": "Araç Yükleniyor",
-    "pleaseWait": "Lütfen bekleyin..."
+    "pleaseWait": "Lütfen bekleyin...",
+    "searchTools": "Araç ara",
+    "privacyClientSideOnly": "100% İstemci Taraflı (Sunucu İzlemesi Yok)"
   },
   "cookieConsent": {
     "title": "🍪 Çerez Kullanımı",

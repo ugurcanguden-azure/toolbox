@@ -32,16 +32,16 @@ export function InArticleAd({
   if (!isMounted || isLoading) {
     return <div className={className} style={{ minHeight: '100px' }} />;
   }
-
-  return (
-    <div className={className}>
-      <AdUnit
+    /*  <AdUnit
         publisherId="ca-pub-9339461513261360"
         slotId={dataAdSlot}
         layout="in-article"
         // Non-personalized ads when consent declined
         {...(!hasConsent && { 'data-npa': '1' })}
-      />
+      />*/
+  return (
+    <div className={className}>
+
     </div>
   );
 }
