@@ -29,7 +29,7 @@ RUN yarn install --frozen-lockfile && \
 COPY . .
 
 # 🚀 Build the application with optimizations
-# RUN npm run build
+RUN yarn build
 
 # 🗜️ Compress assets for maximum performance
 # RUN chmod +x scripts/compress-assets.sh && \
@@ -89,5 +89,5 @@ EXPOSE 3000
 HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
     CMD curl -f http://localhost:3000/api/health || exit 1
 
-# Start the application in development mode
-CMD ["yarn", "dev"]
+# Start the application in production mode
+CMD ["yarn", "start"]

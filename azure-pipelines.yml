@@ -16,5 +16,5 @@ extends:
   parameters:
     imageName: free-dev-tools
     registryPath: 'curio'
-    dockerfilePath: 'Dockerfile.simple'
+    dockerfilePath: 'Dockerfile'
     manifestPath: 'manifests/services/free-dev-tools/deployment.yaml'
