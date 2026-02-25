@@ -7,14 +7,7 @@ function normalizeUrl(request: NextRequest): NextResponse | null {
   const url = request.nextUrl.clone();
   const { pathname, search, hash } = url;
 
-  // Force HTTPS in production
-  if (
-    process.env.NODE_ENV === 'production' &&
-    request.headers.get('x-forwarded-proto') !== 'https'
-  ) {
-    url.protocol = 'https:';
-    return NextResponse.redirect(url, 301);
-  }
+  // Force HTTPS in production (Removed as Traefik Ingress handles this)
 
   // Normalize case for paths (optional - can be aggressive)
   const normalizedPathname = pathname.toLowerCase();
