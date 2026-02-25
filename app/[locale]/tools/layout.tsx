@@ -3,11 +3,12 @@ import { Metadata } from 'next';
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
+  const { locale } = await params;
   return {
     alternates: {
-      canonical: `/${params.locale}/tools`,
+      canonical: `/${locale}/tools`,
       languages: {
         en: '/en/tools',
         de: '/de/tools',

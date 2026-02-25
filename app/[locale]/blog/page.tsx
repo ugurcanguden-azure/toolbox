@@ -15,7 +15,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function BlogPage({ params: { locale } }: { params: { locale: string } }) {
+export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const t = await getTranslations('blog');
   const tCategories = await getTranslations('blog.categories');
 

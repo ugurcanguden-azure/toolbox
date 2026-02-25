@@ -251,7 +251,7 @@ export function middleware(request: NextRequest) {
     
     // Update the middleware content
     const updatedContent = middlewareContent.replace(
-      /import createMiddleware from 'next-intl\/middleware';\nimport { locales } from '\.\/i18n\/request';\n\nexport default createMiddleware\(\{\n  locales,\n  defaultLocale: 'en',\n  localePrefix: 'always'\n\}\);\n\nexport const config = \{\n  matcher: \['\/', '\/(de\|en\|tr\|fr\|pt\|es\|it\|nl\|ja\|ru\)\/:path\*'\]\n\};/,
+      "import createMiddleware from 'next-intl/middleware';\nimport { locales } from './i18n/request';\n\nexport default createMiddleware({\n  locales,\n  defaultLocale: 'en',\n  localePrefix: 'always'\n});\n\nexport const config = {\n  matcher: ['/', '/(de|en|tr|fr|pt|es|it|nl|ja|ru)/:path*']\n};",
       normalizationMiddleware
     );
     

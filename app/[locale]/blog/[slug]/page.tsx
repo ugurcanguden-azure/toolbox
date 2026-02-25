@@ -9,10 +9,10 @@ import { Clock, Calendar, ArrowLeft, Share2 } from 'lucide-react';
 import type { Metadata } from 'next';
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     locale: string;
     slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -22,7 +22,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const post = getBlogPost(params.slug);
+  const { slug } = await params;
+  const post = getBlogPost(slug);
   
   if (!post) {
     return {
@@ -60,7 +61,8 @@ const toolNameMap: Record<string, string> = {
   'csv-to-json': 'tools.csvToJson',
 };
 
-export default async function BlogPostPage({ params: { locale, slug } }: BlogPostPageProps) {
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const { locale, slug } = await params;
   const post = getBlogPost(slug);
   
   if (!post) {
