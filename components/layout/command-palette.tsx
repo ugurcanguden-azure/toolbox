@@ -42,6 +42,8 @@ export function CommandPalette({ locale }: { locale: string }) {
         variant="outline"
         className="relative h-9 w-full justify-start rounded-[0.5rem] bg-background text-sm font-normal text-muted-foreground shadow-none sm:pr-12 md:w-40 lg:w-64"
         onClick={() => setOpen(true)}
+        aria-label={t("searchTools")}
+        aria-keyshortcuts="Meta+K"
       >
         <span className="hidden lg:inline-flex">{t("searchTools")}...</span>
         <span className="inline-flex lg:hidden">{t("search")}...</span>

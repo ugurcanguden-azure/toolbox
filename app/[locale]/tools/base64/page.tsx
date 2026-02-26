@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { useTranslations } from 'next-intl';
-import { Button, Card, CardHeader, CardTitle, CardContent, Textarea, InArticleAd, JsonLdTool, ToolSeoContent } from '@/components';
+import { Button, Card, CardHeader, CardTitle, CardContent, Textarea, InArticleAd, JsonLdTool, ToolSeoContent, ToolFaqSection } from '@/components';
 import { Copy, Check, AlertCircle, ArrowLeftRight, Upload, Download, FileText } from 'lucide-react';
 import { useCopyToClipboard } from '@/hooks';
 import { useParams } from 'next/navigation';
@@ -419,6 +419,8 @@ export default function Base64Page() {
       {/* <InArticleAd dataAdSlot="3333333333" /> */}
 
       <ToolSeoContent toolId="base64" />
+      <ToolFaqSection toolId="base64" />
+
       <JsonLdTool 
         locale={locale}
         tool={{

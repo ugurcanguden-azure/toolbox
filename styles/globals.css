@@ -53,6 +53,14 @@
   * {
     @apply border-border;
   }
+  html {
+    font-family: var(--font-inter), system-ui, Arial, sans-serif;
+    /* Prevent layout shift from font loading */
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
   body {
     @apply bg-background text-foreground;
   }
@@ -89,7 +97,10 @@
   }
 
   /* Smooth transitions for all interactive elements */
-  button, a, input, textarea {
+  button,
+  a,
+  input,
+  textarea {
     @apply transition-all duration-200 ease-in-out;
   }
 
@@ -100,7 +111,8 @@
 
   /* Star animation */
   @keyframes starPulse {
-    0%, 100% {
+    0%,
+    100% {
       transform: scale(1);
     }
     50% {
@@ -138,4 +150,3 @@
     background-size: 1000px 100%;
   }
 }
-

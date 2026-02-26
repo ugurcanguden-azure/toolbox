@@ -154,7 +154,7 @@ class SEOReporter {
 
   private generateMarkdownReport(data: ReportData): string {
     const timestamp = new Date().toISOString();
-    const siteUrl = process.env.SITE_URL || 'https://free-dev-tools.net.tr';
+    const siteUrl = process.env.SITE_URL || 'https://toolbox.curioboxapp.info/';
     
     return `# SEO Optimization Summary Report
 

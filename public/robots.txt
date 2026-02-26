@@ -8,7 +8,7 @@ Disallow: /api/
 Disallow: /seo-output/
 
 # Sitemap
-Sitemap: https://free-dev-tools.net.tr/sitemap.xml
+Sitemap: https://toolbox.curioboxapp.info//sitemap.xml
 
 # Host
-Host: https://free-dev-tools.net.tr
+Host: https://toolbox.curioboxapp.info/

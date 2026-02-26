@@ -21,6 +21,15 @@ const nextConfig = {
     serverActions: {
       bodySizeLimit: '50mb',
     },
+    // Optimize package imports to reduce bundle size (tree-shaking)
+    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
+  },
+
+  // 🎯 SWC COMPILER: Target modern browsers to reduce polyfill bundle size
+  // This eliminates Array.flat, Object.assign etc polyfills for modern browsers
+  compiler: {
+    // Remove console.log in production
+    removeConsole: process.env.NODE_ENV === 'production' ? { exclude: ['error', 'warn'] } : false,
   },
   
   // 🌐 FORCE DYNAMIC RENDERING (for next-intl compatibility)
@@ -55,7 +64,35 @@ const nextConfig = {
         tls: false,
       };
     }
-    
+
+    if (!dev && !isServer) {
+      // Optimize chunk splitting for better caching
+      config.optimization = {
+        ...config.optimization,
+        splitChunks: {
+          ...config.optimization?.splitChunks,
+          cacheGroups: {
+            ...(config.optimization?.splitChunks?.cacheGroups || {}),
+            // Separate heavy editor chunks
+            monaco: {
+              name: 'monaco-editor',
+              test: /[\\/]node_modules[\\/]@monaco-editor[\\/]/,
+              chunks: 'async',
+              priority: 30,
+            },
+            // Common vendor chunk
+            vendor: {
+              name: 'vendor',
+              test: /[\\/]node_modules[\\/]/,
+              chunks: 'initial',
+              priority: 20,
+              reuseExistingChunk: true,
+            },
+          },
+        },
+      };
+    }
+
     return config;
   },
   
@@ -107,6 +144,26 @@ const nextConfig = {
       {
         // Static assets caching (handled by NGINX, but fallback)
         source: '/_next/static/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable'
+          }
+        ]
+      },
+      {
+        // Next/font served fonts — cache aggressively
+        source: '/_next/static/media/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable'
+          }
+        ]
+      },
+      {
+        // Public fonts directory and woff2 files
+        source: '/(fonts|public/fonts)/:path*',
         headers: [
           {
             key: 'Cache-Control',

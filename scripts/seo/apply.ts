@@ -264,7 +264,7 @@ export function middleware(request: NextRequest) {
     
     const sitemapConfig = `const { getServerSideSitemap } = require('next-sitemap');
 
-const SITE_URL = process.env.SITE_URL || 'https://free-dev-tools.net.tr';
+const SITE_URL = process.env.SITE_URL || 'https://toolbox.curioboxapp.info/';
 
 module.exports = {
   siteUrl: SITE_URL,

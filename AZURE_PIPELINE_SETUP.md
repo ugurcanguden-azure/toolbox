@@ -33,15 +33,15 @@ Azure DevOps'ta **Pipelines** → **Library** → **Variable Groups**
 
 ### Yeni Variable Group Oluştur: `toolbox-prod`
 
-| Variable Name | Value | Secret? | Açıklama |
-|--------------|-------|---------|----------|
-| `ENVIRONMENT` | `prod` | ❌ | Environment adı (prod/staging/uat) |
-| `SSH_USER` | `root` | ❌ | Deployment server SSH kullanıcısı |
-| `SSH_HOST` | `164.92.135.142` | ❌ | Deployment server IP adresi |
-| `SSH_PASSWORD` | `.48Qqrchef` | ✅ | SSH şifresi (gizli) |
-| `CONTAINER_PORT` | `3000` | ❌ | Docker container içi port |
-| `SERVER_PORT` | `80` | ❌ | Server'da expose edilen port (80 for HTTP, 443 for HTTPS) |
-| `NEXT_PUBLIC_SITE_URL` | `https://free-dev-tools.net.tr` | ❌ | Uygulamanın public URL'i |
+| Variable Name          | Value                               | Secret? | Açıklama                                                  |
+| ---------------------- | ----------------------------------- | ------- | --------------------------------------------------------- |
+| `ENVIRONMENT`          | `prod`                              | ❌      | Environment adı (prod/staging/uat)                        |
+| `SSH_USER`             | `root`                              | ❌      | Deployment server SSH kullanıcısı                         |
+| `SSH_HOST`             | `164.92.135.142`                    | ❌      | Deployment server IP adresi                               |
+| `SSH_PASSWORD`         | `.48Qqrchef`                        | ✅      | SSH şifresi (gizli)                                       |
+| `CONTAINER_PORT`       | `3000`                              | ❌      | Docker container içi port                                 |
+| `SERVER_PORT`          | `80`                                | ❌      | Server'da expose edilen port (80 for HTTP, 443 for HTTPS) |
+| `NEXT_PUBLIC_SITE_URL` | `https://toolbox.curioboxapp.info/` | ❌      | Uygulamanın public URL'i                                  |
 
 ### Variable Group'u Pipeline'a Ekle
 
@@ -49,7 +49,7 @@ Azure DevOps'ta **Pipelines** → **Library** → **Variable Groups**
 
 ```yaml
 variables:
-- group: toolbox-prod  # Variable group referansı
+  - group: toolbox-prod # Variable group referansı
 ```
 
 ---
@@ -59,12 +59,14 @@ variables:
 Farklı environment'lar için (prod, staging, uat) ayrı variable group'lar oluştur:
 
 ### `toolbox-staging`
+
 - `ENVIRONMENT`: `staging`
 - `SSH_HOST`: `<staging-server-ip>`
 - `SERVER_PORT`: `80`
 - `NEXT_PUBLIC_SITE_URL`: `https://staging.free-dev-tools.net.tr`
 
 ### `toolbox-uat`
+
 - `ENVIRONMENT`: `uat`
 - `SSH_HOST`: `<uat-server-ip>`
 - `SERVER_PORT`: `80`
@@ -82,9 +84,9 @@ Hangi branch'lerde pipeline'ın tetikleneceğini ayarla:
 trigger:
   branches:
     include:
-      - main        # Production
-      - develop     # Staging
-      - uat         # UAT
+      - main # Production
+      - develop # Staging
+      - uat # UAT
 ```
 
 ### B. Environment Approval (Opsiyonel)
@@ -97,9 +99,10 @@ Production deploy öncesi manuel onay için:
 4. Onaylayıcıları ekle
 
 Pipeline'a ekle:
+
 ```yaml
 - deployment: DeployToProduction
-  environment: production  # Manuel onay gerektirir
+  environment: production # Manuel onay gerektirir
 ```
 
 ---
@@ -152,6 +155,7 @@ Pipeline çalışırken her adımı takip et:
 ### C. Logs Kontrol Et
 
 Her step'in loglarını kontrol et:
+
 - Build hataları
 - Docker build output
 - SSH connection logs
@@ -164,11 +168,13 @@ Her step'in loglarını kontrol et:
 ### A. Application Erişimi
 
 Browser'da aç:
+
 ```
-https://free-dev-tools.net.tr
+https://toolbox.curioboxapp.info/
 ```
 
 veya IP ile:
+
 ```
 http://164.92.135.142
 ```
@@ -194,13 +200,13 @@ docker stats toolbox-prod
 
 ```bash
 # HTTP status kontrol (domain)
-curl -I https://free-dev-tools.net.tr
+curl -I https://toolbox.curioboxapp.info/
 
 # veya IP ile
 curl -I http://164.92.135.142
 
 # Detailed response
-curl https://free-dev-tools.net.tr
+curl https://toolbox.curioboxapp.info/
 ```
 
 ---
@@ -222,6 +228,7 @@ Pipeline otomatik tetiklenir ve deploy eder!
 ### Manuel Deployment
 
 Azure DevOps'ta:
+
 1. **Pipelines** → `toolbox`
 2. **Run Pipeline**
 3. Branch seç
@@ -267,6 +274,7 @@ sudo lsof -i :3000
 ### Problem: Build Failed
 
 Azure DevOps logs:
+
 1. Failed step'e tıkla
 2. Error mesajını oku
 3. Gerekli düzeltmeleri yap
@@ -279,6 +287,7 @@ Azure DevOps logs:
 ### A. Pipeline Metrics
 
 Azure DevOps → **Pipelines** → **Analytics**
+
 - Build success rate
 - Average build time
 - Deployment frequency
@@ -314,6 +323,7 @@ docker system df
 ## 🎯 11. Best Practices
 
 ### ✅ Yapılması Gerekenler:
+
 - Variable'ları Azure DevOps Library'de sakla
 - Sensitive data'yı "Secret" olarak işaretle
 - Her deployment'tan sonra health check yap
@@ -322,6 +332,7 @@ docker system df
 - Pipeline başarısız olursa notification al
 
 ### ❌ Yapılmaması Gerekenler:
+
 - Şifreleri YAML dosyasına yazma
 - Production'a direkt push etme (staging'den geçir)
 - Health check skip etme
@@ -333,6 +344,7 @@ docker system df
 ## 📞 Destek
 
 Sorun yaşarsan:
+
 1. Pipeline logs'unu kontrol et
 2. Server logs'unu kontrol et (`docker logs`)
 3. DEPLOYMENT.md dosyasına bak
@@ -347,7 +359,7 @@ Sorun yaşarsan:
 ✅ Docker Registry entegrasyonu  
 ✅ SSH deployment ayarlandı  
 ✅ Health checks eklendi  
-✅ Multi-environment support  
+✅ Multi-environment support
 
 **Artık her `git push` ile otomatik deployment! 🚀**
 

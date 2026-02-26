@@ -1,0 +1,16 @@
+# Modern browsers only — eliminates polyfills for:
+# Array.flat, Array.flatMap, Object.fromEntries, Optional chaining,
+# Nullish coalescing, Logical assignment, Promise.allSettled etc.
+[production]
+last 2 Chrome versions
+last 2 Firefox versions
+last 2 Safari versions
+last 2 Edge versions
+not IE 11
+not dead
+> 0.5%
+
+[development]
+last 1 Chrome version
+last 1 Firefox version
+last 1 Safari version

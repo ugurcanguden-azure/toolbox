@@ -75,18 +75,18 @@ export function CookieConsent() {
                 {t('decline')}
               </Button>
               <Button variant="ghost" size="sm" asChild>
-                <a href={`/${locale}/privacy-policy`} target="_blank">
-                  {t('learnMore')}
+                <a href={`/${locale}/privacy-policy`} target="_blank" rel="noopener noreferrer">
+                  {t('privacyPolicy')}
                 </a>
               </Button>
             </div>
           </div>
 
-          <button
-            onClick={declineCookies}
-            className="flex-shrink-0 p-1 rounded-md hover:bg-muted transition-colors"
-            aria-label="Close"
-          >
+            <button
+              onClick={declineCookies}
+              className="flex-shrink-0 p-1 rounded-md hover:bg-muted transition-colors"
+              aria-label={t('close') || 'Close'}
+            >
             <X className="h-5 w-5" />
           </button>
         </div>

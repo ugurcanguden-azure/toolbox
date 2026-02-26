@@ -3,7 +3,7 @@
  * Production domain: free-dev-tools.net.tr
  */
 
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://free-dev-tools.net.tr';
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://toolbox.curioboxapp.info/';
 
 export const SITE_CONFIG = {
   name: 'Toolbox - 30+ Developer Tools',

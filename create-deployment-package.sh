@@ -26,7 +26,7 @@ cat > deployment-package/start.sh << 'START'
 export NODE_ENV=production
 export NEXT_TELEMETRY_DISABLED=1
 export PORT=3000
-export NEXT_PUBLIC_SITE_URL=https://free-dev-tools.net.tr
+export NEXT_PUBLIC_SITE_URL=https://toolbox.curioboxapp.info/
 
 node server.js
 START
@@ -45,7 +45,7 @@ module.exports = {
       NODE_ENV: 'production',
       NEXT_TELEMETRY_DISABLED: '1',
       PORT: 3000,
-      NEXT_PUBLIC_SITE_URL: 'https://free-dev-tools.net.tr'
+      NEXT_PUBLIC_SITE_URL: 'https://toolbox.curioboxapp.info/'
     }
   }]
 }
@@ -84,7 +84,7 @@ cd /var/www/toolbox/deployment-package
 export NODE_ENV=production
 export NEXT_TELEMETRY_DISABLED=1
 export PORT=3000
-export NEXT_PUBLIC_SITE_URL=https://free-dev-tools.net.tr
+export NEXT_PUBLIC_SITE_URL=https://toolbox.curioboxapp.info/
 node server.js
 ```
 

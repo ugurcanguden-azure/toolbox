@@ -42,7 +42,8 @@
     "description": "Deneyiminizi iyileştirmek, kişiselleştirilmiş reklamlar göstermek ve trafiği analiz etmek için çerezler ve benzer teknolojiler kullanıyoruz. 'Kabul Et' butonuna tıklayarak çerez kullanımını kabul etmiş olursunuz.",
     "accept": "Tümünü Kabul Et",
     "decline": "Reddet",
-    "learnMore": "Daha Fazla Bilgi"
+    "privacyPolicy": "Gizlilik Politikası",
+    "close": "Kapat"
   },
   "navigation": {
     "home": "Ana Sayfa",
@@ -477,7 +478,26 @@
           "Gizlilik için %100 tarayıcı tabanlı (client-side) işlem."
         ],
         "privacyTitle": "Verileriniz Güvende",
-        "privacy": "Kelime Sayacı aracımız tüm işlemleri yerel olarak tarayıcınızda gerçekleştirir. İçeriğiniz asla bir sunucuya yüklenmez, böylece hassas dökümanlarınız tamamen gizli kalır."
+        "privacy": "Kelime Sayacı aracımız tüm işlemleri yerel olarak tarayıcınızda gerçekleştirir. İçeriğiniz asla bir sunucuya yüklenmez, böylece hassas dökümanlarınız tamamen gizli kalır.",
+        "faqTitle": "Sıkça Sorulan Sorular",
+        "faqs": [
+          {
+            "question": "Kelime sayacı ne kadar hassastir?",
+            "answer": "Kelime sayacımız, metni boşluk ve noktalama işaretlerine göre bölerek doğru bir sayım yapar. Çoklu boşluklar, satır sonları ve tirel i kelimelerle doğru şekilde çalışır."
+          },
+          {
+            "question": "Kelime sayacı çevrimdışı çalışır mı?",
+            "answer": "Evet! Tüm işlemler tamamen tarayıcınızda gerçekleşir. Sayfa yüklendiikten sonra, internet bağlantısı olmadan da kullanabilirsiniz."
+          },
+          {
+            "question": "Boşluksuz karakter sayısını sayabilir miyim?",
+            "answer": "Evet. Araç, istatistik panelinde hem toplam karakter sayısını (boşluklar dahil) hem de boşluklar hariç karakter sayısını gösterir."
+          },
+          {
+            "question": "Metnimiz bir yerde saklanıyor mu?",
+            "answer": "Hayır. Metniniz hiçbir sunucuya gönderilmez. Her şey istemci tarafında işlenir, dolayısıyla içeriğiniz tamamen gizli kalır."
+          }
+        ]
       },
       "textInput": "Metin Girdisi",
       "inputPlaceholder": "Metninizi buraya yazın veya yapıştırın...",
@@ -628,7 +648,26 @@
           "Ücretsiz kullanım için kayıt veya e-posta zorunluluğu yok."
         ],
         "privacyTitle": "Güvenli PDF Dönüştürme",
-        "privacy": "Güvenliğinize önem veriyoruz. Dosyalarınız güvenli sunucularımızda işlenir ve işlem tamamlandıktan sonra otomatik olarak silinir. Belgelerinizi saklamıyor veya paylaşmıyoruz."
+        "privacy": "Güvenliğinize önem veriyoruz. Dosyalarınız güvenli sunucularımızda işlenir ve işlem tamamlandıktan sonra otomatik olarak silinir. Belgelerinizi sakalamıyor veya paylaşmıyoruz.",
+        "faqTitle": "Sıkça Sorulan Sorular",
+        "faqs": [
+          {
+            "question": "Dönüştürebileceğim maksimum PDF dosya boyutu nedir?",
+            "answer": "50MB'a kadar PDF dosyaları yükleyebilirsiniz. Daha büyük dosyalar için dönüştürmeden önce PDF'i bölmenizi öneririz."
+          },
+          {
+            "question": "Dönüştürme sonrasında biçimlendirme korunacak mı?",
+            "answer": "Dönüştürücümüzü metin düzenini, yazı tiplerini ve tabloları mümkün olduğunca doğru biçimde korumak için gelişmiş teknoloji kullanır. Karmaşık grafikler küçük farklılıklar gösterebilir."
+          },
+          {
+            "question": "Bir PDF'in dönüştürülmesi ne kadar sürer?",
+            "answer": "Çoğu dönüştürme dosya boyutuna ve karmaşıklığına bağlı olarak birkaç saniyeden bir dakikaya kadar tamamlanır."
+          },
+          {
+            "question": "Dosyalarım sunucuda saklanıyor mu?",
+            "answer": "Hayır. Yülklenen dosyalarınız, işlem tamamlandıktan hemen sonra sunucularımızdan otomatik ve kalıcı olarak silinir."
+          }
+        ]
       },
       "dropzone": "PDF dosyanızı buraya sürükleyin veya tıklayarak seçin",
       "dropzoneHint": "50MB'a kadar .pdf dosyalarını destekler",
@@ -790,7 +829,26 @@
           "Geliştirici iş akışları için anında kopyalama."
         ],
         "privacyTitle": "Güvenli Rastgelelik",
-        "privacy": "Tüm UUID'ler tarayıcınızdaki kriptografik olarak güvenli rastgele sayı üreteci kullanılarak oluşturulur. Oluşturma işlemi sırasında hiçbir veri sunucuya gönderilmez."
+        "privacy": "Tüm UUID'ler tarayıcınızdaki kriptografik olarak güvenli rastgele sayı üreteci kullanılarak oluşturulur. Oluşturma işlemi sırasında hiçbir veri sunucuya gönderilmez.",
+        "faqTitle": "Sıkça Sorulan Sorular",
+        "faqs": [
+          {
+            "question": "UUID v4 nedir?",
+            "answer": "UUID v4, rastgele sayılar kullanılarak üretilen 128 bitlik evrensel benzersiz bir tanımlayıcıdır. xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx formatını izler ve pratikte benzersizliği garanti edilir."
+          },
+          {
+            "question": "Aynı anda kaç UUID üretebilirim?",
+            "answer": "Kaydırıcı veya sayı girişini kullanarak tek seferde 1000'e kadar UUID oluşturabilirsiniz."
+          },
+          {
+            "question": "Oluşturulan UUID'ler gerçekten benzersiz mi?",
+            "answer": "UUID v4 kriptografik olarak güvenli rastgele sayılar kullanır, bu da çakışma olasılığını astronomik ölçüde düşük kılar — istatistiksel olarak, bir çakışmayla karşılaşmadan önce kentilyon UUID üretmeniz gerekirdi."
+          },
+          {
+            "question": "Tüm UUID'leri tek seferde kopyalayabilir miyim?",
+            "answer": "Evet! Birden fazla UUID oluşturduktan sonra, tümünü satır ayrımlı liste olarak panonuza kopyalamak için 'Tümünü Kopyala' düğmesine tıklayın."
+          }
+        ]
       },
       "settings": "Oluşturucu Ayarları",
       "numberOfUuids": "UUID Sayısı",
@@ -872,7 +930,26 @@
           "Vektörel SVG veya piksel tabanlı PNG olarak dışa aktarma."
         ],
         "privacyTitle": "Gizli QR Oluşturma",
-        "privacy": "QR oluşturucumuz yerel olarak tarayıcınızda çalışır. Kodladığınız veriler asla sunucularımıza iletilmez, bu da onu kişisel bilgiler için güvenli kılar."
+        "privacy": "QR oluşturucumuz yerel olarak tarayıcınızda çalışır. Kodladığınız veriler asla sunucularımıza iletilmez, bu da onu kişisel bilgiler için güvenli kılar.",
+        "faqTitle": "Sıkça Sorulan Sorular",
+        "faqs": [
+          {
+            "question": "QR kodu hangi içerik türlerini saklayabilir?",
+            "answer": "QR kodları URL'leri, düz metni, e-posta adreslerini, SMS mesajlarını, Wi-Fi kimlik bilgilerini, vCard kişi bilgilerini ve daha fazlasını saklayabilir. Ülkemiz herhangi bir metin veya URL kabul eder."
+          },
+          {
+            "question": "QR kodumun renklerini özelleştirebilir miyim?",
+            "answer": "Evet! Ayarlar panelindeki renk seçicileri kullanarak QR kodunuz için özel ön plan ve arka plan renkleri seçebilirsiniz. Güvenilir taranabilirlik için yeterli kontrast sağlayın."
+          },
+          {
+            "question": "Hangi hata düzeltme seviyesini seçmeliyim?",
+            "answer": "Çoğu kullanım için 'Orta' (%15) iyi bir denge sağlar. QR kodunuz kirlenebilecek veya hasar görebilecek yüzeylere basılacaksa 'Yüksek' (%30) kullanın."
+          },
+          {
+            "question": "QR kodu vektör dosyası olarak indirebilir miyim?",
+            "answer": "Evet, QR kodunuzu PNG'ye ek olarak her boyutta kayıpsız ölçekleme için SVG (vektör) dosyası olarak da indirebilirsiniz."
+          }
+        ]
       },
       "input": "Metin veya URL",
       "inputPlaceholder": "QR kod için metin veya URL girin...",

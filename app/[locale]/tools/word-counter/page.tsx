@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import { useTranslations } from "next-intl";
 import { FileText, BarChart2 } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle, Progress, JsonLdTool, ToolSeoContent, Textarea } from "@/components";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, Progress, JsonLdTool, ToolSeoContent, ToolFaqSection, Textarea } from "@/components";
 import { useParams } from "next/navigation";
 import * as React from "react";
 
@@ -185,6 +185,7 @@ export default function WordCounterPage() {
           }
         ]}
       />
+      <ToolFaqSection toolId="wordCounter" />
     </div>
   );
 }

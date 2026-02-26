@@ -37,12 +37,15 @@ export function LocaleSwitcher({ currentLocale }: LocaleSwitcherProps) {
 
   return (
     <div className="relative">
-      <Button
-        variant="ghost"
-        size="sm"
-        onClick={() => setIsOpen(!isOpen)}
-        className="gap-2"
-      >
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={() => setIsOpen(!isOpen)}
+          className="gap-2"
+          aria-label="Select Language"
+          aria-expanded={isOpen}
+          aria-haspopup="listbox"
+        >
         <Languages className="h-4 w-4" />
         <span className="hidden sm:inline">{localeNames[currentLocale]}</span>
       </Button>

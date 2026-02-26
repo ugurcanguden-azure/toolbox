@@ -15,7 +15,8 @@ import {
   Label,
   Input,
   JsonLdTool,
-  ToolSeoContent
+  ToolSeoContent,
+  ToolFaqSection
 } from '@/components';
 import { Download, Trash2, QrCode, Info } from 'lucide-react';
 import { useParams } from 'next/navigation';
@@ -413,6 +414,8 @@ export default function QRGeneratorPage() {
       </div>
       
       <ToolSeoContent toolId="qrGenerator" />
+      <ToolFaqSection toolId="qrGenerator" />
+
       <JsonLdTool 
         locale={locale}
         tool={{

@@ -22,7 +22,7 @@ export function Header({ locale }: HeaderProps) {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href={`/${locale}`} className="flex items-center gap-2 font-bold text-xl">
+        <Link href={`/${locale}`} className="flex items-center gap-2 font-bold text-xl" aria-label={`${tCommon('appName')} - ${tCommon('home') ?? 'Home'}`}>
           <Code2 className="h-6 w-6" />
           <span className="hidden sm:inline">{tCommon('appName')}</span>
         </Link>
@@ -53,7 +53,9 @@ export function Header({ locale }: HeaderProps) {
             size="icon"
             className="md:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Menu"
+            aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-nav"
           >
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
@@ -62,7 +64,7 @@ export function Header({ locale }: HeaderProps) {
 
       {/* Mobile Navigation Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t bg-background">
+        <div id="mobile-nav" className="md:hidden border-t bg-background">
           <nav className="container mx-auto px-4 py-4 flex flex-col gap-3">
             <Link
               href={`/${locale}`}

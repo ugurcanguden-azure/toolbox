@@ -42,7 +42,8 @@
     "description": "We use cookies and similar technologies to improve your experience, show personalized ads, and analyze traffic. By clicking 'Accept', you consent to our use of cookies.",
     "accept": "Accept All",
     "decline": "Decline",
-    "learnMore": "Learn More"
+    "privacyPolicy": "Privacy Policy",
+    "close": "Close"
   },
   "navigation": {
     "home": "Home",
@@ -160,7 +161,26 @@
           "Secure client-side validation."
         ],
         "privacyTitle": "Local Processing Only",
-        "privacy": "All JSON formatting and validation happens in your browser. Your data is never sent to our servers, ensuring your sensitive API responses and configuration files stay private."
+        "privacy": "All JSON formatting and validation happens in your browser. Your data is never sent to our servers, ensuring your sensitive API responses and configuration files stay private.",
+        "faqTitle": "Frequently Asked Questions",
+        "faqs": [
+          {
+            "question": "How do I format JSON in one click?",
+            "answer": "Simply paste your JSON code into the editor and click the 'Format' button. The tool will instantly beautify your JSON with proper indentation."
+          },
+          {
+            "question": "Can I validate JSON syntax errors?",
+            "answer": "Yes! The formatter automatically highlights syntax errors as you type, showing you exactly which line contains the invalid JSON."
+          },
+          {
+            "question": "What is the difference between Format and Minify?",
+            "answer": "Format (or Beautify) adds indentation and line breaks to make JSON readable. Minify removes all whitespace to create the smallest possible JSON string, ideal for production APIs."
+          },
+          {
+            "question": "Can I handle very large JSON files?",
+            "answer": "Yes, the editor supports large JSON files efficiently. For files larger than a few MB, we recommend using the tree view to navigate the structure without needing to scroll through raw text."
+          }
+        ]
       },
       "input": "Input JSON",
       "output": "Formatted JSON",
@@ -494,7 +514,26 @@
           "100% Client-side processing for ultimate privacy."
         ],
         "privacyTitle": "Your Data is Safe",
-        "privacy": "Our Word Counter tool processes all text locally within your browser. We never upload your content to any server, ensuring your sensitive documents stay private and secure."
+        "privacy": "Our Word Counter tool processes all text locally within your browser. We never upload your content to any server, ensuring your sensitive documents stay private and secure.",
+        "faqTitle": "Frequently Asked Questions",
+        "faqs": [
+          {
+            "question": "How accurate is the word counter?",
+            "answer": "Our word counter splits text by whitespace and punctuation to give an accurate count. It handles multiple spaces, newlines, and hyphenated words correctly."
+          },
+          {
+            "question": "Does the word counter work offline?",
+            "answer": "Yes! All processing happens entirely in your browser. Once the page loads, you can use the word counter without an internet connection."
+          },
+          {
+            "question": "Can I count characters without spaces?",
+            "answer": "Absolutely. The tool displays both total characters (including spaces) and characters excluding spaces in the statistics panel."
+          },
+          {
+            "question": "Is my text saved anywhere?",
+            "answer": "No. Your text is never sent to any server. Everything is processed client-side, so your content remains completely private."
+          }
+        ]
       },
       "textInput": "Text Input",
       "inputPlaceholder": "Enter or paste your text here...",
@@ -642,7 +681,26 @@
           "No registration or email required for free use."
         ],
         "privacyTitle": "Secure PDF Conversion",
-        "privacy": "We prioritize your security. Your files are processed on our secure servers and are automatically deleted after the conversion is complete. We do not store or share your documents."
+        "privacy": "We prioritize your security. Your files are processed on our secure servers and are automatically deleted after the conversion is complete. We do not store or share your documents.",
+        "faqTitle": "Frequently Asked Questions",
+        "faqs": [
+          {
+            "question": "What is the maximum PDF file size I can convert?",
+            "answer": "You can upload PDF files up to 50MB. For larger files, we recommend splitting the PDF before converting."
+          },
+          {
+            "question": "Will the formatting be preserved after conversion?",
+            "answer": "Our converter uses advanced technology to preserve text layout, fonts, and tables as accurately as possible. Complex graphics may have slight variations."
+          },
+          {
+            "question": "How long does it take to convert a PDF?",
+            "answer": "Most conversions complete within a few seconds to a minute, depending on the file size and complexity."
+          },
+          {
+            "question": "Are my files stored on the server?",
+            "answer": "No. Your uploaded files are automatically and permanently deleted from our servers immediately after processing is complete."
+          }
+        ]
       },
       "dropzone": "Drop your PDF file here or click to browse",
       "dropzoneHint": "Supports .pdf files up to 50MB",
@@ -779,7 +837,26 @@
           "Secure and private browser-based execution."
         ],
         "privacyTitle": "Your Text Remains Private",
-        "privacy": "Our Base64 tool operates entirely within your browser's local environment. No data is transmitted over the internet, making it safe for encoding sensitive configuration values."
+        "privacy": "Our Base64 tool operates entirely within your browser's local environment. No data is transmitted over the internet, making it safe for encoding sensitive configuration values.",
+        "faqTitle": "Frequently Asked Questions",
+        "faqs": [
+          {
+            "question": "What is Base64 encoding used for?",
+            "answer": "Base64 is widely used to encode binary data for safe transmission in text-based systems, such as embedding images in HTML/CSS, encoding file attachments in emails, and passing data in URL query parameters."
+          },
+          {
+            "question": "Can I decode any Base64 string?",
+            "answer": "Yes. Paste any valid Base64-encoded string into the input field and switch to 'Decode' mode to reveal the original content. The tool supports standard and URL-safe Base64 variants."
+          },
+          {
+            "question": "Can I encode files to Base64?",
+            "answer": "Yes! You can upload a file using the file picker and the tool will encode it to Base64, which you can then copy and embed directly in your code."
+          },
+          {
+            "question": "Is Base64 the same as encryption?",
+            "answer": "No. Base64 is an encoding scheme, not encryption. It does not protect your data — anyone who has the Base64 string can easily decode it. For security, use proper encryption methods."
+          }
+        ]
       }
     },
     "urlEncoder": {
@@ -804,7 +881,26 @@
           "Instant copying for developer workflows."
         ],
         "privacyTitle": "Secure Randomness",
-        "privacy": "All UUIDs are generated using the cryptographically secure random number generator in your browser. No data is sent to any server during the generation process."
+        "privacy": "All UUIDs are generated using the cryptographically secure random number generator in your browser. No data is sent to any server during the generation process.",
+        "faqTitle": "Frequently Asked Questions",
+        "faqs": [
+          {
+            "question": "What is a UUID v4?",
+            "answer": "UUID v4 (Universally Unique Identifier version 4) is a 128-bit identifier generated using random numbers. It follows the format xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx and is guaranteed to be practically unique."
+          },
+          {
+            "question": "How many UUIDs can I generate at once?",
+            "answer": "You can generate up to 1000 UUIDs in a single batch using the slider or number input in the generator settings."
+          },
+          {
+            "question": "Are the generated UUIDs truly unique?",
+            "answer": "UUID v4 uses cryptographically secure random numbers, making the probability of a collision astronomically low — statistically, you would need to generate quintillions of UUIDs before encountering a duplicate."
+          },
+          {
+            "question": "Can I copy all UUIDs at once?",
+            "answer": "Yes! After generating multiple UUIDs, click the 'Copy All' button to copy all of them to your clipboard as a newline-separated list."
+          }
+        ]
       },
       "settings": "Generator Settings",
       "numberOfUuids": "Number of UUIDs",
@@ -886,7 +982,26 @@
           "Export as vector SVG or pixel PNG."
         ],
         "privacyTitle": "Private QR Creation",
-        "privacy": "Our QR generator works locally in your browser. The data you encode is never transmitted to our servers, making it safe for private information."
+        "privacy": "Our QR generator works locally in your browser. The data you encode is never transmitted to our servers, making it safe for private information.",
+        "faqTitle": "Frequently Asked Questions",
+        "faqs": [
+          {
+            "question": "What types of content can a QR code store?",
+            "answer": "QR codes can store URLs, plain text, email addresses, SMS messages, Wi-Fi credentials, vCard contact information, and more. Our generator accepts any text or URL."
+          },
+          {
+            "question": "Can I customize the colors of my QR code?",
+            "answer": "Yes! You can choose custom foreground and background colors for your QR code using the color pickers in the settings panel. Ensure sufficient contrast for reliable scanning."
+          },
+          {
+            "question": "What error correction level should I choose?",
+            "answer": "For most uses, 'Medium' (15%) is a good balance. Use 'High' (30%) if your QR code will be printed on surfaces that may get dirty or damaged, as it allows more of the code to be obscured while still being scannable."
+          },
+          {
+            "question": "Can I download the QR code as a vector file?",
+            "answer": "Yes, you can download your QR code as an SVG (vector) file for lossless scaling at any size, in addition to PNG for raster graphics."
+          }
+        ]
       },
       "input": "Text or URL",
       "inputPlaceholder": "Enter text or URL for QR code...",

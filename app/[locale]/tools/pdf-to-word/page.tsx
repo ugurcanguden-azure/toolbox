@@ -3,7 +3,7 @@
 import { useState, useRef, useCallback } from "react";
 import { useTranslations } from "next-intl";
 import { FileUp, FileOutput, Download, AlertCircle, Loader2, X, FileText } from "lucide-react";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, Button, Progress, JsonLdTool, ToolSeoContent } from "@/components";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, Button, Progress, JsonLdTool, ToolSeoContent, ToolFaqSection } from "@/components";
 import { convertToWord } from "@/app/actions/pdf-actions";
 import { useParams } from "next/navigation";
 import { toast } from "sonner";
@@ -293,6 +293,8 @@ export default function PdfToWordPage() {
       </Card>
       
       <ToolSeoContent toolId="pdfToWord" />
+      <ToolFaqSection toolId="pdfToWord" />
+
       
       <JsonLdTool 
         locale={locale}

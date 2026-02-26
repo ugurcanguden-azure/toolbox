@@ -10,7 +10,14 @@ import { locales, type Locale } from '@/i18n/request';
 import '@/styles/globals.css';
 import type { Metadata } from 'next';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  variable: '--font-inter',
+  fallback: ['system-ui', 'Arial', 'sans-serif'],
+  adjustFontFallback: true,
+});
 
 // Force dynamic rendering for next-intl compatibility
 export const dynamic = 'force-dynamic';
@@ -141,18 +148,17 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning className={inter.variable}>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <meta name="google-adsense-account" content="ca-pub-9339461513261360" />
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        {/* dns-prefetch for external services */}
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
         <link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Preconnect only for critical third-party origins */}
         <link rel="preconnect" href="https://www.google-analytics.com" />
-        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
       </head>
-      <body className={inter.className}>
+      <body className="font-sans antialiased">
         <GoogleAnalytics />
         <ThemeProvider
           attribute="class"

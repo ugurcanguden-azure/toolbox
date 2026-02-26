@@ -51,7 +51,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: t("subtitle"),
       description: t("description"),
       type: "profile",
-      url: "https://free-dev-tools.net.tr/about"
+      url: "https://toolbox.curioboxapp.info//about"
     }
   };
 }
@@ -65,7 +65,7 @@ export default function AboutPage() {
     "name": "Uğurcan Güden",
     "jobTitle": "Software Developer",
     "description": "Software Developer focusing on .NET Core, Microservices, React, Next.js, Docker and DevOps",
-    "url": "https://free-dev-tools.net.tr",
+    "url": "https://toolbox.curioboxapp.info/",
     "sameAs": [
       "https://github.com/ugurcanguden",
       "https://linkedin.com/in/ugurcanguden",

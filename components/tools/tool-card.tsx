@@ -38,7 +38,7 @@ export function ToolCard({ tool, isFavorite = false, onToggleFavorite, onCardCli
   const bgColor = iconColor.replace('text-', 'bg-').replace('-500', '-500/10');
 
   return (
-    <Link href={tool.href} className="block h-full group" onClick={handleCardClick}>
+    <Link href={tool.href} className="block h-full group" onClick={handleCardClick} aria-label={`Open ${tool.title}`}>
       <Card className="h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border-border/50 hover:border-primary/30 relative overflow-hidden bg-gradient-to-br from-background to-muted/20">
         {/* Favorite Button */}
         {onToggleFavorite && (
@@ -48,6 +48,8 @@ export function ToolCard({ tool, isFavorite = false, onToggleFavorite, onCardCli
             className="absolute top-2 right-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity"
             onClick={handleFavoriteClick}
             title={isFavorite ? t('removeFromFavorites') : t('addToFavorites')}
+            aria-label={isFavorite ? t('removeFromFavorites') : t('addToFavorites')}
+            aria-pressed={isFavorite}
           >
             {isFavorite ? (
               <Icons.Star className="h-5 w-5 fill-yellow-400 text-yellow-400 drop-shadow-sm" />

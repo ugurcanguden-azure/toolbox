@@ -11,7 +11,7 @@ interface CanonicalProps {
  */
 export const Canonical: FC<CanonicalProps> = ({ 
   url, 
-  baseUrl = process.env.SITE_URL || 'https://free-dev-tools.net.tr' 
+  baseUrl = process.env.SITE_URL || 'https://toolbox.curioboxapp.info/' 
 }) => {
   // Generate canonical URL
   const canonicalUrl = url ? `${baseUrl}${url}` : baseUrl;

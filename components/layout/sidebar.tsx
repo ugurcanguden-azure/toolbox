@@ -47,6 +47,7 @@ export function Sidebar({ locale }: { locale: string }) {
             className="pl-8 h-9" 
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
+            aria-label="Search tools"
           />
         </div>
       </div>

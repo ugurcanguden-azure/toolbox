@@ -257,7 +257,7 @@ class SEOCrawler {
 
 // Main execution
 async function main() {
-  const baseUrl = process.env.SITE_URL || 'https://free-dev-tools.net.tr';
+  const baseUrl = process.env.SITE_URL || 'https://toolbox.curioboxapp.info/';
   
   if (!baseUrl) {
     console.error('❌ SITE_URL environment variable is required');

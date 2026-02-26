@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { useTranslations } from 'next-intl';
-import { Button, Card, CardHeader, CardTitle, CardContent, JsonLdTool, ToolSeoContent } from '@/components';
+import { Button, Card, CardHeader, CardTitle, CardContent, JsonLdTool, ToolSeoContent, ToolFaqSection } from '@/components';
 import { Copy, Check, RefreshCw, Trash2, Sparkles, AlertCircle } from 'lucide-react';
 import { useCopyToClipboard } from '@/hooks';
 import { useParams } from 'next/navigation';
@@ -418,6 +418,8 @@ export default function UuidGeneratorPage() {
       </div>
 
       <ToolSeoContent toolId="uuidGenerator" />
+      <ToolFaqSection toolId="uuidGenerator" />
+
       <JsonLdTool 
         locale={locale}
         tool={{
