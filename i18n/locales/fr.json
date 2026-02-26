@@ -62,7 +62,7 @@
         "description": "Développement d'interfaces dynamiques, responsives et conviviales avec React, Next.js et des frameworks JavaScript modernes. Création de solutions UI/UX modernes avec Ant Design et Tailwind CSS."
       },
       "backend": {
-        "title": "Développement Backend", 
+        "title": "Développement Backend",
         "description": "Conception de systèmes backend sécurisés, évolutifs et hautement performants avec .NET Core, architectures microservices, EF Core, Redis et PostgreSQL/MSSQL. Développement de solutions axées sur la sécurité avec JWT et authentification basée sur les rôles."
       },
       "devops": {
@@ -138,7 +138,8 @@
     "generators": "Générateurs",
     "converters": "Convertisseurs",
     "text": "Outils de Texte",
-    "utilities": "Utilitaires"
+    "utilities": "Utilitaires",
+    "pdf": "PDF Tools"
   },
   "tools": {
     "jsonFormatter": {
@@ -826,6 +827,24 @@
       "strengthDeprecated": "Obsolète pour la sécurité",
       "strengthStrong": "Recommandé pour la plupart des cas",
       "strengthVeryStrong": "Sécurité maximale"
+    },
+    "pdfToWord": {
+      "title": "PDF to Word",
+      "description": "Convert PDF files to editable Word documents",
+      "dropzone": "Drop your PDF file here or click to browse",
+      "dropzoneHint": "Supports .pdf files up to 50MB",
+      "convert": "Convert to Word",
+      "converting": "Converting...",
+      "success": "Conversion complete! Your file is downloading.",
+      "invalidFile": "Please upload a valid PDF file.",
+      "unexpectedError": "An unexpected error occurred. Please try again.",
+      "errorTitle": "Conversion Failed",
+      "aboutTitle": "About PDF to Word",
+      "aboutDescription": "Convert your PDF documents to editable Word (.docx) files while preserving formatting.",
+      "feature1": "Preserves text formatting and layout",
+      "feature2": "Supports files up to 50MB",
+      "feature3": "OCR support for scanned documents",
+      "feature4": "Secure server-side processing"
     }
   },
   "footer": {
@@ -942,7 +961,8 @@
       "formatters": "Formateurs",
       "generators": "Générateurs",
       "converters": "Convertisseurs",
-      "utilities": "Utilitaires"
+      "utilities": "Utilitaires",
+      "pdf": "PDF Tools"
     },
     "posts": {
       "what-is-json": {
@@ -998,4 +1018,3 @@
     }
   }
 }
-

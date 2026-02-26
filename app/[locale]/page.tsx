@@ -278,6 +278,7 @@ export default function HomePage({ params }: { params: Promise<{ locale: string 
         <h2 className="text-2xl font-semibold mb-6">{t('common.allTools')}</h2>
         {filteredTools.length > 0 ? (
           <DndContext 
+            id="dashboard-dnd"
             sensors={sensors}
             collisionDetection={closestCenter}
             onDragEnd={handleDragEnd}

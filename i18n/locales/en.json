@@ -138,7 +138,8 @@
     "generators": "Generators",
     "converters": "Converters",
     "text": "Text Tools",
-    "utilities": "Utilities"
+    "utilities": "Utilities",
+    "pdf": "PDF Tools"
   },
   "tools": {
     "jsonFormatter": {
@@ -588,6 +589,24 @@
         "title": "About Credit Card Validator",
         "description": "Validate credit card numbers using the Luhn algorithm. No data is stored or transmitted."
       }
+    },
+    "pdfToWord": {
+      "title": "PDF to Word",
+      "description": "Convert PDF files to editable Word documents",
+      "dropzone": "Drop your PDF file here or click to browse",
+      "dropzoneHint": "Supports .pdf files up to 50MB",
+      "convert": "Convert to Word",
+      "converting": "Converting...",
+      "success": "Conversion complete! Your file is downloading.",
+      "invalidFile": "Please upload a valid PDF file.",
+      "unexpectedError": "An unexpected error occurred. Please try again.",
+      "errorTitle": "Conversion Failed",
+      "aboutTitle": "About PDF to Word",
+      "aboutDescription": "Convert your PDF documents to editable Word (.docx) files while preserving formatting.",
+      "feature1": "Preserves text formatting and layout",
+      "feature2": "Supports files up to 50MB",
+      "feature3": "OCR support for scanned documents",
+      "feature4": "Secure server-side processing"
     },
     "textCompare": {
       "title": "Text Compare",

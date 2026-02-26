@@ -13,7 +13,8 @@ export type ToolCategory =
   | 'generators'
   | 'converters'
   | 'text'
-  | 'utilities';
+  | 'utilities'
+  | 'pdf';
 
 export interface LocaleSwitcherProps {
   locale: string;
