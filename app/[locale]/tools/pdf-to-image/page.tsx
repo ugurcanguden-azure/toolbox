@@ -2,15 +2,15 @@
 
 import { useState, useRef, useCallback } from "react";
 import { useTranslations } from "next-intl";
-import { FileUp, FileOutput, Download, AlertCircle, Loader2, X, FileText } from "lucide-react";
+import { FileUp, FileOutput, Download, AlertCircle, Loader2, X, FileText, ImageIcon } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { convertToWord } from "@/app/actions/pdf-actions";
+import { pdfToImage } from "@/app/actions/pdf-actions";
 import { toast } from "sonner";
 
-export default function PdfToWordPage() {
-  const t = useTranslations("tools.pdfToWord");
+export default function PdfToImagePage() {
+  const t = useTranslations("tools.pdfToImage");
   const tc = useTranslations("common");
 
   const [file, setFile] = useState<File | null>(null);
@@ -67,12 +67,12 @@ export default function PdfToWordPage() {
     setError(null);
     setSuccess(false);
     setProgress(10);
-    setProgressText(t("uploading") || "Uploading file...");
+    setProgressText(t("uploading"));
 
     // Simulate progress steps
     const progressInterval = setInterval(() => {
       setProgress((prev) => {
-        if (prev >= 60) setProgressText(t("processing") || "Converting to Word...");
+        if (prev >= 60) setProgressText(t("processing"));
         if (prev >= 85) {
           clearInterval(progressInterval);
           return 85;
@@ -83,9 +83,9 @@ export default function PdfToWordPage() {
 
     try {
       const formData = new FormData();
-      formData.append("file", file);
+      formData.append("fileInput", file);
 
-      const result = await convertToWord(formData);
+      const result = await pdfToImage(formData);
 
       clearInterval(progressInterval);
 
@@ -94,10 +94,10 @@ export default function PdfToWordPage() {
         setProgress(0);
         toast.error(t("errorTitle"), { description: result.error });
       } else if (result.data) {
-        setProgressText(t("downloading") || "Preparing download...");
+        setProgressText(t("downloading"));
         setProgress(100);
         setSuccess(true);
-        toast.success(t("successToast") || "Conversion successful!");
+        toast.success(t("successToast"));
 
         // Trigger download
         const byteArray = Uint8Array.from(atob(result.data.base64), (c) => c.charCodeAt(0));
@@ -105,7 +105,7 @@ export default function PdfToWordPage() {
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
-        a.download = result.data.fileName || file.name.replace(".pdf", ".docx");
+        a.download = result.data.fileName || file.name.replace(".pdf", "-images.zip");
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
@@ -141,8 +141,8 @@ export default function PdfToWordPage() {
     <div className="container mx-auto px-4 py-12 max-w-3xl">
       {/* Header */}
       <div className="mb-8 text-center">
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-red-500 to-blue-600 text-white mb-4">
-          <FileOutput className="w-8 h-8" />
+        <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-500 to-orange-600 text-white mb-4">
+          <ImageIcon className="w-8 h-8" />
         </div>
         <h1 className="text-3xl font-bold tracking-tight mb-2">{t("title")}</h1>
         <p className="text-muted-foreground text-lg">{t("description")}</p>
@@ -188,8 +188,8 @@ export default function PdfToWordPage() {
             <div className="space-y-4">
               {/* File Info */}
               <div className="flex items-center gap-4 p-4 bg-muted/50 rounded-xl">
-                <div className="w-12 h-12 rounded-lg bg-red-500/10 flex items-center justify-center flex-shrink-0">
-                  <FileText className="w-6 h-6 text-red-500" />
+                <div className="w-12 h-12 rounded-lg bg-orange-500/10 flex items-center justify-center flex-shrink-0">
+                  <FileText className="w-6 h-6 text-orange-500" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="font-medium truncate">{file.name}</p>
@@ -212,7 +212,7 @@ export default function PdfToWordPage() {
                   <div className="flex items-center justify-between text-sm">
                     <span className="flex items-center gap-2 text-muted-foreground">
                       <Loader2 className="w-4 h-4 animate-spin" />
-                      {progressText || t("converting")}
+                      {progressText || t("processing")}
                     </span>
                     <span className="font-medium">{Math.round(progress)}%</span>
                   </div>
@@ -232,7 +232,7 @@ export default function PdfToWordPage() {
               <Button
                 onClick={handleConvert}
                 disabled={isConverting}
-                className="w-full h-12 text-base font-semibold bg-gradient-to-r from-red-500 to-blue-600 hover:from-red-600 hover:to-blue-700 text-white"
+                className="w-full h-12 text-base font-semibold bg-gradient-to-r from-yellow-500 to-orange-600 hover:from-yellow-600 hover:to-orange-700 text-white"
                 size="lg"
               >
                 {isConverting ? (
@@ -242,7 +242,7 @@ export default function PdfToWordPage() {
                   </>
                 ) : (
                   <>
-                    <FileOutput className="w-5 h-5 mr-2" />
+                    <ImageIcon className="w-5 h-5 mr-2" />
                     {t("convert")}
                   </>
                 )}
@@ -282,10 +282,6 @@ export default function PdfToWordPage() {
             <li className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-primary" />
               {t("feature3")}
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-              {t("feature4")}
             </li>
           </ul>
         </CardContent>

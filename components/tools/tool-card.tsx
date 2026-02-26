@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { useLoading } from '@/contexts/loading-context';
 import type { Tool } from '@/types';
 import * as Icons from 'lucide-react';
+import { toolCategories } from '@/lib/tools-data';
 
 interface ToolCardProps {
   tool: Tool;
@@ -32,9 +33,13 @@ export function ToolCard({ tool, isFavorite = false, onToggleFavorite, onCardCli
     onCardClick?.(tool.id);
   };
 
+  const categoryData = toolCategories[tool.category];
+  const iconColor = categoryData?.color || 'text-primary';
+  const bgColor = iconColor.replace('text-', 'bg-').replace('-500', '-500/10');
+
   return (
     <Link href={tool.href} className="block h-full group" onClick={handleCardClick}>
-      <Card className="h-full transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:border-primary/50 relative overflow-hidden">
+      <Card className="h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border-border/50 hover:border-primary/30 relative overflow-hidden bg-gradient-to-br from-background to-muted/20">
         {/* Favorite Button */}
         {onToggleFavorite && (
           <Button
@@ -45,21 +50,23 @@ export function ToolCard({ tool, isFavorite = false, onToggleFavorite, onCardCli
             title={isFavorite ? t('removeFromFavorites') : t('addToFavorites')}
           >
             {isFavorite ? (
-              <Icons.Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+              <Icons.Star className="h-5 w-5 fill-yellow-400 text-yellow-400 drop-shadow-sm" />
             ) : (
               <Icons.Star className="h-5 w-5 text-muted-foreground hover:text-yellow-400" />
             )}
           </Button>
         )}
 
-        <CardHeader>
-          <div className="mb-3 transition-transform duration-300 group-hover:scale-110">
-            <Icon className="h-8 w-8 text-primary" />
+        <CardHeader className="p-6">
+          <div className={`mb-4 w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:-rotate-3 shadow-sm ${bgColor}`}>
+            <Icon className={`h-6 w-6 ${iconColor}`} />
           </div>
-          <CardTitle className="text-lg group-hover:text-primary transition-colors">
+          <CardTitle className="text-lg font-semibold group-hover:text-primary transition-colors leading-tight mb-1.5">
             {tool.title}
           </CardTitle>
-          <CardDescription className="line-clamp-2">{tool.description}</CardDescription>
+          <CardDescription className="line-clamp-2 text-sm text-muted-foreground/80 leading-relaxed">
+            {tool.description}
+          </CardDescription>
         </CardHeader>
 
         {/* Animated gradient overlay on hover */}

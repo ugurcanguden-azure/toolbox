@@ -7,6 +7,7 @@ export const toolCategories: Record<ToolCategory, { icon: string; color: string 
   converters: { icon: 'RefreshCw', color: 'text-purple-500' },
   text: { icon: 'FileText', color: 'text-orange-500' },
   utilities: { icon: 'Wrench', color: 'text-pink-500' },
+  pdf: { icon: 'FileOutput', color: 'text-red-500' },
 };
 
 // Future tools to be added

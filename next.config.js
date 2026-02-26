@@ -17,6 +17,7 @@ const nextConfig = {
   serverExternalPackages: ['sharp'],
   
   experimental: {
+    middlewareClientMaxBodySize: 52428800, // 50MB
     serverActions: {
       bodySizeLimit: '50mb',
     },
