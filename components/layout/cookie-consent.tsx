@@ -30,6 +30,7 @@ export function CookieConsent() {
       timestamp: new Date().toISOString(),
     };
     localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consentData));
+    window.dispatchEvent(new Event('cookie-consent-changed'));
     setShowBanner(false);
   };
 
@@ -39,6 +40,7 @@ export function CookieConsent() {
       timestamp: new Date().toISOString(),
     };
     localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consentData));
+    window.dispatchEvent(new Event('cookie-consent-changed'));
     setShowBanner(false);
     
     // Disable AdSense if user declines

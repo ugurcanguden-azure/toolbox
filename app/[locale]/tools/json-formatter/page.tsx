@@ -3,13 +3,24 @@
 import * as React from 'react';
 import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
-import Editor from '@monaco-editor/react';
+import dynamic from 'next/dynamic';
 import { Button, Card, CardHeader, CardTitle, CardContent, Textarea, JsonTreeViewer, PrivacyBadge, JsonLdTool, ToolSeoContent, ToolFaqSection } from '@/components';
 import { Copy, Check, AlertCircle, Code2, TreePine, Download, FileJson, Search, ChevronsDownUp, ChevronsUpDown, CopyMinus } from 'lucide-react';
 import { useCopyToClipboard } from '@/hooks';
 import { useParams } from 'next/navigation';
 
 type ViewMode = 'formatted' | 'tree';
+
+const MonacoEditor = dynamic(() => import('@monaco-editor/react'), {
+  ssr: false,
+  loading: () => (
+    <Textarea
+      readOnly
+      value="Loading editor..."
+      className="h-[400px] resize-none border-0 rounded-none"
+    />
+  ),
+});
 
 const SAMPLE_JSON = {
   "user": {
@@ -278,7 +289,7 @@ export default function JsonFormatterPage() {
               </label>
             </div>
             <div className="h-[400px] border rounded-md overflow-hidden">
-              <Editor
+              <MonacoEditor
                 height="100%"
                 defaultLanguage="json"
                 value={input}

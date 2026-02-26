@@ -152,11 +152,6 @@ export default async function LocaleLayout({
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <meta name="google-adsense-account" content="ca-pub-9339461513261360" />
-        {/* dns-prefetch for external services */}
-        <link rel="dns-prefetch" href="//www.google-analytics.com" />
-        <link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
-        {/* Preconnect only for critical third-party origins */}
-        <link rel="preconnect" href="https://www.google-analytics.com" />
       </head>
       <body className="font-sans antialiased">
         <GoogleAnalytics />
@@ -188,4 +183,3 @@ export default async function LocaleLayout({
     </html>
   );
 }
-

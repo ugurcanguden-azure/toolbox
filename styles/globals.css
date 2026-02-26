@@ -66,87 +66,17 @@
   }
 }
 
-/* Custom animations and transitions */
 @layer utilities {
-  /* Smooth page transitions */
-  .page-transition {
-    animation: fadeInUp 0.5s ease-out;
-  }
-
-  /* Stagger animations */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes scaleIn {
-    from {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  /* Smooth transitions for all interactive elements */
+  /* Avoid transition-all on global elements to reduce paint/reflow cost */
   button,
   a,
   input,
   textarea {
-    @apply transition-all duration-200 ease-in-out;
-  }
-
-  /* Card hover effects */
-  .card-hover {
-    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
-  }
-
-  /* Star animation */
-  @keyframes starPulse {
-    0%,
-    100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.2);
-    }
-  }
-
-  .star-pulse {
-    animation: starPulse 0.3s ease-in-out;
+    @apply transition-colors duration-200 ease-in-out;
   }
 
   /* Smooth scroll */
   html {
     scroll-behavior: smooth;
-  }
-
-  /* Loading shimmer */
-  @keyframes shimmer {
-    0% {
-      background-position: -1000px 0;
-    }
-    100% {
-      background-position: 1000px 0;
-    }
-  }
-
-  .shimmer {
-    animation: shimmer 2s infinite;
-    background: linear-gradient(
-      to right,
-      transparent 0%,
-      rgba(255, 255, 255, 0.1) 50%,
-      transparent 100%
-    );
-    background-size: 1000px 100%;
   }
 }

@@ -3,6 +3,7 @@
 import { useState, useMemo, useEffect, use } from 'react';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import Image from 'next/image';
 import { Search, Star, Clock, X, GripHorizontal } from 'lucide-react';
 import { ToolCard, AdBanner } from '@/components';
 import { Input } from '@/components/ui/input';
@@ -156,6 +157,15 @@ export default function HomePage({ params }: { params: Promise<{ locale: string 
     <div className="container mx-auto px-4 py-12">
       {/* Hero Section */}
       <div className="mb-12 text-center">
+        <Image
+          src="/icon.svg"
+          alt={t('common.appName')}
+          width={96}
+          height={96}
+          priority
+          fetchPriority="high"
+          className="mx-auto mb-4 h-20 w-20 sm:h-24 sm:w-24"
+        />
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6 bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
           {t('common.appName')}
         </h1>
@@ -322,4 +332,3 @@ export default function HomePage({ params }: { params: Promise<{ locale: string 
     </div>
   );
 }
-

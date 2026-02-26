@@ -58,6 +58,7 @@ export function CookieConsentManager({ open, onOpenChange }: CookieConsentManage
       timestamp: new Date().toISOString(),
     };
     localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consentData));
+    window.dispatchEvent(new Event('cookie-consent-changed'));
     setCurrentConsent(consent);
     onOpenChange(false);
     

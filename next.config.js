@@ -84,8 +84,9 @@ const nextConfig = {
             vendor: {
               name: 'vendor',
               test: /[\\/]node_modules[\\/]/,
-              chunks: 'initial',
+              chunks: 'async',
               priority: 20,
+              minChunks: 2,
               reuseExistingChunk: true,
             },
           },
@@ -227,4 +228,3 @@ const nextConfig = {
 };
 
 module.exports = withNextIntl(nextConfig);
-
