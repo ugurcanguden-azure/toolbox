@@ -3,7 +3,8 @@ import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { Toaster } from 'sonner';
 import { Inter } from 'next/font/google';
-import { ThemeProvider, Header, Footer, CookieConsent, GlobalLoading, NavigationListener, Sidebar, SmartRedirectListener } from '@/components/layout';
+import { ThemeProvider, Header, Footer, CookieConsent, GlobalLoading, NavigationListener, SmartRedirectListener } from '@/components/layout';
+import { SidebarClient } from '@/components/layout/sidebar-client';
 import { GoogleAnalytics } from '@/components/analytics/google-analytics';
 import { LoadingProvider } from '@/contexts';
 import { locales, type Locale } from '@/i18n/request';
@@ -153,7 +154,7 @@ export default async function LocaleLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <meta name="google-adsense-account" content="ca-pub-9339461513261360" />
       </head>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased min-h-screen">
         <GoogleAnalytics />
         <ThemeProvider
           attribute="class"
@@ -165,11 +166,11 @@ export default async function LocaleLayout({
             <LoadingProvider>
               <NavigationListener />
               <GlobalLoading />
-              <div className="flex min-h-screen flex-col">
+              <div className="flex h-screen flex-col overflow-hidden">
                 <Header locale={locale as Locale} />
-                <div className="flex flex-1 overflow-hidden">
-                  <Sidebar locale={locale} />
-                  <main className="flex-1 overflow-y-auto">{children}</main>
+                <div className="flex flex-1 min-h-0 overflow-hidden">
+                  <SidebarClient locale={locale} />
+                  <main className="flex-1 h-full overflow-y-auto">{children}</main>
                 </div>
                 <Footer />
               </div>

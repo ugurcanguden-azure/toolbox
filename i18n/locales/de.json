@@ -1530,6 +1530,70 @@
       "feature1": "High-quality image extraction",
       "feature2": "Supports files up to 50MB",
       "feature3": "Returns a convenient ZIP file of images"
+    },
+    "cronExpressionGenerator": {
+      "title": "Cron-Expression Generator & Erklärer",
+      "description": "Erstelle, prüfe und erkläre 5-Feld-Cron-Ausdrücke in Klartext.",
+      "inputLabel": "Cron-Ausdruck",
+      "placeholder": "5 Felder nutzen: Minute Stunde Tag-des-Monats Monat Wochentag",
+      "parseError": "Dieser Cron-Ausdruck konnte nicht verarbeitet werden.",
+      "invalidCron": "Bitte genau 5 Cron-Felder eingeben.",
+      "sample": "Beispiel",
+      "clear": "Löschen",
+      "copy": "Kopieren",
+      "templates": {
+        "title": "Schnellvorlagen",
+        "everyHour": "Jede Stunde",
+        "dailyMidnight": "Täglich um Mitternacht",
+        "weekdaysAt9": "Werktags um 09:00",
+        "everyWeekend": "Jedes Wochenende",
+        "every15Minutes": "Alle 15 Minuten",
+        "firstDayOfMonth": "Erster Tag des Monats"
+      },
+      "nextRuns": {
+        "title": "Nächste Ausführungszeiten",
+        "empty": "Gib einen gültigen Cron-Ausdruck ein, um kommende Läufe zu sehen."
+      },
+      "explainer": {
+        "title": "Erklärung in natürlicher Sprache"
+      },
+      "fieldsInfo": {
+        "title": "Cron-Felder (5-Feld-Format)",
+        "minute": "Minute (0-59)",
+        "hour": "Stunde (0-23)",
+        "dayOfMonth": "Tag des Monats (1-31)",
+        "month": "Monat (1-12)",
+        "dayOfWeek": "Wochentag (0-6, Sonntag=0)"
+      },
+      "examples": {
+        "title": "Häufige Cron-Beispiele",
+        "items": [
+          "0 0 * * * -> Täglich um 00:00",
+          "*/15 * * * * -> Alle 15 Minuten",
+          "0 9 * * 1-5 -> Werktags um 09:00",
+          "0 0 1 * * -> Am ersten Tag jedes Monats"
+        ]
+      },
+      "seoContent": {
+        "whatIsCron": {
+          "title": "Was ist ein Cron-Expression?",
+          "body": "Ein Cron-Expression ist ein kompaktes Zeitformat, das definiert, wann ein Job ausgeführt werden soll. Es wird häufig auf Servern, in Automatisierungen, CI/CD-Pipelines und Cloud-Schedulern verwendet."
+        },
+        "starsMeaning": {
+          "title": "Was bedeuten die Cron-Sterne? (Minute, Stunde, Tag...)",
+          "body": "In Cron bedeutet * einen beliebigen Wert im jeweiligen Feld. Im 5-Feld-Format sind das Minute, Stunde, Tag des Monats, Monat und Wochentag. Zusätzlich sind Bereiche, Listen und Schrittwerte wie */5 möglich."
+        },
+        "commonExamples": {
+          "title": "Häufige Cron-Beispiele",
+          "items": [
+            "0 * * * * -> Jede Stunde",
+            "0 0 * * * -> Täglich um Mitternacht",
+            "0 9 * * 1-5 -> Werktags um 09:00",
+            "0 0 * * 6,0 -> Jedes Wochenende",
+            "*/10 * * * * -> Alle 10 Minuten"
+          ]
+        }
+      }
     }
   },
   "footer": {

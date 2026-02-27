@@ -21,24 +21,26 @@ export function Header({ locale }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href={`/${locale}`} className="flex items-center gap-2 font-bold text-xl" aria-label={`${tCommon('appName')} - ${tCommon('home') ?? 'Home'}`}>
-          <Code2 className="h-6 w-6" />
-          <span className="hidden sm:inline">{tCommon('appName')}</span>
-        </Link>
+      <div className="w-full flex h-16 items-center justify-between px-4">
+        <div className="flex items-center gap-8">
+          <Link href={`/${locale}`} className="flex items-center gap-2 font-bold text-xl" aria-label={`${tCommon('appName')} - ${tCommon('home') ?? 'Home'}`}>
+            <Code2 className="h-6 w-6" />
+            <span className="hidden sm:inline">{tCommon('appName')}</span>
+          </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6">
-          <Link href={`/${locale}`} className="text-sm font-medium hover:text-primary transition-colors">
-            {tNav('home')}
-          </Link>
-          <Link href={`/${locale}/blog`} className="text-sm font-medium hover:text-primary transition-colors">
-            {tNav('blog')}
-          </Link>
-          <Link href={`/${locale}/about`} className="text-sm font-medium hover:text-primary transition-colors">
-            {tNav('about')}
-          </Link>
-        </nav>
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-6">
+            <Link href={`/${locale}`} className="text-sm font-medium hover:text-primary transition-colors">
+              {tNav('home')}
+            </Link>
+            <Link href={`/${locale}/blog`} className="text-sm font-medium hover:text-primary transition-colors">
+              {tNav('blog')}
+            </Link>
+            <Link href={`/${locale}/about`} className="text-sm font-medium hover:text-primary transition-colors">
+              {tNav('about')}
+            </Link>
+          </nav>
+        </div>
 
         <div className="flex flex-1 items-center justify-end gap-2 px-4 md:px-0">
           <div className="w-full max-w-sm ml-auto sm:w-auto">
@@ -93,4 +95,3 @@ export function Header({ locale }: HeaderProps) {
     </header>
   );
 }
-

@@ -1512,6 +1512,70 @@
       "strengthDeprecated": "Güvenlik için kullanımdan kaldırıldı",
       "strengthStrong": "Çoğu kullanım için önerilir",
       "strengthVeryStrong": "Maksimum güvenlik"
+    },
+    "cronExpressionGenerator": {
+      "title": "Cron Expression Oluşturucu ve Açıklayıcı",
+      "description": "5 alanlı cron ifadelerini oluşturun, doğrulayın ve insan dilinde açıklayın.",
+      "inputLabel": "Cron İfadesi",
+      "placeholder": "5 alan kullanın: dakika saat ay-günü ay hafta-günü",
+      "parseError": "Bu cron ifadesi çözümlenemedi.",
+      "invalidCron": "Lütfen tam olarak 5 cron alanı girin.",
+      "sample": "Örnek",
+      "clear": "Temizle",
+      "copy": "Kopyala",
+      "templates": {
+        "title": "Hazır Şablonlar",
+        "everyHour": "Her saat",
+        "dailyMidnight": "Her gün gece yarısı",
+        "weekdaysAt9": "Hafta içi 09:00",
+        "everyWeekend": "Her hafta sonu",
+        "every15Minutes": "Her 15 dakikada",
+        "firstDayOfMonth": "Ayın ilk günü"
+      },
+      "nextRuns": {
+        "title": "Gelecek Çalışma Zamanları",
+        "empty": "Yaklaşan çalışmaları görmek için geçerli bir cron ifadesi girin."
+      },
+      "explainer": {
+        "title": "İnsan Diline Çeviri"
+      },
+      "fieldsInfo": {
+        "title": "Cron Alanları (5 Alan Formatı)",
+        "minute": "Dakika (0-59)",
+        "hour": "Saat (0-23)",
+        "dayOfMonth": "Ayın günü (1-31)",
+        "month": "Ay (1-12)",
+        "dayOfWeek": "Haftanın günü (0-6, Pazar=0)"
+      },
+      "examples": {
+        "title": "Sık Kullanılan Cron Örnekleri",
+        "items": [
+          "0 0 * * * -> Her gün 00:00’da çalışır",
+          "*/15 * * * * -> Her 15 dakikada çalışır",
+          "0 9 * * 1-5 -> Hafta içi 09:00’da çalışır",
+          "0 0 1 * * -> Her ayın ilk gününde çalışır"
+        ]
+      },
+      "seoContent": {
+        "whatIsCron": {
+          "title": "Cron Expression nedir?",
+          "body": "Cron ifadesi, bir görevin ne zaman çalışacağını tanımlayan kısa bir zamanlama formatıdır. Sunucularda, otomasyon işlerinde, CI/CD süreçlerinde ve bulut zamanlayıcılarda yaygın olarak kullanılır."
+        },
+        "starsMeaning": {
+          "title": "Cron yıldızları ne anlama gelir? (Dakika, Saat, Gün...)",
+          "body": "Cron içinde * işareti o alanda her değeri temsil eder. 5 alanlı yapıda sırasıyla dakika, saat, ayın günü, ay ve haftanın günü bulunur. Aralık, liste ve */5 gibi adım değerleri de kullanılabilir."
+        },
+        "commonExamples": {
+          "title": "Sık kullanılan Cron örnekleri",
+          "items": [
+            "0 * * * * -> Her saat",
+            "0 0 * * * -> Her gün gece yarısı",
+            "0 9 * * 1-5 -> Hafta içi 09:00",
+            "0 0 * * 6,0 -> Her hafta sonu",
+            "*/10 * * * * -> Her 10 dakikada"
+          ]
+        }
+      }
     }
   },
   "footer": {

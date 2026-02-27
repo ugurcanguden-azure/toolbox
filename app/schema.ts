@@ -46,7 +46,8 @@ export default function schema(): MetadataRoute.Manifest {
       "CSV to JSON",
       "YAML Formatter",
       "Credit Card Validator",
-      "XML Formatter"
+      "XML Formatter",
+      "Cron Expression Generator & Explainer"
     ],
     "browserRequirements": "Requires JavaScript enabled",
     "softwareVersion": "2.1.0",
@@ -55,7 +56,7 @@ export default function schema(): MetadataRoute.Manifest {
       "name": "Toolbox",
       "url": "https://toolbox.curioboxapp.info"
     },
-    "inLanguage": ["en", "de", "tr", "fr", "pt"],
+    "inLanguage": ["en", "de", "tr", "fr", "pt", "es", "it", "nl", "ja", "ru"],
     "potentialAction": {
       "@type": "UseAction",
       "target": "https://toolbox.curioboxapp.info"

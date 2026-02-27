@@ -9,5 +9,6 @@ export * from './locale-switcher';
 export * from './navigation-listener';
 export * from './cookie-consent-manager';
 export * from './sidebar';
+export * from './sidebar-client';
 export * from './command-palette';
 export * from './smart-redirect';

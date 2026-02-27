@@ -87,6 +87,14 @@ export function useTools(locale: string) {
       href: `/${locale}/tools/regex-tester`,
     },
     {
+      id: 'cron-expression-generator',
+      title: t('tools.cronExpressionGenerator.title'),
+      description: t('tools.cronExpressionGenerator.description'),
+      category: 'utilities',
+      icon: 'CalendarClock',
+      href: `/${locale}/tools/cron-expression-generator`,
+    },
+    {
       id: 'string-tools',
       title: t('tools.stringTools.title'),
       description: t('tools.stringTools.description'),

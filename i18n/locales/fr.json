@@ -1530,6 +1530,70 @@
       "feature1": "High-quality image extraction",
       "feature2": "Supports files up to 50MB",
       "feature3": "Returns a convenient ZIP file of images"
+    },
+    "cronExpressionGenerator": {
+      "title": "Générateur et Explicateur d'Expression Cron",
+      "description": "Créez, validez et expliquez des expressions cron à 5 champs en langage naturel.",
+      "inputLabel": "Expression Cron",
+      "placeholder": "Utilisez 5 champs : minute heure jour-du-mois mois jour-de-semaine",
+      "parseError": "Impossible d'analyser cette expression cron.",
+      "invalidCron": "Veuillez saisir exactement 5 champs cron.",
+      "sample": "Exemple",
+      "clear": "Effacer",
+      "copy": "Copier",
+      "templates": {
+        "title": "Modèles rapides",
+        "everyHour": "Chaque heure",
+        "dailyMidnight": "Chaque jour à minuit",
+        "weekdaysAt9": "En semaine à 09:00",
+        "everyWeekend": "Chaque week-end",
+        "every15Minutes": "Toutes les 15 minutes",
+        "firstDayOfMonth": "Premier jour du mois"
+      },
+      "nextRuns": {
+        "title": "Prochaines exécutions",
+        "empty": "Saisissez une expression cron valide pour voir les prochaines exécutions."
+      },
+      "explainer": {
+        "title": "Explication en langage naturel"
+      },
+      "fieldsInfo": {
+        "title": "Champs Cron (format 5 champs)",
+        "minute": "Minute (0-59)",
+        "hour": "Heure (0-23)",
+        "dayOfMonth": "Jour du mois (1-31)",
+        "month": "Mois (1-12)",
+        "dayOfWeek": "Jour de semaine (0-6, dimanche=0)"
+      },
+      "examples": {
+        "title": "Exemples cron fréquents",
+        "items": [
+          "0 0 * * * -> Exécute chaque jour à 00:00",
+          "*/15 * * * * -> Exécute toutes les 15 minutes",
+          "0 9 * * 1-5 -> Exécute à 09:00 en semaine",
+          "0 0 1 * * -> Exécute le premier jour de chaque mois"
+        ]
+      },
+      "seoContent": {
+        "whatIsCron": {
+          "title": "Qu'est-ce qu'une expression cron ?",
+          "body": "Une expression cron est un format compact pour définir quand une tâche doit s'exécuter. Elle est largement utilisée sur les serveurs, dans l'automatisation, les pipelines CI/CD et les planificateurs cloud."
+        },
+        "starsMeaning": {
+          "title": "Que signifient les étoiles cron ? (Minute, Heure, Jour...)",
+          "body": "Dans cron, * signifie n'importe quelle valeur pour ce champ. En format 5 champs : minute, heure, jour du mois, mois et jour de semaine. Vous pouvez aussi utiliser des plages, des listes et des pas comme */5."
+        },
+        "commonExamples": {
+          "title": "Exemples cron courants",
+          "items": [
+            "0 * * * * -> Chaque heure",
+            "0 0 * * * -> Chaque jour à minuit",
+            "0 9 * * 1-5 -> En semaine à 09:00",
+            "0 0 * * 6,0 -> Chaque week-end",
+            "*/10 * * * * -> Toutes les 10 minutes"
+          ]
+        }
+      }
     }
   },
   "footer": {

@@ -1530,6 +1530,70 @@
       "feature1": "High-quality image extraction",
       "feature2": "Supports files up to 50MB",
       "feature3": "Returns a convenient ZIP file of images"
+    },
+    "cronExpressionGenerator": {
+      "title": "Generador y Explicador de Expresiones Cron",
+      "description": "Genera, valida y explica expresiones cron de 5 campos en lenguaje natural.",
+      "inputLabel": "Expresión Cron",
+      "placeholder": "Usa 5 campos: minuto hora día-del-mes mes día-de-semana",
+      "parseError": "No se pudo analizar esta expresión cron.",
+      "invalidCron": "Introduce exactamente 5 campos cron.",
+      "sample": "Ejemplo",
+      "clear": "Limpiar",
+      "copy": "Copiar",
+      "templates": {
+        "title": "Plantillas rápidas",
+        "everyHour": "Cada hora",
+        "dailyMidnight": "Cada día a medianoche",
+        "weekdaysAt9": "Días laborables a las 09:00",
+        "everyWeekend": "Cada fin de semana",
+        "every15Minutes": "Cada 15 minutos",
+        "firstDayOfMonth": "Primer día del mes"
+      },
+      "nextRuns": {
+        "title": "Próximas ejecuciones",
+        "empty": "Introduce una expresión cron válida para ver las próximas ejecuciones."
+      },
+      "explainer": {
+        "title": "Explicación en lenguaje natural"
+      },
+      "fieldsInfo": {
+        "title": "Campos Cron (formato de 5 campos)",
+        "minute": "Minuto (0-59)",
+        "hour": "Hora (0-23)",
+        "dayOfMonth": "Día del mes (1-31)",
+        "month": "Mes (1-12)",
+        "dayOfWeek": "Día de la semana (0-6, domingo=0)"
+      },
+      "examples": {
+        "title": "Ejemplos comunes de cron",
+        "items": [
+          "0 0 * * * -> Se ejecuta todos los días a las 00:00",
+          "*/15 * * * * -> Se ejecuta cada 15 minutos",
+          "0 9 * * 1-5 -> Se ejecuta a las 09:00 en días laborables",
+          "0 0 1 * * -> Se ejecuta el primer día de cada mes"
+        ]
+      },
+      "seoContent": {
+        "whatIsCron": {
+          "title": "¿Qué es una expresión cron?",
+          "body": "Una expresión cron es un formato compacto para definir cuándo debe ejecutarse una tarea. Se usa mucho en servidores, automatizaciones, pipelines CI/CD y programadores en la nube."
+        },
+        "starsMeaning": {
+          "title": "¿Qué significan los asteriscos del cron? (Minuto, Hora, Día...)",
+          "body": "En cron, * significa cualquier valor para ese campo. En el formato de 5 campos son: minuto, hora, día del mes, mes y día de la semana. También puedes usar rangos, listas y pasos como */5."
+        },
+        "commonExamples": {
+          "title": "Ejemplos frecuentes de cron",
+          "items": [
+            "0 * * * * -> Cada hora",
+            "0 0 * * * -> Cada día a medianoche",
+            "0 9 * * 1-5 -> Días laborables a las 09:00",
+            "0 0 * * 6,0 -> Cada fin de semana",
+            "*/10 * * * * -> Cada 10 minutos"
+          ]
+        }
+      }
     }
   },
   "footer": {

@@ -16,24 +16,28 @@ export function Footer() {
   return (
     <>
       <footer className="w-full border-t bg-background">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-col items-center justify-center gap-4 text-center text-sm text-muted-foreground">
-            <p className="flex items-center gap-1">
+        <div className="container mx-auto px-4 py-3">
+          <div className="flex items-center justify-between gap-4 text-xs text-muted-foreground">
+            <p className="flex items-center gap-1 whitespace-nowrap">
               {t('madeWith')} <Heart className="h-4 w-4 fill-red-500 text-red-500" /> {t('by')}
             </p>
-            
-            {/* Footer Links */}
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <Button variant="link" size="sm" className="h-auto p-0 text-muted-foreground hover:text-foreground" asChild>
+
+            <div className="flex items-center justify-end gap-3 whitespace-nowrap">
+              <Button
+                variant="link"
+                size="sm"
+                className="h-auto p-0 text-xs text-muted-foreground hover:text-foreground"
+                asChild
+              >
                 <a href={`/${locale}/privacy-policy`} target="_blank" rel="noopener noreferrer">
                   {t('privacyPolicy')}
                 </a>
               </Button>
               <span className="text-muted-foreground/50">•</span>
-              <Button 
-                variant="link" 
-                size="sm" 
-                className="h-auto p-0 text-muted-foreground hover:text-foreground"
+              <Button
+                variant="link"
+                size="sm"
+                className="h-auto p-0 text-xs text-muted-foreground hover:text-foreground"
                 onClick={() => setShowCookieSettings(true)}
               >
                 {t('cookieSettings')}
@@ -43,12 +47,7 @@ export function Footer() {
         </div>
       </footer>
 
-      {/* Cookie Settings Dialog */}
-      <CookieConsentManager 
-        open={showCookieSettings} 
-        onOpenChange={setShowCookieSettings} 
-      />
+      <CookieConsentManager open={showCookieSettings} onOpenChange={setShowCookieSettings} />
     </>
   );
 }
-

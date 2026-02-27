@@ -1530,6 +1530,70 @@
       "feature1": "High-quality image extraction",
       "feature2": "Supports files up to 50MB",
       "feature3": "Returns a convenient ZIP file of images"
+    },
+    "cronExpressionGenerator": {
+      "title": "Cron 式ジェネレーター＆解説",
+      "description": "5フィールドの cron 式を生成・検証し、自然な文章で説明します。",
+      "inputLabel": "Cron 式",
+      "placeholder": "5フィールドを使用: 分 時 日(月内) 月 曜日",
+      "parseError": "この cron 式を解析できませんでした。",
+      "invalidCron": "cron フィールドを5つ入力してください。",
+      "sample": "サンプル",
+      "clear": "クリア",
+      "copy": "コピー",
+      "templates": {
+        "title": "クイックテンプレート",
+        "everyHour": "毎時",
+        "dailyMidnight": "毎日 00:00",
+        "weekdaysAt9": "平日 09:00",
+        "everyWeekend": "毎週末",
+        "every15Minutes": "15分ごと",
+        "firstDayOfMonth": "毎月1日"
+      },
+      "nextRuns": {
+        "title": "次回実行時刻",
+        "empty": "有効な cron 式を入力すると次回実行時刻が表示されます。"
+      },
+      "explainer": {
+        "title": "自然言語での説明"
+      },
+      "fieldsInfo": {
+        "title": "Cron フィールド（5フィールド形式）",
+        "minute": "分 (0-59)",
+        "hour": "時 (0-23)",
+        "dayOfMonth": "日 (1-31)",
+        "month": "月 (1-12)",
+        "dayOfWeek": "曜日 (0-6, 日曜=0)"
+      },
+      "examples": {
+        "title": "よく使う Cron 例",
+        "items": [
+          "0 0 * * * -> 毎日 00:00 に実行",
+          "*/15 * * * * -> 15分ごとに実行",
+          "0 9 * * 1-5 -> 平日 09:00 に実行",
+          "0 0 1 * * -> 毎月1日に実行"
+        ]
+      },
+      "seoContent": {
+        "whatIsCron": {
+          "title": "Cron Expression とは？",
+          "body": "Cron 式は、ジョブをいつ実行するかを定義するための短いスケジュール形式です。サーバー運用、自動化、CI/CD パイプライン、クラウドスケジューラで広く使われます。"
+        },
+        "starsMeaning": {
+          "title": "Cron のアスタリスクは何を意味する？（分、時、日...）",
+          "body": "Cron で * はそのフィールドの「すべての値」を意味します。5フィールド形式では 分・時・日・月・曜日 を表します。範囲、リスト、*/5 のようなステップ値も利用できます。"
+        },
+        "commonExamples": {
+          "title": "よく使う Cron 例",
+          "items": [
+            "0 * * * * -> 毎時",
+            "0 0 * * * -> 毎日 00:00",
+            "0 9 * * 1-5 -> 平日 09:00",
+            "0 0 * * 6,0 -> 毎週末",
+            "*/10 * * * * -> 10分ごと"
+          ]
+        }
+      }
     }
   },
   "footer": {

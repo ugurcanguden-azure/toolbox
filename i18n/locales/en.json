@@ -64,7 +64,7 @@
         "description": "Building dynamic, responsive and user-friendly interfaces with React, Next.js and modern JavaScript frameworks. Creating modern UI/UX solutions with Ant Design and Tailwind CSS."
       },
       "backend": {
-        "title": "Backend Development", 
+        "title": "Backend Development",
         "description": "Designing secure, scalable and high-performance backend systems with .NET Core, microservice architectures, EF Core, Redis and PostgreSQL/MSSQL. Developing security-focused solutions with JWT and role-based auth."
       },
       "devops": {
@@ -1526,6 +1526,70 @@
       "strengthDeprecated": "Deprecated for security purposes",
       "strengthStrong": "Recommended for most use cases",
       "strengthVeryStrong": "Maximum security"
+    },
+    "cronExpressionGenerator": {
+      "title": "Cron Expression Generator & Explainer",
+      "description": "Generate, validate and explain 5-field cron expressions in plain language.",
+      "inputLabel": "Cron Expression",
+      "placeholder": "Use 5 fields: minute hour day-of-month month day-of-week",
+      "parseError": "Could not parse this cron expression.",
+      "invalidCron": "Please enter exactly 5 cron fields.",
+      "sample": "Sample",
+      "clear": "Clear",
+      "copy": "Copy",
+      "templates": {
+        "title": "Quick Templates",
+        "everyHour": "Every hour",
+        "dailyMidnight": "Every day at midnight",
+        "weekdaysAt9": "Weekdays at 09:00",
+        "everyWeekend": "Every weekend",
+        "every15Minutes": "Every 15 minutes",
+        "firstDayOfMonth": "First day of month"
+      },
+      "nextRuns": {
+        "title": "Next Execution Times",
+        "empty": "Enter a valid cron expression to see upcoming runs."
+      },
+      "explainer": {
+        "title": "Human-readable Explanation"
+      },
+      "fieldsInfo": {
+        "title": "Cron Fields (5-Field Format)",
+        "minute": "Minute (0-59)",
+        "hour": "Hour (0-23)",
+        "dayOfMonth": "Day of month (1-31)",
+        "month": "Month (1-12)",
+        "dayOfWeek": "Day of week (0-6, Sunday=0)"
+      },
+      "examples": {
+        "title": "Popular Cron Examples",
+        "items": [
+          "0 0 * * * -> Runs every day at 00:00",
+          "*/15 * * * * -> Runs every 15 minutes",
+          "0 9 * * 1-5 -> Runs at 09:00 on weekdays",
+          "0 0 1 * * -> Runs on the first day of each month"
+        ]
+      },
+      "seoContent": {
+        "whatIsCron": {
+          "title": "What is a Cron Expression?",
+          "body": "A cron expression is a compact schedule format used to define when a job should run. It is commonly used in servers, automation tools, CI/CD pipelines and cloud schedulers."
+        },
+        "starsMeaning": {
+          "title": "What do the cron stars mean? (Minute, Hour, Day...)",
+          "body": "In cron, * means any value for that field. In a 5-field expression, the fields are minute, hour, day of month, month and day of week. You can also use ranges, lists and step values like */5."
+        },
+        "commonExamples": {
+          "title": "Common Cron Examples",
+          "items": [
+            "0 * * * * -> Every hour",
+            "0 0 * * * -> Every day at midnight",
+            "0 9 * * 1-5 -> Weekdays at 09:00",
+            "0 0 * * 6,0 -> Every weekend",
+            "*/10 * * * * -> Every 10 minutes"
+          ]
+        }
+      }
     }
   },
   "footer": {
@@ -1698,4 +1762,3 @@
     }
   }
 }
-

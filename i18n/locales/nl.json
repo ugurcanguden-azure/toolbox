@@ -1530,6 +1530,70 @@
       "feature1": "High-quality image extraction",
       "feature2": "Supports files up to 50MB",
       "feature3": "Returns a convenient ZIP file of images"
+    },
+    "cronExpressionGenerator": {
+      "title": "Cron Expression Generator & Uitleg",
+      "description": "Genereer, valideer en leg 5-veld cron-expressies uit in gewone taal.",
+      "inputLabel": "Cron-expressie",
+      "placeholder": "Gebruik 5 velden: minuut uur dag-van-maand maand dag-van-week",
+      "parseError": "Deze cron-expressie kon niet worden geparseerd.",
+      "invalidCron": "Voer precies 5 cron-velden in.",
+      "sample": "Voorbeeld",
+      "clear": "Wissen",
+      "copy": "Kopiëren",
+      "templates": {
+        "title": "Snelle sjablonen",
+        "everyHour": "Elk uur",
+        "dailyMidnight": "Elke dag om middernacht",
+        "weekdaysAt9": "Werkdagen om 09:00",
+        "everyWeekend": "Elk weekend",
+        "every15Minutes": "Elke 15 minuten",
+        "firstDayOfMonth": "Eerste dag van de maand"
+      },
+      "nextRuns": {
+        "title": "Volgende uitvoertijden",
+        "empty": "Voer een geldige cron-expressie in om komende uitvoeringen te zien."
+      },
+      "explainer": {
+        "title": "Uitleg in natuurlijke taal"
+      },
+      "fieldsInfo": {
+        "title": "Cron-velden (5-velden formaat)",
+        "minute": "Minuut (0-59)",
+        "hour": "Uur (0-23)",
+        "dayOfMonth": "Dag van de maand (1-31)",
+        "month": "Maand (1-12)",
+        "dayOfWeek": "Dag van de week (0-6, zondag=0)"
+      },
+      "examples": {
+        "title": "Veelgebruikte cron-voorbeelden",
+        "items": [
+          "0 0 * * * -> Draait elke dag om 00:00",
+          "*/15 * * * * -> Draait elke 15 minuten",
+          "0 9 * * 1-5 -> Draait om 09:00 op werkdagen",
+          "0 0 1 * * -> Draait op de eerste dag van elke maand"
+        ]
+      },
+      "seoContent": {
+        "whatIsCron": {
+          "title": "Wat is een cron-expressie?",
+          "body": "Een cron-expressie is een compacte planningnotatie die aangeeft wanneer een taak moet draaien. Het wordt veel gebruikt op servers, in automatisering, CI/CD-pipelines en cloud schedulers."
+        },
+        "starsMeaning": {
+          "title": "Wat betekenen cron-sterren? (Minuut, Uur, Dag...)",
+          "body": "In cron betekent * elke waarde voor dat veld. In een 5-velden expressie zijn dat minuut, uur, dag van de maand, maand en dag van de week. Je kunt ook bereiken, lijsten en stapwaarden zoals */5 gebruiken."
+        },
+        "commonExamples": {
+          "title": "Veelgebruikte cron-voorbeelden",
+          "items": [
+            "0 * * * * -> Elk uur",
+            "0 0 * * * -> Elke dag om middernacht",
+            "0 9 * * 1-5 -> Werkdagen om 09:00",
+            "0 0 * * 6,0 -> Elk weekend",
+            "*/10 * * * * -> Elke 10 minuten"
+          ]
+        }
+      }
     }
   },
   "footer": {
