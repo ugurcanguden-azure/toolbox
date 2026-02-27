@@ -19,11 +19,12 @@ function getRuntimeAnalyticsIds() {
   };
 }
 
-function AnalyticsTracker() {
+function AnalyticsTracker({ enabled }: { enabled: boolean }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   useEffect(() => {
+    if (!enabled) return;
     if (pathname) {
       const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : '');
       const run = () => {
@@ -37,7 +38,7 @@ function AnalyticsTracker() {
       const timer = setTimeout(run, 0);
       return () => clearTimeout(timer);
     }
-  }, [pathname, searchParams]);
+  }, [enabled, pathname, searchParams]);
 
   return null;
 }
@@ -53,10 +54,27 @@ export function GoogleAnalytics() {
         const raw = localStorage.getItem(COOKIE_CONSENT_KEY);
         if (!raw) {
           setAnalyticsEnabled(false);
+          if (typeof window !== 'undefined' && (window as any).gtag) {
+            (window as any).gtag('consent', 'update', {
+              analytics_storage: 'denied',
+              ad_storage: 'denied',
+              ad_user_data: 'denied',
+              ad_personalization: 'denied',
+            });
+          }
           return;
         }
         const parsed = JSON.parse(raw);
-        setAnalyticsEnabled(parsed?.consent === 'accepted');
+        const accepted = parsed?.consent === 'accepted';
+        setAnalyticsEnabled(accepted);
+        if (typeof window !== 'undefined' && (window as any).gtag) {
+          (window as any).gtag('consent', 'update', {
+            analytics_storage: accepted ? 'granted' : 'denied',
+            ad_storage: accepted ? 'granted' : 'denied',
+            ad_user_data: accepted ? 'granted' : 'denied',
+            ad_personalization: accepted ? 'granted' : 'denied',
+          });
+        }
       } catch {
         setAnalyticsEnabled(false);
       }
@@ -73,7 +91,7 @@ export function GoogleAnalytics() {
     };
   }, []);
 
-  if (!mounted || !analyticsEnabled || !ids.gaMeasurementId) {
+  if (!mounted || !ids.gaMeasurementId) {
     return null;
   }
 
@@ -91,6 +109,13 @@ export function GoogleAnalytics() {
           __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              analytics_storage: 'denied',
+              ad_storage: 'denied',
+              ad_user_data: 'denied',
+              ad_personalization: 'denied',
+              wait_for_update: 500
+            });
             gtag('js', new Date());
             gtag('config', '${ids.gaMeasurementId}', {
               page_path: window.location.pathname,
@@ -108,7 +133,7 @@ export function GoogleAnalytics() {
         />
       )}
       <Suspense fallback={null}>
-        <AnalyticsTracker />
+        <AnalyticsTracker enabled={analyticsEnabled} />
       </Suspense>
     </>
   );
