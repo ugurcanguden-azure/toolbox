@@ -76,18 +76,18 @@ USER nextjs
 # 🚀 Performance optimizations
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
-ENV PORT=3000
+ENV PORT=3001
 ENV HOSTNAME="0.0.0.0"
 
 # 🎯 Node.js optimizations for performance
 ENV NODE_OPTIONS="--max-old-space-size=1024"
 
 # Expose port
-EXPOSE 3000
+EXPOSE 3001
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
-    CMD curl -f http://localhost:3000/api/health || exit 1
+    CMD curl -f http://localhost:3001/api/health || exit 1
 
 # Start the application in production mode
 CMD ["yarn", "start"]
