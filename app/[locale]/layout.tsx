@@ -47,6 +47,7 @@ export async function generateMetadata({
   };
   
   return {
+    metadataBase: new URL('https://toolbox.curioboxapp.info'),
     title: {
       default: t('appName'),
       template: `%s | ${t('appName')}`,
@@ -89,7 +90,6 @@ export async function generateMetadata({
       locale: ogLocaleMap[locale] || 'en_US',
       alternateLocale: Object.values(ogLocaleMap).filter(l => l !== ogLocaleMap[locale]),
       siteName: t('appName'),
-      url: `https://toolbox.curioboxapp.info/${locale}`,
       images: [
         {
           url: 'https://toolbox.curioboxapp.info/og-image.svg',
@@ -106,22 +106,6 @@ export async function generateMetadata({
       creator: '@toolbox',
       site: '@toolbox',
       images: ['https://toolbox.curioboxapp.info/og-image.svg'],
-    },
-    alternates: {
-      canonical: `https://toolbox.curioboxapp.info/${locale}`,
-      languages: {
-        'en': 'https://toolbox.curioboxapp.info/en',
-        'de': 'https://toolbox.curioboxapp.info/de',
-        'tr': 'https://toolbox.curioboxapp.info/tr',
-        'fr': 'https://toolbox.curioboxapp.info/fr',
-        'pt': 'https://toolbox.curioboxapp.info/pt',
-        'es': 'https://toolbox.curioboxapp.info/es',
-        'it': 'https://toolbox.curioboxapp.info/it',
-        'nl': 'https://toolbox.curioboxapp.info/nl',
-        'ja': 'https://toolbox.curioboxapp.info/ja',
-        'ru': 'https://toolbox.curioboxapp.info/ru',
-        'x-default': 'https://toolbox.curioboxapp.info/en',
-      },
     },
      // Google Site Verification
     verification: {
