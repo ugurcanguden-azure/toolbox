@@ -51,7 +51,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: t("subtitle"),
       description: t("description"),
       type: "profile",
-      url: "https://toolbox.curioboxapp.info//about"
+      url: "https://toolbox.curioboxapp.info/about"
     }
   };
 }

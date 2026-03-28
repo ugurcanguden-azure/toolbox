@@ -8,7 +8,7 @@ Disallow: /api/
 Disallow: /seo-output/
 
 # Sitemap
-Sitemap: https://toolbox.curioboxapp.info//sitemap.xml
+Sitemap: https://toolbox.curioboxapp.info/sitemap.xml
 
 # Host
-Host: https://toolbox.curioboxapp.info/
+Host: toolbox.curioboxapp.info
