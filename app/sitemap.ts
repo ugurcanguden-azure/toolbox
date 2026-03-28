@@ -26,9 +26,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'daily',
       priority: 1,
       alternates: {
-        languages: Object.fromEntries(
-          locales.map((l) => [l, `${baseUrl}/${l}`])
-        ),
+        languages: {
+          ...Object.fromEntries(
+            locales.map((l) => [l, `${baseUrl}/${l}`])
+          ),
+          'x-default': `${baseUrl}/en`, // Best practice fallback
+        },
       },
     });
   });
@@ -67,9 +70,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         changeFrequency: isHighPriority ? 'weekly' : 'monthly',
         priority: isHighPriority ? 0.9 : 0.7,
         alternates: {
-          languages: Object.fromEntries(
-            locales.map((l) => [l, `${baseUrl}/${l}/tools/${tool}`])
-          ),
+          languages: {
+            ...Object.fromEntries(
+              locales.map((l) => [l, `${baseUrl}/${l}/tools/${tool}`])
+            ),
+            'x-default': `${baseUrl}/en/tools/${tool}`,
+          },
         },
       });
     });
@@ -83,9 +89,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.3,
       alternates: {
-        languages: Object.fromEntries(
-          locales.map((l) => [l, `${baseUrl}/${l}/privacy-policy`])
-        ),
+        languages: {
+          ...Object.fromEntries(
+            locales.map((l) => [l, `${baseUrl}/${l}/privacy-policy`])
+          ),
+          'x-default': `${baseUrl}/en/privacy-policy`,
+        },
       },
     });
   });

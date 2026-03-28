@@ -1,22 +1,1486 @@
 [
   {
-    "pattern": "/search*",
-    "reason": "Search results page"
+    "pattern": "https://toolbox.curioboxapp.info",
+    "reason": "Missing or short title"
   },
   {
-    "pattern": "/filter*",
-    "reason": "Filtered content"
+    "pattern": "https://toolbox.curioboxapp.info/en",
+    "reason": "Missing or short title"
   },
   {
-    "pattern": "/*?*",
-    "reason": "Parameterized URLs"
+    "pattern": "https://toolbox.curioboxapp.info/de",
+    "reason": "Missing or short title"
   },
   {
-    "pattern": "/admin/*",
-    "reason": "Admin area"
+    "pattern": "https://toolbox.curioboxapp.info/tr",
+    "reason": "Missing or short title"
   },
   {
-    "pattern": "/preview/*",
-    "reason": "Preview pages"
+    "pattern": "https://toolbox.curioboxapp.info/fr",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/base64",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/base64",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/base64",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/base64",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/base64",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/base64",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/base64",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/base64",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/base64",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/base64",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/case-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/case-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/case-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/case-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/case-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/case-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/case-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/case-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/case-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/case-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/color-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/color-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/color-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/color-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/color-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/color-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/color-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/color-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/color-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/color-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/credit-card-validator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/credit-card-validator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/credit-card-validator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/credit-card-validator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/credit-card-validator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/credit-card-validator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/credit-card-validator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/credit-card-validator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/credit-card-validator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/credit-card-validator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/cron-expression-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/cron-expression-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/cron-expression-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/cron-expression-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/cron-expression-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/cron-expression-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/cron-expression-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/cron-expression-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/cron-expression-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/cron-expression-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/css-minifier",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/css-minifier",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/css-minifier",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/css-minifier",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/css-minifier",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/css-minifier",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/css-minifier",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/css-minifier",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/css-minifier",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/css-minifier",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/csv-to-json",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/csv-to-json",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/csv-to-json",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/csv-to-json",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/csv-to-json",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/csv-to-json",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/csv-to-json",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/csv-to-json",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/csv-to-json",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/csv-to-json",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/duplicate-remover",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/duplicate-remover",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/duplicate-remover",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/duplicate-remover",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/duplicate-remover",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/duplicate-remover",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/duplicate-remover",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/duplicate-remover",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/duplicate-remover",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/duplicate-remover",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/hash-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/hash-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/hash-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/hash-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/hash-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/hash-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/hash-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/hash-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/hash-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/hash-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/html-entity-encoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/html-entity-encoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/html-entity-encoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/html-entity-encoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/html-entity-encoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/html-entity-encoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/html-entity-encoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/html-entity-encoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/html-entity-encoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/html-entity-encoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/html-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/html-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/html-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/html-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/html-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/html-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/html-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/html-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/html-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/html-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/image-to-base64",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/image-to-base64",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/image-to-base64",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/image-to-base64",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/image-to-base64",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/image-to-base64",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/image-to-base64",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/image-to-base64",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/image-to-base64",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/image-to-base64",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/json-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/json-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/json-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/json-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/json-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/json-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/json-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/json-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/json-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/json-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/json-to-csv",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/json-to-csv",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/json-to-csv",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/json-to-csv",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/json-to-csv",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/json-to-csv",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/json-to-csv",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/json-to-csv",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/json-to-csv",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/json-to-csv",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/jwt-decoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/jwt-decoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/jwt-decoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/jwt-decoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/jwt-decoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/jwt-decoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/jwt-decoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/jwt-decoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/jwt-decoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/jwt-decoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/line-sorter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/line-sorter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/line-sorter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/line-sorter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/line-sorter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/line-sorter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/line-sorter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/line-sorter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/line-sorter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/line-sorter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/lorem-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/lorem-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/lorem-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/lorem-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/lorem-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/lorem-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/lorem-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/lorem-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/lorem-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/lorem-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/markdown-preview",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/markdown-preview",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/markdown-preview",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/markdown-preview",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/markdown-preview",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/markdown-preview",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/markdown-preview",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/markdown-preview",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/markdown-preview",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/markdown-preview",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/number-base-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/number-base-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/number-base-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/number-base-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/number-base-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/number-base-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/number-base-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/number-base-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/number-base-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/number-base-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/password-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/password-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/password-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/password-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/password-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/password-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/password-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/password-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/password-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/password-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/pdf-merge",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/pdf-merge",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/pdf-merge",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/pdf-merge",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/pdf-merge",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/pdf-merge",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/pdf-merge",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/pdf-merge",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/pdf-merge",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/pdf-merge",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/pdf-protect",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/pdf-protect",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/pdf-protect",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/pdf-protect",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/pdf-protect",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/pdf-protect",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/pdf-protect",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/pdf-protect",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/pdf-protect",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/pdf-protect",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/pdf-to-image",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/pdf-to-image",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/pdf-to-image",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/pdf-to-image",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/pdf-to-image",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/pdf-to-image",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/pdf-to-image",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/pdf-to-image",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/pdf-to-image",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/pdf-to-image",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/pdf-to-word",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/pdf-to-word",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/pdf-to-word",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/pdf-to-word",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/pdf-to-word",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/pdf-to-word",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/pdf-to-word",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/pdf-to-word",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/pdf-to-word",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/pdf-to-word",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/qr-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/qr-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/qr-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/qr-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/qr-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/qr-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/qr-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/qr-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/qr-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/qr-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/regex-tester",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/regex-tester",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/regex-tester",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/regex-tester",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/regex-tester",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/regex-tester",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/regex-tester",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/regex-tester",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/regex-tester",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/regex-tester",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/sql-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/sql-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/sql-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/sql-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/sql-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/sql-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/sql-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/sql-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/sql-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/sql-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/string-tools",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/string-tools",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/string-tools",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/string-tools",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/string-tools",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/string-tools",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/string-tools",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/string-tools",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/string-tools",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/string-tools",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/text-compare",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/text-compare",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/text-compare",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/text-compare",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/text-compare",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/text-compare",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/text-compare",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/text-compare",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/text-compare",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/text-compare",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/timestamp-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/timestamp-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/timestamp-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/timestamp-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/timestamp-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/timestamp-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/timestamp-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/timestamp-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/timestamp-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/timestamp-converter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/url-encoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/url-encoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/url-encoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/url-encoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/url-encoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/url-encoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/url-encoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/url-encoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/url-encoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/url-encoder",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/uuid-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/uuid-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/uuid-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/uuid-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/uuid-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/uuid-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/uuid-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/uuid-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/uuid-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/uuid-generator",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/word-counter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/word-counter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/word-counter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/word-counter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/word-counter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/word-counter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/word-counter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/word-counter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/word-counter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/word-counter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/xml-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/xml-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/xml-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/xml-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/xml-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/xml-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/xml-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/xml-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/xml-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/xml-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/tools/yaml-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/tools/yaml-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/tools/yaml-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/tools/yaml-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/tools/yaml-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/tools/yaml-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/tools/yaml-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/tools/yaml-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/tools/yaml-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/tools/yaml-formatter",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/en/privacy-policy",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/de/privacy-policy",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/tr/privacy-policy",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/fr/privacy-policy",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/pt/privacy-policy",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/es/privacy-policy",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/it/privacy-policy",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/nl/privacy-policy",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ja/privacy-policy",
+    "reason": "Missing or short title"
+  },
+  {
+    "pattern": "https://toolbox.curioboxapp.info/ru/privacy-policy",
+    "reason": "Missing or short title"
   }
 ]
