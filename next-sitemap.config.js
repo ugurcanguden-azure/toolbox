@@ -1,6 +1,6 @@
-const { getServerSideSitemap } = require('next-sitemap');
+const SITE_URL = (process.env.SITE_URL || 'https://toolbox.curioboxapp.info').replace(/\/$/, '');
 
-const SITE_URL = process.env.SITE_URL || 'https://toolbox.curioboxapp.info/';
+const locales = ['en', 'de', 'tr', 'fr', 'pt', 'es', 'it', 'nl', 'ja', 'ru'];
 
 module.exports = {
   siteUrl: SITE_URL,
@@ -27,42 +27,31 @@ module.exports = {
     ]
   },
   transform: async (config, path) => {
-    // Custom transform for different page types
-    const priority = path === '/' ? 1.0 : 
-                   path.includes('/tools/') ? 0.8 : 
-                   path.includes('/blog/') ? 0.6 : 0.5;
-    
-    const changefreq = path === '/' ? 'daily' : 
-                       path.includes('/tools/') ? 'weekly' : 
+    const priority = path === '/' ? 1.0 :
+                     path.includes('/tools/') ? 0.8 :
+                     path.includes('/blog/') ? 0.6 : 0.5;
+
+    const changefreq = path === '/' ? 'daily' :
+                       path.includes('/tools/') ? 'weekly' :
                        path.includes('/blog/') ? 'monthly' : 'yearly';
-    
+
+    const cleanPath = path.replace(/^\/[a-z]{2}(\/|$)/, '/');
+
     return {
       loc: path,
       lastmod: new Date().toISOString(),
       changefreq,
       priority,
       alternateRefs: [
+        ...locales.map((lang) => ({
+          href: `${SITE_URL}/${lang}${cleanPath === '/' ? '' : cleanPath}`,
+          hreflang: lang,
+        })),
         {
-          href: `${SITE_URL}/en${path.replace(/^/[a-z]{2}/, '')}`,
-          hreflang: 'en'
+          href: `${SITE_URL}/en${cleanPath === '/' ? '' : cleanPath}`,
+          hreflang: 'x-default',
         },
-        {
-          href: `${SITE_URL}/de${path.replace(/^/[a-z]{2}/, '')}`,
-          hreflang: 'de'
-        },
-        {
-          href: `${SITE_URL}/tr${path.replace(/^/[a-z]{2}/, '')}`,
-          hreflang: 'tr'
-        },
-        {
-          href: `${SITE_URL}/fr${path.replace(/^/[a-z]{2}/, '')}`,
-          hreflang: 'fr'
-        },
-        {
-          href: `${SITE_URL}/pt${path.replace(/^/[a-z]{2}/, '')}`,
-          hreflang: 'pt'
-        }
-      ]
+      ],
     };
   }
 };

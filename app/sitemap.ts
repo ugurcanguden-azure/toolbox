@@ -1,111 +1,94 @@
-import { MetadataRoute } from 'next';
-import { locales } from '@/i18n/request';
+import { supportedLanguages } from "@/i18n/request";
+import type { MetadataRoute } from "next";
 
-import fs from 'fs';
-import path from 'path';
+const BASE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://toolbox.curioboxapp.info";
+const WEEKLY_TOOLS = new Set([
+  "base64",
+  "color-converter",
+  "hash-generator",
+  "json-formatter",
+  "password-generator",
+  "qr-generator",
+  "regex-tester",
+  "uuid-generator",
+]);
 
-const baseUrl = 'https://toolbox.curioboxapp.info';
+const TOOL_SLUGS = [
+  "base64",
+  "case-converter",
+  "color-converter",
+  "credit-card-validator",
+  "cron-expression-generator",
+  "css-minifier",
+  "csv-to-json",
+  "duplicate-remover",
+  "hash-generator",
+  "html-entity-encoder",
+  "html-formatter",
+  "image-to-base64",
+  "json-formatter",
+  "json-to-csv",
+  "jwt-decoder",
+  "line-sorter",
+  "lorem-generator",
+  "markdown-preview",
+  "number-base-converter",
+  "password-generator",
+  "pdf-merge",
+  "pdf-protect",
+  "pdf-to-image",
+  "pdf-to-word",
+  "qr-generator",
+  "regex-tester",
+  "sql-formatter",
+  "string-tools",
+  "text-compare",
+  "timestamp-converter",
+  "url-encoder",
+  "uuid-generator",
+  "word-counter",
+  "xml-formatter",
+  "yaml-formatter",
+] as const;
+
+function buildLocalizedRoute(
+  lang: string,
+  routePath: string,
+  changeFrequency: "daily" | "weekly" | "monthly",
+  priority: number
+): MetadataRoute.Sitemap[number] {
+  return {
+    url: `${BASE_URL}/${lang}${routePath}`,
+    changeFrequency,
+    priority,
+  };
+}
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const routes: MetadataRoute.Sitemap = [];
-  const currentDate = new Date();
-
-  // Add root redirect
-  routes.push({
-    url: baseUrl,
-    lastModified: currentDate,
-    changeFrequency: 'daily',
-    priority: 1,
-    alternates: {
-      languages: {
-        ...Object.fromEntries(
-          locales.map((l) => [l, `${baseUrl}/${l}`])
-        ),
-        'x-default': `${baseUrl}/en`,
-      },
-    },
-  });
-
-  // Add homepage for each locale
-  locales.forEach((locale) => {
-    routes.push({
-      url: `${baseUrl}/${locale}`,
-      lastModified: currentDate,
-      changeFrequency: 'daily',
+  const staticRoutes: MetadataRoute.Sitemap = [
+    {
+      url: BASE_URL,
       priority: 1,
-      alternates: {
-        languages: {
-          ...Object.fromEntries(
-            locales.map((l) => [l, `${baseUrl}/${l}`])
-          ),
-          'x-default': `${baseUrl}/en`, // Best practice fallback
-        },
-      },
-    });
-  });
-
-  // Dynamically get tools from the directory
-  const toolsDir = path.join(process.cwd(), 'app', '[locale]', 'tools');
-  let tools: string[] = [];
-  try {
-    const entries = fs.readdirSync(toolsDir, { withFileTypes: true });
-    tools = entries
-      .filter((entry) => entry.isDirectory() && !entry.name.startsWith('[') && !entry.name.startsWith('_'))
-      .map((entry) => entry.name);
-  } catch (e) {
-    console.error('Failed to read tools directory for sitemap:', e);
-  }
-
-  // Define high priority tool categories
-  const highPriorityTools = [
-    'json-formatter',
-    'base64',
-    'uuid-generator',
-    'password-generator',
-    'hash-generator',
-    'qr-generator',
-    'color-converter',
-    'regex-tester',
+      changeFrequency: "daily",
+    },
+    ...supportedLanguages.map((lang) =>
+      buildLocalizedRoute(lang, "", "daily", 1)
+    ),
+    ...supportedLanguages.flatMap((lang) =>
+      TOOL_SLUGS.map((slug) =>
+        buildLocalizedRoute(
+          lang,
+          `/tools/${slug}`,
+          WEEKLY_TOOLS.has(slug) ? "weekly" : "monthly",
+          WEEKLY_TOOLS.has(slug) ? 0.9 : 0.7
+        )
+      )
+    ),
+    ...supportedLanguages.map((lang) =>
+      buildLocalizedRoute(lang, "/privacy-policy", "monthly", 0.3)
+    ),
   ];
 
-  // Add tool pages for each locale
-  tools.forEach((tool) => {
-    const isHighPriority = highPriorityTools.includes(tool);
-    locales.forEach((locale) => {
-      routes.push({
-        url: `${baseUrl}/${locale}/tools/${tool}`,
-        lastModified: currentDate,
-        changeFrequency: isHighPriority ? 'weekly' : 'monthly',
-        priority: isHighPriority ? 0.9 : 0.7,
-        alternates: {
-          languages: {
-            ...Object.fromEntries(
-              locales.map((l) => [l, `${baseUrl}/${l}/tools/${tool}`])
-            ),
-            'x-default': `${baseUrl}/en/tools/${tool}`,
-          },
-        },
-      });
-    });
-  });
-
-  // Add privacy policy for each locale
-  locales.forEach((locale) => {
-    routes.push({
-      url: `${baseUrl}/${locale}/privacy-policy`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.3,
-      alternates: {
-        languages: {
-          ...Object.fromEntries(
-            locales.map((l) => [l, `${baseUrl}/${l}/privacy-policy`])
-          ),
-          'x-default': `${baseUrl}/en/privacy-policy`,
-        },
-      },
-    });
-  });
-
-  return routes;
+  return staticRoutes;
 }
