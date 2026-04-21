@@ -16,6 +16,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: currentDate,
     changeFrequency: 'daily',
     priority: 1,
+    alternates: {
+      languages: {
+        ...Object.fromEntries(
+          locales.map((l) => [l, `${baseUrl}/${l}`])
+        ),
+        'x-default': `${baseUrl}/en`,
+      },
+    },
   });
 
   // Add homepage for each locale
