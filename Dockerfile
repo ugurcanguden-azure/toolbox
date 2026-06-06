@@ -19,17 +19,17 @@ RUN apk add --no-cache \
 WORKDIR /app
 
 # Copy package files first for better caching
-COPY package.json yarn.lock ./
+COPY package.json package-lock.json ./
 
 # Install dependencies with optimizations
-RUN yarn install --frozen-lockfile && \
-    yarn cache clean
+RUN npm ci && \
+    npm cache clean --force
 
 # Copy source code
 COPY . .
 
 # 🚀 Build the application with optimizations
-RUN yarn build
+RUN npm run build
 
 # 🗜️ Compress assets for maximum performance
 # RUN chmod +x scripts/compress-assets.sh && \
@@ -90,4 +90,4 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
     CMD curl -f http://localhost:3000/api/health || exit 1
 
 # Start the application in production mode
-CMD ["yarn", "start"]
+CMD ["npm", "run", "start"]
