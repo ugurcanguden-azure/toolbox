@@ -1,8 +1,10 @@
 import { supportedLanguages } from "@/i18n/request";
+import { blogPosts } from "@/data/blog-posts";
 import type { MetadataRoute } from "next";
 
-const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://toolbox.curioboxapp.info";
+const BASE_URL = (
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://toolbox.curioboxapp.info"
+).replace(/\/$/, "");
 const WEEKLY_TOOLS = new Set([
   "base64",
   "color-converter",
@@ -55,7 +57,7 @@ const TOOL_SLUGS = [
 function buildLocalizedRoute(
   lang: string,
   routePath: string,
-  changeFrequency: "daily" | "weekly" | "monthly",
+  changeFrequency: "weekly" | "monthly" | "yearly",
   priority: number
 ): MetadataRoute.Sitemap[number] {
   return {
@@ -70,10 +72,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     {
       url: BASE_URL,
       priority: 1,
-      changeFrequency: "daily",
+      changeFrequency: "weekly",
     },
     ...supportedLanguages.map((lang) =>
-      buildLocalizedRoute(lang, "", "daily", 1)
+      buildLocalizedRoute(lang, "", "weekly", 0.9)
+    ),
+    ...supportedLanguages.flatMap((lang) => [
+      buildLocalizedRoute(lang, "/tools", "weekly", 0.8),
+      buildLocalizedRoute(lang, "/blog", "weekly", 0.7),
+      buildLocalizedRoute(lang, "/about", "monthly", 0.5),
+      buildLocalizedRoute(lang, "/privacy-policy", "yearly", 0.3),
+    ]),
+    ...supportedLanguages.flatMap((lang) =>
+      blogPosts.map((post) =>
+        buildLocalizedRoute(lang, `/blog/${post.slug}`, "monthly", 0.6)
+      )
     ),
     ...supportedLanguages.flatMap((lang) =>
       TOOL_SLUGS.map((slug) =>
@@ -84,9 +97,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           WEEKLY_TOOLS.has(slug) ? 0.9 : 0.7
         )
       )
-    ),
-    ...supportedLanguages.map((lang) =>
-      buildLocalizedRoute(lang, "/privacy-policy", "monthly", 0.3)
     ),
   ];
 

@@ -221,7 +221,7 @@ class SEOReporter {
 ### Files Created/Modified
 - \`next.config.js\` - Added redirects configuration
 - \`middleware.ts\` - Added URL normalization
-- \`next-sitemap.config.js\` - Generated sitemap configuration
+- \`app/sitemap.ts\` - Next.js sitemap route
 - \`seo-redirects.json\` - Redirect rules
 - \`seo-noindex-routes.json\` - NoIndex rules
 

@@ -1,5 +1,9 @@
 import { MetadataRoute } from 'next';
 
+const SITE_URL = (
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://toolbox.curioboxapp.info'
+).replace(/\/$/, '');
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
@@ -35,7 +39,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/admin/'],
       },
     ],
-    sitemap: 'https://toolbox.curioboxapp.info/sitemap.xml',
-    host: 'https://toolbox.curioboxapp.info',
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   };
 }
