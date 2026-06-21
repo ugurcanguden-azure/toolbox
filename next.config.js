@@ -184,7 +184,7 @@ const nextConfig = {
       },
       {
         // Favicon and manifest caching
-        source: '/(favicon.ico|manifest.json|robots.txt)',
+        source: '/(favicon.ico|manifest.json|robots.txt|sitemap.xml|sitemap-pages.xml|sitemap-tools.xml|sitemap-posts.xml|sitemap.xsl)',
         headers: [
           {
             key: 'Cache-Control',

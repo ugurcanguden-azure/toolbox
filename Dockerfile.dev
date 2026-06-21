@@ -8,11 +8,13 @@ RUN apk add --no-cache libc6-compat
 
 WORKDIR /app
 
+RUN corepack enable && corepack prepare yarn@1.22.22 --activate
+
 # Copy package files
-COPY package.json package-lock.json* ./
+COPY package.json yarn.lock ./
 
 # Install dependencies
-RUN npm ci
+RUN yarn install --frozen-lockfile
 
 # Copy all source code
 COPY . .
@@ -22,4 +24,4 @@ EXPOSE 3000
 ENV PORT=3000
 
 # Run in development mode
-CMD ["npm", "run", "dev"]
+CMD ["yarn", "dev", "-H", "0.0.0.0"]

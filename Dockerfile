@@ -1,93 +1,55 @@
-# 🚀 Toolbox - Optimized Production Dockerfile
-# Multi-stage build for maximum performance and security
-# Optimized for PageSpeed 80+ score
+# Toolbox - Production Dockerfile
+# Yarn-based multi-stage build for server deployment.
 
-# ========================================
-# 🏗️ BUILD STAGE - Optimized for building
-# ========================================
-FROM node:22-alpine AS builder
+FROM node:22-alpine AS base
 
-# Install system dependencies for building
-RUN apk add --no-cache \
-    libc6-compat \
-    python3 \
-    make \
-    g++ \
-    brotli \
-    gzip
+RUN apk add --no-cache libc6-compat
 
 WORKDIR /app
 
-# Copy package files first for better caching
-COPY package.json package-lock.json ./
+ENV NEXT_TELEMETRY_DISABLED=1
 
-# Install dependencies with optimizations
-RUN npm ci && \
-    npm cache clean --force
+RUN corepack enable && corepack prepare yarn@1.22.22 --activate
 
-# Copy source code
+FROM base AS deps
+
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile
+
+FROM base AS builder
+
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# 🚀 Build the application with optimizations
-RUN npm run build
+ENV NODE_ENV=production
 
-# 🗜️ Compress assets for maximum performance
-# RUN chmod +x scripts/compress-assets.sh && \
-#     ./scripts/compress-assets.sh
+RUN yarn build
 
-# ========================================
-# 🏃 RUNTIME STAGE - Optimized for production
-# ========================================
-FROM node:22-alpine AS runner
+FROM base AS runner
 
-# Install runtime dependencies
-RUN apk add --no-cache \
-    libc6-compat \
-    brotli \
-    gzip \
-    curl \
-    tzdata
+RUN apk add --no-cache curl tzdata
 
-WORKDIR /app
-
-# Set timezone
+ENV NODE_ENV=production
+ENV PORT=3000
+ENV HOSTNAME=0.0.0.0
 ENV TZ=UTC
+ENV NODE_OPTIONS=--max-old-space-size=1024
 
-# Create nextjs user for security
 RUN addgroup --system --gid 1001 nodejs && \
-adduser --system --uid 1001 nextjs
+    adduser --system --uid 1001 nextjs
 
-# Copy application from builder stage
-COPY --from=builder --chown=nextjs:nodejs /app ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 
-# Copy compressed assets
-# COPY --from=builder --chown=nextjs:nodejs /app/.next/static/*.gz ./.next/static/ 2>/dev/null || true
-# COPY --from=builder --chown=nextjs:nodejs /app/.next/static/*.br ./.next/static/ 2>/dev/null || true
-# COPY --from=builder --chown=nextjs:nodejs /app/public/*.gz ./public/ 2>/dev/null || true
-# COPY --from=builder --chown=nextjs:nodejs /app/public/*.br ./public/ 2>/dev/null || true
+RUN node -e "const fs=require('fs'); const pkg=JSON.parse(fs.readFileSync('package.json','utf8')); pkg.scripts={start:'node server.js'}; fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2));" && \
+    chown nextjs:nodejs package.json
 
-# Fix permissions for development
-RUN chown -R nextjs:nodejs /app && \
-    chmod -R 755 /app
-
-# Switch to non-root user
 USER nextjs
 
-# 🚀 Performance optimizations
-ENV NODE_ENV=production
-ENV NEXT_TELEMETRY_DISABLED=1
-ENV PORT=3000
-ENV HOSTNAME="0.0.0.0"
-
-# 🎯 Node.js optimizations for performance
-ENV NODE_OPTIONS="--max-old-space-size=1024"
-
-# Expose port
 EXPOSE 3000
 
-# Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
-    CMD curl -f http://localhost:3000/api/health || exit 1
+    CMD curl -fsS http://localhost:3000/sitemap.xml > /dev/null || exit 1
 
-# Start the application in production mode
-CMD ["npm", "run", "start"]
+CMD ["yarn", "start"]

@@ -49,7 +49,7 @@ sleep 10
 
 # Health check
 echo "🔍 Health check..."
-if curl -f http://localhost:3001/api/health > /dev/null 2>&1; then
+if curl -f http://localhost:3001/sitemap.xml > /dev/null 2>&1; then
     echo "✅ Health check passed"
 else
     echo "❌ Health check failed"

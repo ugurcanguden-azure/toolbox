@@ -4,7 +4,7 @@
   "private": true,
   "engines": {
     "node": ">=18.0.0",
-    "npm": ">=9.0.0"
+    "yarn": ">=1.22.0"
   },
   "scripts": {
     "dev": "next dev",
@@ -16,14 +16,14 @@
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
     "clean": "rm -rf .next node_modules",
     "compress": "chmod +x scripts/compress-assets.sh && ./scripts/compress-assets.sh",
-    "build:prod": "npm run build && npm run compress",
-    "analyze": "ANALYZE=true npm run build",
-    "perf": "npm run build && npm run start",
+    "build:prod": "yarn build && yarn compress",
+    "analyze": "ANALYZE=true yarn build",
+    "perf": "yarn build && yarn start",
     "seo:collect": "tsx scripts/seo/collect.ts",
     "seo:diagnose": "tsx scripts/seo/diagnose.ts",
     "seo:apply": "tsx scripts/seo/apply.ts",
     "seo:report": "tsx scripts/seo/report.ts",
-    "seo:full": "npm run seo:collect && npm run seo:diagnose && npm run seo:apply && npm run seo:report"
+    "seo:full": "yarn seo:collect && yarn seo:diagnose && yarn seo:apply && yarn seo:report"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
