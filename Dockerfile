@@ -9,7 +9,7 @@ WORKDIR /app
 
 ENV NEXT_TELEMETRY_DISABLED=1
 
-RUN corepack enable && corepack prepare yarn@1.22.22 --activate
+RUN corepack disable && npm install --global yarn@1.22.22
 
 FROM base AS deps
 

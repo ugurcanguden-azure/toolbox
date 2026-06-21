@@ -8,7 +8,7 @@ RUN apk add --no-cache libc6-compat
 
 WORKDIR /app
 
-RUN corepack enable && corepack prepare yarn@1.22.22 --activate
+RUN corepack disable && npm install --global yarn@1.22.22
 
 # Copy package files
 COPY package.json yarn.lock ./
